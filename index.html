@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>Jimat - Food choice for you</title>
+        <link href="css/main.css" type="text/css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/edd4d6d779.js" crossorigin="anonymous"></script>
+        <script>
+            function popup_login(href, w, h) {
+	          var href = "login.html";
+            var w = 466;
+            var h = 615;
+            var xPos = (document.body.offsetWidth/2) - (w/2); // 가운데 정렬
+	              xPos += window.screenLeft; // 듀얼 모니터일 때
+	          var yPos = (document.body.offsetHeight/2) - (h/2);
+              	window.open(href, "로그인", "width="+w+", height="+h+",  left="+xPos+", top=200, menubar=0, status=0, titlebar=0, resizable=0");
+            }   
+        </script>
+    </head>
+    <body>
+        <header class="wrap">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html"><img src="images\logo1.png" id="logo_img"></a>   
+                </div>
+                <div class="top_search">
+                    <span>
+                      <div id="search_form">
+                        <input type="text" value="test"/></div>
+                    </span>
+                    <span> 
+                      <div id="search_button">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                      </div>
+                    </span>
+                    <span> 
+                      <button id="login" value="로그인" onclick="popup_login();">로그인</button>
+                    </span>
+                </div>
+                <div class="top_menu">
+                    <ul>
+                      <li><a href="javascript:;">팀원소개 </a></li>
+                      <li><a href="javascript:;">큐레이션</a></li>
+                      <li><a href="javascript:;">반경1km </a></li>
+                      <li><a href="javascript:;">매거진</a></li>
+                      <li><a href="javascript:;">마이페이지</a></li>
+                    </ul>
+                  </div>
+            </div>          
+            <div class="nav">
+                <div class="main_image">
+                    <img src="D:\big_study\project01\aa\images\main_image.jpg">
+                </div>
+                <span class="main_text">
+                    <p>#맛집 #Gourmet #빵지순례 #애완동반 #노포</p>
+                    <p>#검색어를 입력하세요</p>
+                    <p>지금, 맛집</p>
+                </span>
+            </div>
+        </header>
+    </body>

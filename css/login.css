@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+* {
+  background-color: #FDFCF5;
+  margin: auto;
+  padding: 0;
+  border-width: 0;
+  text-align: center;
+  /* border: 1px solid black; */
+}
+
+div.logo_box {
+  margin-top : 50px;
+  margin-bottom: 30px;
+}
+
+div.logo_box > img {
+  width : 200px;
+  height: 140px;
+
+}
+
+li.sns_login_item {
+  margin-top:20px;
+}
+
+img#naver_login_img, img#kakao_login_img {
+  width:200px;
+}
+
+div.login_info{
+  margin-top:20px;
+}
