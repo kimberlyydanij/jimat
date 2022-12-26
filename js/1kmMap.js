@@ -40,7 +40,3 @@ function displayMarker(place) {
         infowindow.open(map, marker);
     });
 }
-
-function move_1km(){
-    location.href = "/1kmMap.html";
-}

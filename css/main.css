@@ -11,12 +11,12 @@
 ul {
     list-style-type: none;
 }
-  
+
 a {
     text-decoration: none;
     color: #444444;
 }
-  
+
 .clear {
     clear: both;
 }
@@ -35,8 +35,8 @@ body {
   font-size: 16px;
   color: #444444;
   text-align: center;
-  min-width: 1280px;
-  max-width: 1580px;
+  min-width: 1200px;
+  max-width: 1480px;
 }
 
 div.body_wrap {
@@ -45,8 +45,8 @@ div.body_wrap {
 
 div.header {
     z-index:1;
-    min-width: 1580px;
-    max-width: 1580px;
+    min-width: 1480px;
+    max-width: 1480px;
     padding-top:30px;
 }
 
@@ -62,8 +62,8 @@ img#logo_img {
 }
 
 div.top_search {
-    min-width: 1100px;
-    max-width: 1100px;
+    min-width: 1000px;
+    max-width: 1000px;
     height: 55px;
     float : left;
     padding-top:45px;
@@ -108,8 +108,8 @@ button#login {
 }
 
 div.top_menu {
-    min-width:1300px;
-    max-width:1300px;
+    min-width:1200px;
+    max-width:1200px;
     height: 40px;
     float : left; 
     background-color: lightgray;
@@ -126,12 +126,13 @@ div.top_menu > ul > li {
     line-height: 40px;
 }
 
-div.nav {
-    max-width: 1580px;
-    min-width: 1580px;
+div.nav{
+    max-width: 1480px;
+    min-width: 1480px;
     position : relative;
-    margin-top:185px;
+    margin-top:165px;
     height:1000px;
+    margin-left:50px;
 }
 
 div.nav img{
@@ -139,7 +140,7 @@ div.nav img{
     height: 100%;
 }
 
-span.main_text {
+div.span.main_text {
     position : absolute;
     top : 50%;
     left: 50%; transform: translate(-50%, -50%); 
@@ -149,7 +150,33 @@ span.main_text {
     background-color:transparent;
 }
 
-span.main_text > p{
-    text-align: left;
-    background-color:transparent;
+div.map_category{
+ margin-right:30px;
+ border: 1px solid black;
+ width:318px;
+ height:600px;   
+ float : left;
 }
+
+div.map_main{
+ width:1080px;
+ height:400px;
+ float:left;
+ /* style="position:relative;top:0;width:100%;height:calc(100% - 200px);" */
+}
+
+div#shop_info{
+ width:1078px;
+ height:180px;
+ border : 1px solid black;
+ float:left;
+ margin-top:20px;
+}
+
+div.teamVita500, div.curationPage, div.magazinePage, div.myPage {
+    margin-right:30px;
+    border: 1px solid black;
+    width:1428px;
+    height:600px;   
+    float : left;
+   }
