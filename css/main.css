@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 * {
-  background-color: #FDFCF5;
-  margin: auto;
+/*  background-color: #FDFCF5;*/
+  margin: 0;
   padding: 0;
   border-width: 0;
   text-align: center;
@@ -36,13 +36,18 @@ body {
   font-size: 16px;
   color: #444444;
   text-align: center;
+  min-width: 1200px;
+  max-width: 1600px;
 }
 
-div.header {
-    margin : 2% auto;
-    min-width: 1200px;
-    max-width: 1600px;
-    height: 140px;
+header.wrap {
+    position : fixed;
+    z-index: 1;
+
+}
+#header {
+    margin-top:50px;
+    height: 190px;
 }
 
 div.logo {
@@ -90,7 +95,7 @@ button#login {
     background-color: lightgray;
 }
 div.top_menu {
-    width : 80%;
+    width: 100%;
     height: 40px;
     float : left; 
     background-color: lightgray;
@@ -101,13 +106,14 @@ div.top_menu > ul {
 }
 
 div.top_menu > ul > li {
-    width : 200px;
+    width : 150px;
     height : 40px;
     display: inline-block;
     line-height: 40px;
 }
 
 div.nav {
+    padding-top: 150px;
     max-width: 1600px;
     min-width: 1280px;
     position : relative;
@@ -123,7 +129,7 @@ span.main_text {
     top : 50%;
     left: 50%; transform: translate(-50%, -50%); 
     color: white;
-    font-size : 2rem;
+    font-size : 1.5rem;
     z-index: 1;
     background-color:transparent;
 }
