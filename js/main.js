@@ -1,23 +1,23 @@
-function vita500() {
-  location.href = "/teamVita500.html";
+function team_vita500() {
+  location.href = "/team_vita500.html";
 }
 
-function curationPage() {
-  location.href = "/curationPage.html";
+function curation_page() {
+  location.href = "/curation_page.html";
 }
 
-function move_1km() {
-  location.href = "/1kmMap.html";
+function one_km_map() {
+  location.href = "/one_km_map.html";
 }
 
-function magazinePage() {
-  location.href = "/magazinePage.html";
+function magazine_page() {
+  location.href = "/magazine_page.html";
 }
 
-function myPage() {
-  location.href = "/myPage.html";
+function my_page() {
+  location.href = "/my_page.html";
 }
 
-function mainPage() {
+function main_page() {
   location.href = "/index.html";
 }
