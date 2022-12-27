@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+div.logo {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+article.card-body {
+  padding: 0px;
+}
+img#logo_img {
+  width: 200px;
+  height: 140px;
+}
+
+div.bg-light {
+  height: 500px;
+}
+div.container {
+  width: 500px;
+  height: 550px;
+}
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  clear: both;
+}
+
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+}
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+img#kakao_btn,
+img#naver_btn {
+  width: 140px;
+  height: 35px;
+}
+
+div.sns-login > span:nth-child(1) {
+  float: left;
+}
+div.sns-login > span:nth-child(2) {
+  float: right;
+}
+
+select.form-control {
+  margin: 6 0 6 6;
+}
+
+select.form-control#year {
+  width: 40px;
+}
