@@ -39,9 +39,30 @@ body {
   max-width: 1480px;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 5px; /* 스크롤바의 길이 */
+    background: ffffff; /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
+/* 스크롤바 뒷 배경 색상 */
+/*
+body::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .1);  
+} 
 div.body_wrap {
     text-align:center;
-}
+} */
+
+/* 스크롤바에 마우스 호버 */
+/*
+body::-webkit-scrollbar-thumb:hover {
+    background:lightgrey;
+} */
 
 div.header {
     z-index:1;
@@ -132,7 +153,7 @@ div.nav{
     position : relative;
     margin-top:165px;
     height:1000px;
-    margin-left:50px;
+
 }
 
 div.nav img{
@@ -174,9 +195,11 @@ div#shop_info{
 }
 
 div.teamVita500, div.curationPage, div.magazinePage, div.myPage {
+    margin-left:40px;
     margin-right:30px;
     border: 1px solid black;
     width:1428px;
     height:600px;   
     float : left;
+
    }
