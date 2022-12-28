@@ -6,6 +6,7 @@ div.logo {
   margin-bottom: 10px;
 }
 article.card-body {
+  width: 360px;
   padding: 0px;
 }
 
@@ -24,16 +25,15 @@ div.container {
 .divider-text {
   position: relative;
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
   clear: both;
+  margin-bottom: 5px;
 }
 
 .divider-text span {
   padding: 7px;
   font-size: 12px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .divider-text:after {
   content: "";
@@ -51,11 +51,15 @@ img#naver_btn {
   height: 35px;
 }
 
-div.sns-login > span:nth-child(1) {
+div.sns-login > span:nth-child(1),
+div.sns-login > span:nth-child(2) {
   float: left;
 }
-div.sns-login > span:nth-child(2) {
-  float: right;
+div.sns-login > a:active,
+div.sns-login > a:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 select.form-control {

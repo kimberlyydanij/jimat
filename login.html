@@ -1,56 +1,99 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="title" content="JIMAT" />
-    <meta name="description" content="JIGUM MATZIP, FOOD CHOICE FOR YOU" />
-  
-    <title>Jimat - Food choice for you</title>
-    <link href="css/login.css" type="text/css" rel="stylesheet" />
+  <head>
+    <meta charset="utf-8">
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/edd4d6d779.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="/css/sign_up.css" type="text/css" rel="stylesheet" />
+    <script defer src="/js/main.js"></script>
+  </head>
 
-    <header class="header_wrapper">
-        <div class="header_inner">
-            
-            <div class="logo_box">
-                    <img src="images/logo1.png" alt="JIMAT, 지금 맛집"/>
-            </div> 
+<body>
+  <div class="logo">
+    <a href="javascript: main_page();"
+      ><img src="/images/logo1.png" id="logo_img"
+    /></a>
+  </div>
+</div>
+<div class="container">
+  <div class="card bg-light">
+    <article class="card-body mx-auto" >
+      <h4 class="card-title mt-3 text-center">로 그 인</h4>
+      <div class="sns-login">
+        <span>
+          <a href="" class="btn btn-block btn-kakao">
+          <img src="/images/kakao_login/ko/kakao_login_medium_narrow.png" id="kakao_btn" />
+        </a>    
+        </span>
+        <span>
+          <a href="" class="btn btn-block btn-naver" >
+          <img src="/images/naver_login/ko/naver_btn_login1.png" id="naver_btn" /></a>
+        </span>
+      <p class="divider-text">
+        <span class="bg-light">OR</span>
+      </p>
+      <form>
+        <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="width: 40px">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input
+            name=""
+            class="form-control"
+            placeholder="Email"
+            type="email"
+          />
         </div>
-    </header>
+        <!-- form-group end.// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input
+            class="form-control"
+            placeholder="Password"
+            type="password"
+          />
+        </div>
+        <!-- form-group// -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            로 그 인
+          </button>
+        </div>
+        <!-- form-group// -->
+        <p class="text-center">회 원 가 입<a href="javascript: sign_up();"
+          > Sign Up</a></p>
+      </form>
+    </article>
+  </div>
+  <!-- card.// -->
+</div>
+<!--container end.//-->
 
-                <!-- sns 로그인 -->
-                <div class="sns_login_box">
-                    <ul class="sns_login_list">
-
-                        <li class="sns_login_item">
-                            <div class="bubble_speech_desc arw_left_bottom" style="display: none">최근 사용한 로그인 방법입니다.</div>
-                            <button class="btn_sns_login_kakao"><span class="hidden">
-                                <img src="images/kakao_login/ko/kakao_login_medium_narrow.png" id="kakao_login_img"></span></button>
-                        </li>
-                       
-                        <li class="sns_login_item">
-                            <div class="bubble_speech_desc arw_left_bottom" style="display: none">최근 사용한 로그인 방법입니다.</div>
-                            <button class="btn_sns_login_naver"><span class="hidden">
-                                <img src="images/naver_login/ko/naver_login2.png" id="naver_login_img">
-                            </span></button>
-                        </li>
-
-                        <!--
-                        <li class="sns_login_item">
-                            <div class="bubble_speech_desc arw_mid_bottom" style="display: none">최근 사용한 로그인 방법입니다.</div>
-                            <button class="btn_sns_login google"><span class="hidden">구글 로그인</span></button>
-                        </li>  -->
-                        
-                    </ul>
-                </div>
-                <div class="login_info">
-                    <p>개인정보 보호를 위해 공용 PC에서</p>
-                    <p>사용 시 SNS계정의 로그아웃 상태를</p>
-                    <p>꼭 확인해 주세요.</p>
-                </div>
-                <!-- // sns 로그인 -->
-
+<!-- <select class="custom-select" style="max-width: 120px;">
+    <option selected="">010</option>
+    <option value="1">+972</option>
+    <option value="2">+198</option>
+    <option value="3">+701</option>
+</select>   -->
 </body>
 </html>

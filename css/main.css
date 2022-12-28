@@ -15,6 +15,7 @@ ul {
 a {
   text-decoration: none;
   color: #444444;
+  -webkit-text-decorations-in-effect: none;
 }
 
 .clear {
@@ -115,19 +116,23 @@ div#search_button {
   float: left;
 }
 
-div.login_button {
-  min-width: 200px;
-  max-width: 200px;
+div.login_button,
+div.signUp_button {
+  min-width: 80px;
+  max-width: 80px;
   height: 38px;
   float: left;
   padding-top: 45px;
+  margin-left: 15px;
 }
 
-button#login {
+button#login,
+button#signUp {
   border: solid 1px black;
-  width: 100px;
+  width: 80px;
   height: 38px;
   background-color: lightgray;
+  float: left;
 }
 
 div.top_menu {

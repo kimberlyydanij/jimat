@@ -21,3 +21,11 @@ function my_page() {
 function main_page() {
   location.href = "/index.html";
 }
+
+function login() {
+  location.href = "/login.html";
+}
+
+function sign_up() {
+  location.href = "/sign_up.html";
+}
