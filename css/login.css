@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 * {
-  background-color: #FDFCF5;
+  background-color: #fdfcf5;
   margin: auto;
   padding: 0;
   border-width: 0;
@@ -23,29 +23,29 @@ a {
 }
 
 body {
-  min-width:466px;
-  max-width:466px;
+  min-width: 466px;
+  max-width: 466px;
 }
 
 div.logo_box {
-  margin-top : 50px;
+  margin-top: 50px;
   margin-bottom: 30px;
 }
 
 div.logo_box > img {
-  width : 200px;
+  width: 200px;
   height: 140px;
-
 }
 
-li.sns_login_item {
-  margin-top:20px;
+div.sns-login {
+  margin-top: 20px;
 }
 
-img#naver_login_img, img#kakao_login_img {
-  width:200px;
+img#naver_login_img,
+img#kakao_login_img {
+  width: 200px;
 }
 
-div.login_info{
-  margin-top:20px;
+div.login_info {
+  margin-top: 20px;
 }
