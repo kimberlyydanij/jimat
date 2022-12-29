@@ -29,3 +29,7 @@ function login() {
 function sign_up() {
   location.href = "/sign_up.html";
 }
+
+function review() {
+  location.href = "/review.html";
+}

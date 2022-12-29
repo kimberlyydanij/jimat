@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+}
+
+div.container {
+  margin-top: 20px;
+  background-color: yellow;
+}
+
+div.user_profile {
+  height: 100px;
+  background-color: lightpink;
+  float: left;
+}
+
+div.user_info {
+  float: left;
+}
+div.profile_image {
+  width: 100px;
+  padding: 10px;
+}
+
+div.profile_image > img {
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+
+div.user_info {
+  background-color: green;
+  width: 250px;
+  float: left;
+}
+div.user_nickname {
+  float: left;
+  width: 250px;
+}
