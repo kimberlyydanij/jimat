@@ -1,24 +1,24 @@
 body {
   font-family: "Calibri", sans-serif !important;
-}
-
+  font-family: "nanumbarungothic" !important;
+  font-size: 16px;
+} /*
 div {
   border: 1px solid black;
-}
+} */
 
-div.comment {
+div.comment-body {
   margin: auto;
 }
-.comment {
-  background-color: yellow;
+
+.comment-options {
+  text-align: center;
+}
+.user_info {
+  margin-top: 0px;
+  height: 80px;
 }
 
-.user_info {
-  height: 60px;
-}
-.write_date {
-  text-align: right;
-}
 .card-no-border .card {
   border: 0px;
   border-radius: 4px;
@@ -26,23 +26,13 @@ div.comment {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.card-body {
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding: 1.25rem;
-}
-
-.card-title {
-  margin-top: 20px;
-}
-.comment-widgets .comment-row:hover {
+.comment-widgets {
   background: rgba(0, 0, 0, 0.02);
   cursor: pointer;
 }
 
-.comment-widgets .comment-row {
+.comment-widgets {
   border-bottom: 1px solid rgba(120, 130, 140, 0.13);
-  padding: 15px;
 }
 
 div.profile-image {
@@ -50,16 +40,12 @@ div.profile-image {
   height: 80px;
   margin: 0px 10px;
 }
-
-div.conment-info {
-  position: relative;
+div.comment-info {
+  padding: 0px;
 }
-
-.comment-text:hover {
-  visibility: hidden;
-}
-.comment-text:hover {
-  visibility: visible;
+div.user_info {
+  width: 150px;
+  height: 30px;
 }
 
 .label {
@@ -96,10 +82,57 @@ div.conment-info {
 .action-icons a:hover {
   color: #1976d2;
 }
-.mt-100 {
-  margin-top: 100px;
+
+.rating {
+  display: flex;
+  width: 115px;
 }
 
-.mb-100 {
-  margin-bottom: 100px;
+.rating > input {
+  display: none;
+  width: 30px;
+}
+
+.rating > label {
+  position: relative;
+  width: 19px;
+  font-size: 25px;
+  color: #ff0000;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.rating > label::before {
+  content: "\2605";
+  position: absolute;
+  opacity: 0;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+.rating > input:checked ~ label:before {
+  opacity: 1;
+}
+
+.rating:hover > input:checked ~ label:before {
+  opacity: 0.4;
+}
+
+.user_rating,
+.write_date {
+  padding-left: 5px;
+}
+
+.comment-body:hover {
+  visibility: hidden;
+}
+.comment-body:hover {
+  visibility: visible;
+}
+
+.comment-text {
+  padding-right: 5px;
 }
