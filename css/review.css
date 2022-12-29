@@ -35,6 +35,9 @@ div.comment-body {
   border-bottom: 1px solid rgba(120, 130, 140, 0.13);
 }
 
+div.comment-options {
+  max-width: 120px;
+}
 div.profile-image {
   width: 80px;
   height: 80px;
@@ -43,8 +46,13 @@ div.profile-image {
 div.comment-info {
   padding: 0px;
 }
+div.comment-inside,
+div.comment-info,
+div.user-info {
+  min-width: 150px;
+}
 div.user_info {
-  width: 150px;
+  min-width: 50px;
   height: 30px;
 }
 
@@ -135,4 +143,12 @@ div.user_info {
 
 .comment-text {
   padding-right: 5px;
+}
+
+div.review-images img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  object-fit: cover;
 }

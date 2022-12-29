@@ -16,86 +16,105 @@
     ></script>
   </head>
   <body>
-    <div class="comment-body p-3 col-md-9">
-      <div class="row">
-        <div class="card p-3 justify-content-start">
+    <div class="comment-body p-3 col-9">
+      <div class="card p-3 justify-content-start">
+        <div class="row">
           <div class="card-title">
-            <h4 class="card-title">방문자 리뷰</h4>
+            <h4>방문자 리뷰</h4>
           </div>
-          <div class="comment-widgets d-flex m-b-20">
-            <div class="profile column-row mt-3">
-              <div class="profile-image">
-                <span class="round"
+        </div>
+        <!-- 1.리뷰줄 -->
+          <div class="row">
+            <div class="profile-body">
+              <div class="comment-widgets d-flex m-b-20">
+              <div class="profile column-row mt-3">
+                <div class="profile-image">
+                  <span class="round"
                   ><img
                     src="/data/images/profile1.png"
                     alt="user"
                     width="80"
-                    id="user_profile_image"
-                /></span>
-              </div>
+                    id="user_profile_image" />
+                  </span>
+                </div>
               <div class="comment-options mt-4">
                 <span class="action-icons">
                   <a href="#" data-abc="true"
                     ><i class="fa fa-pencil" alt="수정"></i
-                  ></a>
+                ></a>
                   <a href="#" data-abc="true"
                     ><i class="fa fa-rotate-right"></i
-                  ></a>
+                ></a>
                   <a href="#" data-abc="true"><i class="fa fa-heart"></i></a>
                 </span>
-              </div>
             </div>
-            <div class="comment-inside p-3 col-3">
-              <div class="comment-info column-row">
-                <div class="user_info" id="user_nickname">
-                  <span id="user_nickname"><h4>작성자 이름</h4></span>
-                </div>
-                <div class="user_rating">
-                  <div class="rating flex-row-reverse">
-                    <input type="radio" name="rating" value="1" id="1" /><label
-                      for="1"
-                      >☆</label
-                    >
-                    <input type="radio" name="rating" value="2" id="2" /><label
-                      for="2"
-                      >☆</label
-                    >
-                    <input type="radio" name="rating" value="3" id="3" /><label
-                      for="3"
-                      >☆</label
-                    >
-                    <input type="radio" name="rating" value="4" id="4" /><label
-                      for="4"
-                      >☆</label
-                    >
-                    <input type="radio" name="rating" value="5" id="5" /><label
-                      for="5"
-                      >☆</label
-                    >
-                  </div>
-                </div>
-                <div class="write_date">
-                  <span class="date" id="date">April 14, 2019</span>
-                </div>
-                <div class="comment-tag mt-1">
-                  <span class="label label-danger" id="delicious"
-                    >맛있어요</span
+          </div>
+          <div class="comment-inside p-3 col-3">
+            <div class="comment-info column-row">
+              <div class="user_info" id="user_nickname">
+                <span id="user_nickname"><h4>작성자 이름</h4></span>
+              </div>
+              <div class="user_rating">
+                <div class="rating flex-row-reverse">
+                  <input type="radio" name="rating" value="1" id="1" /><label
+                    for="1"
+                    >☆</label
                   >
-                  <span class="label label-info" id="kindfull">친절해요</span>
+                  <input type="radio" name="rating" value="2" id="2" /><label
+                    for="2"
+                    >☆</label
+                  >
+                  <input type="radio" name="rating" value="3" id="3" /><label
+                    for="3"
+                    >☆</label
+                  >
+                  <input type="radio" name="rating" value="4" id="4" /><label
+                    for="4"
+                    >☆</label
+                  >
+                  <input type="radio" name="rating" value="5" id="5" /><label
+                    for="5"
+                    >☆</label
+                  >
                 </div>
               </div>
+              <div class="write_date">
+                <span class="date" id="date">April 14, 2019</span>
+              </div>
+              <div class="comment-tag mt-1">
+                <span class="label label-danger" id="delicious">맛있어요</span>
+                <span class="label label-info" id="kindfull">친절해요</span>
+              </div>
             </div>
-            <div class="comment-text mt-3">
-              <p class="m-b-5 m-t-10" id="comment-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it
-              </p>
+          </div>
+          <div class="comment-text mt-3">
+            <p class="m-b-5 m-t-10" id="comment-text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="container d-flex p-3">
+            <div class="row">
+              <div class="review-images col-3">
+                <img src="/data/images/review_images1.jpg" />
+              </div>
+              <div class="review-images col-3">
+                <img src="/data/images/review_images2.jpg" />
+              </div>
+              <div class="review-images col-3">
+                <img src="/data/images/review_images3.jpg" />
+              </div>
+              <div class="review-images col-3">
+                <img src="/data/images/review_images4.jpg" />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div></body>
 </html>
