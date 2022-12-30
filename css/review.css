@@ -5,24 +5,11 @@ body {
   min-width: 600px;
 }
 
-button.btn {
-  font-size: 12px;
-  margin-right: 5px;
-}
-
-/*
-div {
-  border: 1px solid black;
-} */
-
-div#comment-textarea {
-  margin: 0px;
-  padding: 0px;
-}
 div#comment-area {
   margin: 0;
   padding: 0;
 }
+
 div.card {
   min-width: 550px;
 }
@@ -33,6 +20,13 @@ div.profile-body {
   min-width: 550px;
 }
 
+div.comment-rating {
+  max-height: 40px;
+}
+
+.title > p {
+  margin: 0px;
+}
 textarea {
   min-width: 550px;
 }
@@ -40,6 +34,16 @@ textarea {
   text-align: center;
 }
 
+input {
+  display: none;
+}
+
+button#comment-send {
+  margin-left: 20px;
+}
+input#formFile {
+  max-width: 400px;
+}
 .user_info {
   margin-top: 0px;
   height: 80px;
@@ -62,11 +66,17 @@ textarea {
 }
 
 div.user-rating {
-  font-size: 12px;
+  font-size: 20px;
 }
 
 div.comment-options {
   max-width: 120px;
+}
+
+div.comment-options > p {
+  font-size: 18px;
+  color: #ff4136;
+  font-style: bold;
 }
 
 div.profile-image {
@@ -93,7 +103,7 @@ div.user_info {
   color: #ffffff;
   font-weight: 400;
   border-radius: 4px;
-  font-size: 75%;
+  font-size: 120%;
 }
 
 .round img {
@@ -101,32 +111,23 @@ div.user_info {
 }
 
 div.comment-tag {
-  min-width: 400px;
-}
-/*
-.label-info {
-  background-color: #1976d2;
+  min-width: 350px;
 }
 
-.label-success {
-  background-color: green;
-}
-
-.label-danger {
-  background-color: #ef5350;
-}
-
-*/
-.action-icons a {
+.action-icons a,
+.btn-group i {
   padding-left: 7px;
   vertical-align: middle;
   color: #99abb4;
 }
 
-.action-icons a:hover {
-  color: #1976d2;
+.action-icons a#edit:hover {
+  color: #158cba;
 }
 
+.btn-group i:hover {
+  color: #ff4136;
+}
 .rating {
   display: flex;
   width: 115px;

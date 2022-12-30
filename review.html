@@ -17,30 +17,30 @@
   </head>
   <body>
     <div class="card p-3 col-lg-9 mt-3" id="comment-body">
-      <div class="comment-box-body column-row p-3">
-        <div class="comment-box mb-4 d-flex">
-          <div class="row">
-            <div class="title">
+      <div class="comment-box-body column-row p-3">   
+        <div class="comment-box column-row mb-4 column-row">  
+          <div class="row" id="row1">
+          <div class="comment-rating d-flex justify-content-between p-0">
+            <div class="title m-0 p-0">
               <p><h4>리뷰 작성하기</h4></p>
             </div>
-            <div class="user-rating d-flex">
-              <div class="rating flex-row-reverse ms-3">
-                <input type="radio" name="rating" value="1" id="1" />
-                <label id="stars" for="1">☆</label>
-                <input type="radio" name="rating" value="2" id="2" />
-                <label id="stars" for="2">☆</label>
-                <input type="radio" name="rating" value="3" id="3" />
-                <label id="stars" for="3">☆</label>
-                <input type="radio" name="rating" value="4" id="4" />
-                <label id="stars" for="4">☆</label>
-                <input type="radio" name="rating" value="5" id="5" />
-                <label id="stars" for="5">☆</label>
-              </div>
-              <div class="comment-tag ms-4 mt-1">
-                <div
-                  class="btn-group"
-                  role="group"
-                  aria-label="Basic radio toggle button group"
+            <div class="rating flex-row-reverse ms-3">
+              <input type="radio" name="rating" value="1" id="1" />
+              <label id="stars" for="1">☆</label>
+              <input type="radio" name="rating" value="2" id="2" />
+              <label id="stars" for="2">☆</label>
+              <input type="radio" name="rating" value="3" id="3" />
+              <label id="stars" for="3">☆</label>
+              <input type="radio" name="rating" value="4" id="4" />
+              <label id="stars" for="4">☆</label>
+              <input type="radio" name="rating" value="5" id="5" />
+              <label id="stars" for="5">☆</label>
+            </div>
+            <div class="comment-tag">
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic radio toggle button group"
                 >
                   <input
                     type="checkbox"
@@ -90,28 +90,32 @@
                   >
                 </div>
               </div>
-          </div>
-          <div class="row" id="comment-textarea">
-            <div class="comment-area">
-              <textarea
-                class="form-control mt-3 container"
-                placeholder="리뷰를 입력해주세요"
-                rows="4"
-              ></textarea>
             </div>
           </div>
         </div>
-        <div class="row">
-          <p>aa</p>
+          <div class="row" id="row2">
+            <div class="comment-area p-0">
+              <textarea
+                class="form-control"
+                placeholder="리뷰를 입력해주세요"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+        <div class="row" id="row3">
+          <div class="write-buttons mt-3 d-flex justify-content-center">
+            <input class="form-control" type="file" id="formFile">  
+            <button type="button" class="btn btn-primary" id="comment-send">작성완료</button>
+          </div>
         </div>
       </div>
-      <div class="card p-3 justify-content-start">
+     
+      <div class="card p-3 justify-content-start mt-2">
         <div class="row">
           <div class="card-title">
             <h4>방문자 리뷰</h4>
           </div>
         </div>
-        <!-- 1.리뷰줄 -->
         <div class="row">
           <div class="profile-body container">
             <div class="comment-widgets d-flex m-b-20">
@@ -126,16 +130,27 @@
                     />
                   </span>
                 </div>
-                <div class="comment-options mt-4">
-                  <span class="action-icons">
-                    <a href="#" data-abc="true"
-                      ><i class="fa fa-pencil" alt="수정"></i
-                    ></a>
-                    <a href="#" data-abc="true"
-                      ><i class="fa fa-rotate-right"></i
-                    ></a>
-                    <a href="#" data-abc="true"><i class="fa fa-heart"></i></a>
-                  </span>
+                <div class="comment-options mt-3 d-flex justify-content-center">
+                  <div class="action-icons">
+                    <a href="#" data-abc="true" id="edit"
+                      ><i class="fa fa-pencil fa-lg" id="edit" alt="수정" ></i
+                    ></a></div>
+                    <!-- 여기 하는 중 -->
+                    
+                  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" id="i-heart">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      name="heart"
+                      id="i-heart"
+                      autocomplete="off"/>
+                      <label class="btn-outline-danger" for="i-heart">
+                        <i class="fa fa-heart fa-lg">         </i>                               </i>
+                      </label>
+                  </div>  
+
+                    <!-- -->
+                  <p class="ms-1">5</p>
                 </div>
               </div>
               <div class="comment-inside p-3 col-2">
@@ -180,7 +195,7 @@
                   <div class="write_date">
                     <span class="date" id="date">April 14, 2019</span>
                   </div>
-                  <div class="comment-tag mt-1">
+                  <div class="comment-tag mt-1 container flex-wrap:wrap">
                     <button type="button" class="btn btn-danger">맛</button>
                     <button type="button" class="btn btn-warning">가격</button>
                   </div>
@@ -217,5 +232,5 @@
         </div>
       </div>
     </div>
-  </body>
+</body>
 </html>
