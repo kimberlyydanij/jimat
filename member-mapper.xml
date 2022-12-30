@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="Member"> 
+
+	<!-- 정보 찾기 -->
+	<select id="findKakao" parameterType="com.mycompany.myapp.KakaoDTO" resultType="com.mycompany.myapp.KakaoDTO">
+		select * from kakao_login where k_nickname=#{k_nickname, jdbcType=VARCHAR} and k_email=#{k_email, jdbcType=VARCHAR}
+	</select>
+
+	<!-- 정보 저장 -->
+	<insert id="kakaoInsert" parameterType="com.mycompany.myapp.KakaoDTO">
+		insert into kakao_login(k_number, k_id, k_nickname, k_has_email, k_email, k_image, 
+k_has_age_range, k_age_range, k_has_birthday, k_birthday, 
+k_birthday_type, k_has_gender, k_gender)
+			values(kakao_login_k_number_seq.nextval, #{k_id, jdbcType=VARCHAR}, #{k_nickname, jdbcType=VARCHAR}, #{k_has_email, jdbcType=VARCHAR}, #{k_email, jdbcType=VARCHAR}, #{k_image, jdbcType=VARCHAR},
+			 #{k_has_age_range, jdbcType=VARCHAR}, #{k_age_range, jdbcType=VARCHAR}, #{k_has_birthday, jdbcType=VARCHAR}, #{k_birthday, jdbcType=VARCHAR},
+			 #{k_birthday_type, jdbcType=VARCHAR}, #{k_has_gender, jdbcType=VARCHAR}, #{k_gender, jdbcType=VARCHAR})
+	</insert>
+	
+</mapper>
