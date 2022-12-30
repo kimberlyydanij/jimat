@@ -2,18 +2,44 @@ body {
   font-family: "Calibri", sans-serif !important;
   font-family: "nanumbarungothic" !important;
   font-size: 16px;
-} /*
+  min-width: 600px;
+}
+
+button.btn {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+/*
 div {
   border: 1px solid black;
 } */
 
-div.comment-body {
-  margin: auto;
+div#comment-textarea {
+  margin: 0px;
+  padding: 0px;
+}
+div#comment-area {
+  margin: 0;
+  padding: 0;
+}
+div.card {
+  min-width: 550px;
 }
 
-.comment-options {
+div.card#comment-body,
+div.profile-body {
+  margin: auto;
+  min-width: 550px;
+}
+
+textarea {
+  min-width: 550px;
+}
+.form .comment-options {
   text-align: center;
 }
+
 .user_info {
   margin-top: 0px;
   height: 80px;
@@ -35,9 +61,14 @@ div.comment-body {
   border-bottom: 1px solid rgba(120, 130, 140, 0.13);
 }
 
+div.user-rating {
+  font-size: 12px;
+}
+
 div.comment-options {
   max-width: 120px;
 }
+
 div.profile-image {
   width: 80px;
   height: 80px;
@@ -56,7 +87,7 @@ div.user_info {
   height: 30px;
 }
 
-.label {
+.label#stars {
   padding: 3px 10px;
   line-height: 13px;
   color: #ffffff;
@@ -69,6 +100,10 @@ div.user_info {
   border-radius: 100%;
 }
 
+div.comment-tag {
+  min-width: 400px;
+}
+/*
 .label-info {
   background-color: #1976d2;
 }
@@ -81,6 +116,7 @@ div.user_info {
   background-color: #ef5350;
 }
 
+*/
 .action-icons a {
   padding-left: 7px;
   vertical-align: middle;
@@ -94,6 +130,8 @@ div.user_info {
 .rating {
   display: flex;
   width: 115px;
+  min-width: 120px;
+  margin-top: -4px;
 }
 
 .rating > input {
@@ -145,6 +183,9 @@ div.user_info {
   padding-right: 5px;
 }
 
+.comment-text > p {
+  margin-left: 5px;
+}
 div.review-images img {
   object-fit: contain;
   width: 100%;
