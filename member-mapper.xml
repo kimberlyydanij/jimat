@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="Member"> 
+<mapper namespace="review"> 
 
-	<!-- 정보 찾기 -->
-	<select id="findKakao" parameterType="com.mycompany.myapp.KakaoDTO" resultType="com.mycompany.myapp.KakaoDTO">
-		select * from kakao_login where k_nickname=#{k_nickname, jdbcType=VARCHAR} and k_email=#{k_email, jdbcType=VARCHAR}
+	<!-- 전체 리뷰 정보 조회 -->
+	<select id="find_review_all" resultType="com.mycompany.myapp.ReviewDTO">
+		SELECT * FROM review
 	</select>
 
-	<!-- 정보 저장 -->
-	<insert id="kakaoInsert" parameterType="com.mycompany.myapp.KakaoDTO">
-		insert into kakao_login(k_number, k_id, k_nickname, k_has_email, k_email, k_image, 
-k_has_age_range, k_age_range, k_has_birthday, k_birthday, 
-k_birthday_type, k_has_gender, k_gender)
-			values(kakao_login_k_number_seq.nextval, #{k_id, jdbcType=VARCHAR}, #{k_nickname, jdbcType=VARCHAR}, #{k_has_email, jdbcType=VARCHAR}, #{k_email, jdbcType=VARCHAR}, #{k_image, jdbcType=VARCHAR},
-			 #{k_has_age_range, jdbcType=VARCHAR}, #{k_age_range, jdbcType=VARCHAR}, #{k_has_birthday, jdbcType=VARCHAR}, #{k_birthday, jdbcType=VARCHAR},
-			 #{k_birthday_type, jdbcType=VARCHAR}, #{k_has_gender, jdbcType=VARCHAR}, #{k_gender, jdbcType=VARCHAR})
-	</insert>
+	<!-- 유저 id를 통한 리뷰 정보 조회 -->
+	<select id="find_review_user" parameterType="String" resultType="com.mycompany.myapp.ReviewDTO">
+		SELECT * FROM review where review_writer_id = #{review_writer_id}
+	</select>
 	
+	<!-- 리뷰 번호를 통한 리뷰 정보 조회 -->
+	<select id="find_review_number" parameterType="long" resultType="com.mycompany.myapp.ReviewDTO">
+		SELECT * FROM review where review_number = #{review_number}
+	</select>
+
+	<!-- 리뷰 작성 -->
+	<insert id="review_write" parameterType="com.mycompany.myapp.ReviewDTO">
+		INSERT INTO review(review_number, review_seq_number, review_writer_id,
+            review_write_date, review_update_date, review_content, review_main_number,
+            review_read_count_number, review_tag_number, review_good_number, review_upload_number)
+          VALUES(review_num_seq.nextval, #{review_seq_number}, #{review_writer_id},
+            #{review_write_date}, #{review_update_date}, #{review_content}, #{review_main_number},
+            #{review_read_count_number}, #{review_tag_number}, #{review_good_number}, #{review_upload_number});
+	</insert> 
+	
+	<!-- 리뷰 수정 -->
+	<update id="review_update" parameterType="com.mycompany.myapp.ReviewDTO">
+		
+	</update>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="review_delete" parameterType="long">
+		DELETE FROM review
+		WHERE review_number=#{review_number}
+	</delete>
 </mapper>
