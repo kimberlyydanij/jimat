@@ -38,6 +38,7 @@ body {
   font-size: 16px;
   color: #444444;
   text-align: center;
+  min-width: 1200px;
 }
 
 body::-webkit-scrollbar {
@@ -82,8 +83,8 @@ div#rowd {
 /* test 끝 */
 
 div.main {
-  border: solid 1px black;
-  height: 500px;
+  background-color: lightyellow;
+  height: 530px;
 }
 .navbar-mainmanu {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -103,18 +104,41 @@ div.main img {
   height: 100%;
 }
 
-/*
-div.map_category {
-  margin-right: 30px;
-  border: 1px solid black;
-  width: 318px;
-  height: 600px;
-  float: left;
+div.map-main {
+  height: 400px;
 }
 
-div.map_main {
-  width: 1080px;
-  height: 400px;
-  float: left;
-  style="position:relative;top:0;width:100%;height:calc(100% - 200px);" 
-}  */
+.title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.title-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin: auto;
+}
+
+div#title {
+  margin-left: -15px;
+}
+
+.people-group,
+.gender-group,
+.category-group,
+.convenience-group {
+  min-width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px;
+}
+.people-group > li,
+.gender-group > li,
+.category-group > li,
+.convenience-group > li {
+  width: 75px;
+}

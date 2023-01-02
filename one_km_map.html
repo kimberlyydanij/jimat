@@ -16,8 +16,14 @@
     <link href="/css/main.css" type="text/css" rel="stylesheet" />
     <script defer src="/js/one_km_map.js"></script>
     <script defer src="/js/main.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
-    <script charset="UTF-8" src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"
+    ></script>
+    <script
+      charset="UTF-8"
+      src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"
+    ></script>
   </head>
   <body>
     <div class="header container col-12 mt-4">
@@ -120,24 +126,256 @@
       </div>
     </div>
     <div class="main container col-12 column-row mt-2">
-      <div class="row">
-        <div class="nav-body containercol-md-12 d-flex">
-          <div class="nav-menu col-2">
-            <br /><br />
-            <p>검색 카테고리</p>
-            <br />
-            <ul>
-              <br />
-              <li>이용자층</li>
-              <br />
-              <li>카테고리</li>
-              <br />
-              <li>편의시설</li>
-              <br />
-              <li>방문목적</li>
+        <div class="main-body containercol-md-12 d-flex">
+          <div class="main-menu col-2 ms-2">
+            <div class="title container d-flex mt-4">
+              <div
+                class="title-bullet"
+                style="background-color: rgb(251, 201, 68);"
+              ></div>
+              <div id="title">이용자층</div>
+            </div>
+            <ul class="people-group mt-2">
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="age-10" />
+                    10대</label
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="age-20" />
+                    20대</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="age-30" />
+                    30대</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="age-40" />
+                    40대</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="age-50" />
+                    50대</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="age-60" />
+                    60대</label
+                  >
+                </div>
+              </li>
             </ul>
+            <ul class="gender-group d-flex mt-1">
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="radio" id="male" />
+                    남성</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="radio" id="female" />
+                    여성</label
+                  >
+                </div>
+              </li>
+            </ul>
+            <div class="hr col-9">
+              <hr/>
+            </div>
+            <div class="title container d-flex mt-2">
+              <div
+                class="title-bullet"
+                style="background-color: rgb(234, 99, 99);"
+              ></div>
+              <div id="title">카테고리</div>
+            </div>
+            <ul class="category-group d-flex mt-2">
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-delivery" />
+                    배달</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-meal" />
+                    밥집</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-cafe" />
+                    카페</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-pub" />
+                    술집</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-gogi" />
+                  고기</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-seafood" />
+                    횟집</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-korean" />
+                    한식</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-china" />
+                    중식</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-japan" />
+                    일식</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-west" />
+                    양식</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-buffet" />
+                    부페</label
+                  >
+                </div>
+              </li>
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="cate-snack" />
+                    분식</label
+                  >
+                </div>
+              </li>
+            </ul>
+            <div class="hr col-9">
+              <hr/>
+            </div>
+            <div class="title container d-flex mt-2">
+              <div
+                class="title-bullet"
+                style="background-color: rgb(10, 199, 206);"
+              ></div>
+              <div id="title">편의시설</div>
+            </div>
+            <ul class="convenience-group d-flex mt-2">
+              <li class="filter-button">
+                <div class="filter-button-click-container">
+                  <label>
+                    <input type="checkbox" id="conve-parking" />
+                    주차</label
+                  >
+                </div>
+              </li>
+              <li>
+              <div class="filter-button-click-container">
+                <label>
+                  <input type="checkbox" id="conve-valet" />
+                  발렛</label
+                >
+              </div>
+            </li>
           </div>
-            <div id="map" class="map_main col-10"></div>
+
+          <div class="map-body column-row col-10 ms-2">
+            <!-- 정렬 
+            <div class="nav nav-pills">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Dropdown</a
+                  >
+                  <div class="dropdown-menu" style="">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">평점순</a>
+                    <a class="dropdown-item" href="#">리뷰많은순</a>
+                    <a class="dropdown-item" href="#">좋아요많은순</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div> -->
+            <div class="map-main" id="map"></div>
           </div>
         </div>
       </div>
