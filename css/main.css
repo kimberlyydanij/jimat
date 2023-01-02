@@ -81,14 +81,10 @@ div#rowd {
 }
 /* test 끝 */
 
-div.nav {
-  max-width: 1300px;
-  min-width: 1300px;
-  margin-top: 20px;
-  border: 1px solid black;
+div.main {
+  border: solid 1px black;
   height: 500px;
 }
-
 .navbar-mainmanu {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
@@ -101,3 +97,24 @@ div.nav {
 div.login-button {
   margin: auto;
 }
+
+div.main img {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+div.map_category {
+  margin-right: 30px;
+  border: 1px solid black;
+  width: 318px;
+  height: 600px;
+  float: left;
+}
+
+div.map_main {
+  width: 1080px;
+  height: 400px;
+  float: left;
+  style="position:relative;top:0;width:100%;height:calc(100% - 200px);" 
+}  */
