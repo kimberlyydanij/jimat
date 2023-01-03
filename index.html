@@ -29,15 +29,16 @@
           <div class="row">
             <div class="login mt-3">
               <div class="row">
-                <div class="black col-8"></div>
-                <div class="login-button col-4">
+                <div class="blanc col-8"></div>
+                <div class="login-button justify-content-end col-4" id="login-button">
                   <span>
                     <button type="button" class="btn btn-secondary" id="login" value="로그인" onclick="login();">
                       로그인
                     </button>
+                    <!--
                     <button type="button" class="btn btn-secondary" id="sign_up" value="회원가입" onclick="sign_up();">
                       회원가입
-                    </button>
+                    </button> -->
                   </span>
                 </div>
               </div>
@@ -83,7 +84,45 @@
       </div>
       <div class="main col-10 mt-2" id="main">
         <div class="main_image">
-          <img src="images\main_img1.png" />
+          <img src="/images/main_img1.png" />
         </div>
+      <div class="card col-12 column-row mt-4" id="main-curation">
+        <div class="row">
+          <div class="curation-body container m-2">
+            <div class="row">
+              <div class="curation-title d-flex justify-content-between py-2 mt-1">
+                <div class="col-2">#분위기</div>
+                <div class="col-7"></div>
+                <div class="col-3"><button type="button" class="btn btn-warning">자세히 보기 ></button></div>
+                <hr />
+              </div>
+            </div>
+            <div class="row">
+              <div class="shop-body d-flex col-11 p-1">
+                <div class="col-3 p-3">
+                  <a href="#"><img src="/data/images/review_images1.jpg" id="shop-thumbnail"></a>
+                  <p>업소명</p>
+                </div>
+                <div class="col-3 p-3">
+                  <a href="#"><img src="/data/images/review_images2.jpg" id="shop-thumbnail"></a>
+                  <p>업소명</p>
+                </div>
+                <div class="col-3 p-3">
+                  <a href="#"><img src="/data/images/review_images3.jpg" id="shop-thumbnail"></a>
+                  <p>업소명</p>
+                </div>
+                <div class="col-3 p-3">
+                  <a href="#"><img src="/data/images/review_images4.jpg" id="shop-thumbnail"></a>
+                  <p>업소명</p>
+                </div>
+              </div>
+              
+
+                
+                
+              </div>
+            </div>
+        </div>
+      </div>
   </body>
 </html>

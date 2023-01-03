@@ -142,3 +142,30 @@ div#title {
 .convenience-group > li {
   width: 75px;
 }
+
+#login-button {
+  text-align: right;
+  margin-right: 20px;
+}
+
+div.curation-body {
+  border-radius: 10px;
+  padding: auto;
+}
+
+/*
+div.curation-body > div {
+  border: 1px solid black;
+} */
+
+div.curation-title {
+  font-size: 1.4rem;
+}
+
+img#shop-thumbnail {
+  height: 250px;
+}
+
+div.shop-body {
+  font-size: 1.2rem;
+}
