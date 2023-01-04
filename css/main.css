@@ -38,6 +38,7 @@ body {
   font-size: 16px;
   color: #444444;
   text-align: center;
+  min-width: 1200px;
 }
 
 body::-webkit-scrollbar {
@@ -81,14 +82,16 @@ div#rowd {
 }
 /* test 끝 */
 
-div.nav {
-  max-width: 1300px;
-  min-width: 1300px;
-  margin-top: 20px;
-  border: 1px solid black;
-  height: 500px;
+div.logo {
+  margin: 0px 20px 0px 0px;
 }
 
+div.header-menu {
+  max-width: 1030px;
+}
+div.main {
+  background-color: lightyellow;
+}
 .navbar-mainmanu {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
@@ -99,5 +102,95 @@ div.nav {
   --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
 }
 div.login-button {
+  padding-right: 50px;
+}
+
+div.main img {
+  width: 100%;
+  height: 100%;
+}
+
+div.map-main {
+  height: 400px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.title-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
   margin: auto;
+}
+
+div#title {
+  margin-left: -15px;
+}
+
+.people-group,
+.gender-group,
+.category-group,
+.convenience-group {
+  min-width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px;
+}
+.people-group > li,
+.gender-group > li,
+.category-group > li,
+.convenience-group > li {
+  width: 75px;
+}
+
+#login-button {
+  text-align: right;
+  margin-right: 20px;
+}
+
+/*
+div.curation-body > div {
+  border: 1px solid black;
+} */
+
+div.curation-body {
+  font-size: 1rem;
+}
+
+div.curation-title {
+  text-align: left;
+  margin-left: 70px;
+  font: bolder;
+}
+
+img#shop-thumbnail {
+  height: 180px;
+  border-radius: 15px;
+  width: 100%;
+}
+
+div#arrow {
+  max-width: 50px;
+  margin-top: 80px;
+  padding: 0px;
+}
+
+div#curation-title {
+  margin-left: -25px;
+}
+
+p.shop-name {
+  height: 20px;
+  margin: 0px;
+}
+
+img#team-vita500 {
+  width: 100%;
+  height: 100%;
 }
