@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
@@ -13,8 +14,19 @@
       src="https://kit.fontawesome.com/edd4d6d779.js"
       crossorigin="anonymous"
     ></script>
+    
     <link href="/css/main.css" type="text/css" rel="stylesheet" />
+    <link href="/css/shop_detail.css" type="text/css" rel="stylesheet" />
     <script defer src="/js/main.js"></script>
+    <script defer src="/js/detail_page_map.js"></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"
+    ></script>
+    <script
+      charset="UTF-8"
+      src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"
+    ></script>
   </head>
   <body>
     <div class="body-wrap container col-12 column-row">
@@ -122,80 +134,18 @@
         </div>
       </div>
       <div class="row">
-        <div class="main col-12 mt-2" id="main">
-          <div class="main_image">
-            <img src="/images/main_img1.png" />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card-container">
-          <div
-            class="card border-warning col-12 column-row mt-4"
-            id="main-curation"
-          >
-            <div class="row">
-              <div class="curation-body pb-2 container">
-                <div class="row">
-                  <div class="curation-title mt-3">
-                    #분위기
-                  </div>
-                </div>
-              <div class="row">
-                <div class="shop-body container d-flex p-1">
-                  <div class="col-1" id="arrow">
-                    <a href="#"
-                      ><i class="fa-solid fa-angle-left fa-2x"></i>
-                    </a>
-                  </div>
-                  <div class="col-2 p-1">
-                    <a href="#"
-                      ><img
-                        src="/data/images/review_images1.jpg"
-                        id="shop-thumbnail"
-                    /></a>
-                    <p class="mt-2 shop-name">업소명</p>
-                  </div>
-                  <div class="col-2 p-1">
-                    <a href="#"
-                      ><img
-                        src="/data/images/review_images2.jpg"
-                        id="shop-thumbnail"
-                    /></a>
-                    <p class="mt-2 shop-name">업소명</p>
-                  </div>
-                  <div class="col-2 p-1">
-                    <a href="#"
-                      ><img
-                        src="/data/images/review_images3.jpg"
-                        id="shop-thumbnail"
-                    /></a>
-                    <p class="mt-2 shop-name">업소명</p>
-                  </div>
-                  <div class="col-2 p-1">
-                    <a href="#"
-                      ><img
-                        src="/data/images/review_images4.jpg"
-                        id="shop-thumbnail"
-                    /></a>
-                    <p class="mt-2 shop-name">업소명</p>
-                  </div>
-                  <div class="col-2 p-1">
-                    <a href="#"
-                      ><img
-                        src="/data/images/review_images4.jpg"
-                        id="shop-thumbnail"
-                    /></a>
-                    <p class="mt-2 shop-name">업소명</p>
-                  </div>
-                  <div class="col-1" id="arrow">
-                    <a href="#"
-                      ><i class="fa-solid fa-angle-right fa-2x"></i>
-                    </a>
-                  </div>
-                </div>
+        <div class="shop-detail-wrap col-12 mt-2 column-row" id="shop-detail-wrap">
+          <div class="row">
+            <div class="shop-detail-header container d-flex">
+              <div class="col-9 container shop-main-image p-2">
+                <img src="/images/shop-main1.jpg" id="shop-main-image">
+              </div>
+              <div class="col-3 detail-map p-2" id="staticMap">
+
               </div>
             </div>
+          </div>
+            
           </div>
         </div>
       </div>
