@@ -57,6 +57,6 @@ function popup_login(href, w, h) {
       h +
       ",  left=" +
       xPos +
-      ", top=200, menubar=no, status=no, titlebar=no, location=no, resizable=no, toolbar=no"
+      ", top=70, menubar=no, status=no, titlebar=no, location=no, resizable=no, toolbar=no"
   );
 }
