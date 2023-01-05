@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
@@ -14,7 +13,6 @@
       src="https://kit.fontawesome.com/edd4d6d779.js"
       crossorigin="anonymous"
     ></script>
-    
     <link href="/css/main.css" type="text/css" rel="stylesheet" />
     <link href="/css/shop_detail.css" type="text/css" rel="stylesheet" />
     <script defer src="/js/main.js"></script>
@@ -29,110 +27,33 @@
     ></script>
   </head>
   <body>
-    <div class="body-wrap container col-12 column-row">
-      <div class="row">
-        <div class="header container d-flex col-12 mt-4">
-          <div class="logo col-2">
-            <a href="javascript: main_page();"
-              ><img src="/images/logo2.png" id="logo_img"
-            /></a>
-          </div>
-          <div class="header-menu column-row col-10">
-            <div class="row">
-              <div class="login mt-3">
-                <div class="row">
-                  <div
-                    class="login-button justify-content-end"
-                    id="login-button"
-                  >
-                    <span>
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        id="login"
-                        value="로그인"
-                        onclick="login();"
-                      >
-                        로그인
-                      </button>
-                      <!--
-                    <button type="button" class="btn btn-secondary" id="sign_up" value="회원가입" onclick="sign_up();">
-                      회원가입
-                    </button> -->
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <nav
-                class="navbar navbar-expand-lg navbar-mainmanu bg-warning mt-3"
-              >
-                <div class="container-fluid">
-                  <div class="collapse navbar-collapse" id="navbarColor03">
-                    <ul class="navbar-nav me-auto">
-                      <li class="nav-item">
-                        <a
-                          class="nav-link active"
-                          href="javascript: main_page();"
-                          >Home
-                          <span class="visually-hidden">(current)</span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="javascript: team_vita500();"
-                          >Team Vita500</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="javascript: curation_page()"
-                          >맛집추천</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="javascript: one_km_map()"
-                          >반경1km</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="javascript: magazine_page();"
-                          >Magazine</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="javascript: my_page();"
-                          >My Page</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="javascript: review();"
-                          >임시_리뷰</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="javascript: shop_detail();"
-                          >임시_상세</a
-                        >
-                      </li>
-                    </ul>
-                    <form class="d-flex">
-                      <input
-                        class="form-control me-sm-4"
-                        type="search"
-                        placeholder="검색어를 입력하세요"
-                      />
-                      <button
-                        class="btn btn-secondary my-2 my-sm-0"
-                        type="submit"
-                      >
-                        Search
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </div>
+    <body>
+      <div class="body-wrap container col-12 column-row">
+        <div class="row">
+          <div
+            data-include-path="main_menu.html"
+            class="header container d-flex col-12 mt-4"
+            id="main_menu"
+          ></div>
+          <script>
+            window.addEventListener("load", function () {
+              var allElements = document.getElementsByTagName("*");
+              Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                      el.outerHTML = this.responseText;
+                    }
+                  };
+                  xhttp.open("GET", includePath, true);
+                  xhttp.send();
+                }
+              });
+            });
+          </script>
         </div>
-      </div>
       <div class="row">
         <div class="shop-detail-wrap col-12 mt-2 column-row" id="shop-detail-wrap">
           <div class="row">
@@ -151,13 +72,9 @@
                 <div class="shop-map" id="staticMap"></div>
                 <div class="shop-menu" id="shop-menu"> bb </div>
               </div> 
-
-              </div>
             </div>
           </div>
-            
-          </div>
-        </div>
+        </div>            
       </div>
     </div>
   </body>
