@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="res_test">
+	<select id="count" resultType="int">
+		SELECT count(*) FROM res_test
+	</select>
+
+	<select id="res_coordinate" parameterType="java.util.HashMap" resultType="dto.MapDTO">
+		SELECT latitude, longitude
+		FROM res_test
+	</select>
+
+	<select id="list" parameterType="dto.PageDTO" resultType="dto.MapDTO">
+		select *
+		from res_test
+	</select>
+</mapper>   
+    
