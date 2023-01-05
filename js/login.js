@@ -1,5 +1,5 @@
 function popup_login(href, w, h) {
-  var href = "/login1.html";
+  var href = "/login.html";
   var w = 466;
   var h = 615;
   var xPos = document.body.offsetWidth / 2 - w / 2; // 가운데 정렬
