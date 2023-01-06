@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+
+	<!-- [1] DataSource빈 선언 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+		<property name="username" value="hr" />
+		<property name="password" value="a1234" />
+	</bean>
+
+	<!-- [2] SqlSessionFactoryBean 빈 선언 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:com/mycompany/myapp/member-mapper.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- [3] SqlSessionTemplate 빈 선언 -->
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- [4] Repository 빈 선언-->
+	<bean id="repository"
+		class="com.mycompany.myapp.MemberRepository">
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
+
+		<!-- [5] Service 빈 선언 -->
+	<bean id="service" class="com.mycompany.myapp.MemberService">
+		<property name="mrt" ref="repository" />
+	</bean>
+
+	<!-- [6] controller 빈 선언-->
+	<bean class="com.mycompany.myapp.MemberController">
+		<property name="mst" ref="service" />
+	</bean>
+
+	<!-- [7] view -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+</beans>
