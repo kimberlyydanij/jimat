@@ -1,11 +1,7 @@
 @charset "UTF-8";
 
-div.shop-detail-wrap {
-  min-width: 1400px;
-}
-
-div.shop-right {
-  max-width: 300px;
+div {
+  border: 1px solid black;
 }
 
 div#staticMap {
@@ -15,58 +11,4 @@ div#staticMap {
 img#shop-main-image {
   width: 100%;
   height: 100%;
-}
-
-div.shop-info {
-  height: 50px;
-}
-p#shop-name {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: right;
-}
-
-p#shop-rating {
-  font-size: 2rem;
-  color: #ff851b;
-}
-
-p#shop-category {
-  height: 48px;
-  font-size: 1.2rem;
-  padding-top: 16px;
-  text-align: left;
-  text-decoration: underline;
-}
-
-p#shop-menu {
-  font-size: 1rem;
-  text-align: left;
-  font-weight: bold;
-}
-
-div.shop-map {
-  border: 7px solid #ffc107;
-}
-
-div.shop-menu {
-  border: 3px solid black;
-  max-height: 290px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-div#shop-menu-detail,
-p#shop-menu-detail,
-div.shop-info-detail p {
-  margin: 0px;
-  text-align: left;
-  font-size: 1rem;
-}
-div#shop-menu-price,
-p#shop-menu-price {
-  margin: 0px;
-  text-align: right;
-  font-size: 1rem;
 }
