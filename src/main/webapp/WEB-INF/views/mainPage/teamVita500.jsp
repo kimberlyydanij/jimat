@@ -32,7 +32,7 @@
       <jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
       </div>
       <div class="row">  
-        <div class="teamteamVita500 col-12 mt-2" id="team-vita500">
+        <div class="teamteamVita500 col-12 mt-2 ms-3" id="team-vita500">
           <img src="${path}/resources/images/team_vita500.png" id="team-vita500" />
         </div>
       </div>

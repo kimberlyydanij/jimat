@@ -12,32 +12,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import dao.MemberRepository;
+import dao.MemberDaoImpl;
 import dto.KakaoDTO;
-import service.MemberService;
+import service.MemberServiceImpl;
 
 
-//http://localhost:8090/loginformpage.do
-//http://localhost:8090/loginpage.do
+//http://localhost:8090/myapp/loginformpage.do
+//http://localhost:8090/myapp/loginpage.do
 
 @Controller
 public class MemberController {
 
-	@Autowired
-	private MemberService ms;
+	private MemberServiceImpl ms;
 	
-		
-	@Autowired
-	private MemberRepository mr;
-	
-	public void setMst(MemberService ms) {
+	public void setMs(MemberServiceImpl ms) {
 		this.ms = ms;
 	}
-	
-	public void setMrt(MemberRepository mr) {
-		this.mr = mr;
-	}
-	
 	
 	//loginform으로 이동
 	@RequestMapping(value="/loginformpage.do", method=RequestMethod.GET)
@@ -62,7 +52,7 @@ public class MemberController {
 		//MemberService를 이용해서 카카오api 정보를 가져옴
 		//getUserInfo를 통해 유저에 대한 각종 정보를 가져옴
 		KakaoDTO userinfo = ms.getUserInfo();
-		
+		System.out.println("check2");
 		System.out.println("###access_Token#### : " + access_token);
 		System.out.println("###id#### : " + userinfo.getK_id());		
 		System.out.println("###nickname#### : " + userinfo.getK_nickname());
@@ -77,7 +67,7 @@ public class MemberController {
 //		// 아래 코드가 추가되는 내용
 //		session.invalidate();
 
-		mav.setViewName("login/loginpage");
+		mav.setViewName("login/login");
 		
 		return mav;
 

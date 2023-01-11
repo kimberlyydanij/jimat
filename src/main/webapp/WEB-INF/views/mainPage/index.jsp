@@ -32,87 +32,22 @@
   </head>
   <body>
     <div class="body-wrap container col-12 column-row">
-      <div class="row">
       <%-- 메인 메뉴 불러오기 --%>
+      <div class="row">
       <jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
       </div>
+      <%-- 메인 이미지 불러오기 --%>
       <div class="row">
-        <div class="main col-12 mt-2" id="main">
+        <div class="main col-12 mt-2 ms-3"  id="main">
           <div class="main_image">
             <img src="${path}/resources/images/main_img1.png" />
           </div>
         </div>
       </div>
+      <%-- 큐레이션 불러오기 --%>
       <div class="row">
-        <div class="card-container">
-          <div
-            class="card border-warning col-12 column-row mt-4"
-            id="main-curation"
-          >
-            <div class="row">
-              <div class="curation-body pb-2 container">
-                <div class="row">
-                  <div class="curation-title mt-3">#분위기</div>
-                </div>
-                <div class="row">
-                  <div class="shop-body container d-flex p-1">
-                    <div class="col-1" id="arrow">
-                      <a href="#"
-                        ><i class="fa-solid fa-angle-left fa-2x"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 p-1">
-                      <a href="#"
-                        ><img
-                          src="${path}/resources/images/test-images/review_images1.jpg"
-                          id="shop-thumbnail"
-                      /></a>
-                      <p class="mt-2 shop-name">업소명</p>
-                    </div>
-                    <div class="col-2 p-1">
-                      <a href="#"
-                        ><img
-                          src="${path}/resources/images/test-images/review_images2.jpg"
-                          id="shop-thumbnail"
-                      /></a>
-                      <p class="mt-2 shop-name">업소명</p>
-                    </div>
-                    <div class="col-2 p-1">
-                      <a href="#"
-                        ><img
-                          src="${path}/resources/images/test-images/review_images3.jpg"
-                          id="shop-thumbnail"
-                      /></a>
-                      <p class="mt-2 shop-name">업소명</p>
-                    </div>
-                    <div class="col-2 p-1">
-                      <a href="#"
-                        ><img
-                          src="${path}/resources/images/test-images/review_images4.jpg"
-                          id="shop-thumbnail"
-                      /></a>
-                      <p class="mt-2 shop-name">업소명</p>
-                    </div>
-                    <div class="col-2 p-1">
-                      <a href="#"
-                        ><img
-                          src="${path}/resources/images/test-images/review_images4.jpg"
-                          id="shop-thumbnail"
-                      /></a>
-                      <p class="mt-2 shop-name">업소명</p>
-                    </div>
-                    <div class="col-1" id="arrow">
-                      <a href="#"
-                        ><i class="fa-solid fa-angle-right fa-2x"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <jsp:include page="/WEB-INF/views/curation/curationRow.jsp"></jsp:include>
+      </div>     
     </div>
   </body>
 </html>

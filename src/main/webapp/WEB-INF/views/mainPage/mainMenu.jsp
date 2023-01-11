@@ -31,7 +31,7 @@
     <div class="logo col-2">
     	
       <a href="javascript: main();"
-        ><img src="/resources/images/logo.png" id="logo_img"
+        ><img src="${path}/resources/images/logo.png" id="logo_img"
       /></a>
     </div>
     <div class="header-menu column-row col-10">

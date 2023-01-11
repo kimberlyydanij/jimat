@@ -38,7 +38,9 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
 			/WEB-INF/spring/appServlet/kakaologin-servlet-context.xml
+			/WEB-INF/spring/appServlet/review-servlet-context.xml
 			/WEB-INF/spring/appServlet/servlet-context.xml
+			/WEB-INF/spring/appServlet/curation-servlet-context.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

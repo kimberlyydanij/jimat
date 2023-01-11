@@ -36,11 +36,11 @@
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
 		<div class="row">
-			<div class="shop-detail-wrap col-12 mt-1 column-row"
+			<div class="shop-detail-wrap col-12 mt-2 ms-3 column-row"
 				id="shop-detail-wrap">
 				<div class="row">
 					<div class="shop-detail-header container d-flex">
-						<div class="col-9 container shop-left column-row p-2 ms-0 me-0">
+						<div class="col-9 container shop-left column-row py-2 px-0 ms-0 me-0">
 							<div class="shop-main-image">
 
 								<img src="${path}/resources/images/shop-main1.jpg"
@@ -82,7 +82,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-4 shop-right column-row p-2 ms-2 mx-0">
+						<div class="col-4 shop-right column-row p-2 mx-0">
 							<div class="shop-map" id="staticMap"></div>
 							<div class="shop-menu column-low mt-3 p-3" id="shop-menu">
 								<div class="row">

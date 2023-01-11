@@ -13,7 +13,7 @@ public class KakaoDTO {
 	
 	public KakaoDTO() {
 
-	}
+	}	
 
 	public String getK_id() {
 		return k_id;

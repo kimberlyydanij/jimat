@@ -28,13 +28,13 @@
 	rel="stylesheet" />
 </head>
 <body>
-	<div class="body-wrap container col-12 mt-2 column-row">
+	<div class="body-wrap container col-12 column-row">
 		<div class="row">
 			<%-- 메인 메뉴 불러오기 --%>
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
 		<div class="row p-0">
-			<div class="map-wrap container col-12 p-0 d-flex">
+			<div class="map-wrap container col-12 mt-2 ms-3 d-flex">
 				<div class="map-list col-3 column-row">
 					<hr />
 					<ul id="placesList"></ul>

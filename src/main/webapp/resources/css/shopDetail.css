@@ -5,7 +5,8 @@ div.shop-left {
 }
 
 div.shop-right {
-  max-width: 320px;
+  max-width: 310px;
+  margin-left :-10px;
 }
 
 div#staticMap {

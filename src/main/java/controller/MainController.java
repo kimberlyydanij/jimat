@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-//http://localhost:8090/index.do
+//http://localhost:8090/myapp/index.do
 
 @Controller
 public class MainController {
@@ -25,7 +25,7 @@ public class MainController {
 	// 맛집소개로 이동
 	@RequestMapping("curation.do")
 	public String Curation() {
-		return "mainPage/curation";
+		return "curation/curation";
 	}
 
 	// 1km로 이동

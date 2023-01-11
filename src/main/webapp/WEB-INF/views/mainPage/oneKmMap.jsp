@@ -26,13 +26,13 @@
 </head>
 <body>
 	<div class="body-wrap container col-12 column-row">
-      <div class="row">
-      <%-- 메인 메뉴 불러오기 --%>
-      <jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
-      </div>
-	<div class="row">
 		<div class="row">
-			<div class="main container col-12 column-row mt-2">
+			<%-- 메인 메뉴 불러오기 --%>
+			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
+		</div>
+		<%-- 지도 메인 불러오기 --%>
+		<div class="row">
+			<div class="main container col-12 column-row mt-2 ms-3">
 				<div class="main-body containercol-md-12 d-flex">
 					<div class="main-menu col-2 ms-2">
 						<div class="title container d-flex mt-4">
@@ -144,7 +144,7 @@
 							<li class="filter-button">
 								<div class="filter-button-click-container">
 									<label> <input type="checkbox" id="cate-korean" />
-										한식ì
+										한식
 									</label>
 								</div>
 							</li>
@@ -156,8 +156,7 @@
 							</li>
 							<li class="filter-button">
 								<div class="filter-button-click-container">
-									<label> <input type="checkbox" id="cate-japan" />
-										일식ì
+									<label> <input type="checkbox" id="cate-japan" /> 일식
 									</label>
 								</div>
 							</li>
@@ -210,6 +209,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 </body>
 </html>

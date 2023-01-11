@@ -8,28 +8,29 @@ import org.springframework.stereotype.Repository;
 
 import dto.KakaoDTO;
 
-@Repository
-public class MemberRepository{
+public class MemberDaoImpl implements MemberDAO{
 
 	// mapper를 호출하기 위한 클래스 주입.
+
 	private SqlSessionTemplate sqlSession;
 
-	public MemberRepository() {
+	public MemberDaoImpl() {
 
 	}
 	
 	public void setSqlSession(SqlSessionTemplate sqlSession) {
 		this.sqlSession = sqlSession;
+		System.out.println("check10");
 	}
 	
 	// 정보 저장
 	public void kakaoinsert(KakaoDTO userInfo) {
-		sqlSession.insert("Member.kakaoInsert",userInfo);
+		sqlSession.insert("member.kakaoInsert",userInfo);
 	}
 
 	// 정보 확인
 	public KakaoDTO findkakao(KakaoDTO userInfo) {
-		return sqlSession.selectOne("Member.findKakao", userInfo);
+		return sqlSession.selectOne("member.findKakao", userInfo);
 	}
 
 }

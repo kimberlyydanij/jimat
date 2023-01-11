@@ -95,16 +95,12 @@ div.header-menu {
   max-width: 1030px;
 }
 
-div.navbar {
-  max-height:50px  !important;
-}
 div.main {
   background-color: lightyellow;
 }
 .navbar-mainmanu {
-  padding-top: var(--bs-navbar-brand-padding-y);
-  padding-bottom: var(--bs-navbar-brand-padding-y);
-  margin-right: var(--bs-navbar-brand-margin-end);
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
   color: var(--bs-navbar-brand-color);
   white-space: nowrap;
   --bs-navbar-active-color: #fff;

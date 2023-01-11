@@ -36,3 +36,8 @@ div.login-logo {
 div.body-wrap {
   border: 7px solid #ffc107;
 }
+
+body::-webkit-scrollbar {
+  display:none;
+}
+

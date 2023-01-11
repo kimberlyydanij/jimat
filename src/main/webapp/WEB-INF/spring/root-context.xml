@@ -17,6 +17,25 @@
 		<property name="password" value="a1234" />
 	</bean>
 
+	<!-- [2] SqlSessionFactoryBean 빈 선언 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:config/member-mapper.xml</value>
+				<value>classpath:config/review-mapper.xml</value>
+				<value>classpath:config/curation-mapper.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- [3] SqlSessionTemplate 빈 선언 -->
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
 	<!-- [7] view -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

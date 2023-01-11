@@ -111,7 +111,7 @@
 						<div class="comment-inside pt-3 col-2">
 							<div class="comment-info column-row">
 								<div class="user_info" id="user_nickname">
-									<span><h4 id="user_nickname">작성자 이름</h4></span>
+									<span><h4>작성자 이름</h4></span>
 								</div>
 								<div class="user-rating d-flex" id="user-stars">
 									<div class="rating flex-row-reverse" id="review-rating">

@@ -7,7 +7,7 @@ function teamVita500() {
 }
 
 function curation() {
-	document.location.href="curation.do";
+  document.location.href="curation.do";
 }
 
 function oneKmMap() {
@@ -27,7 +27,7 @@ function shopDetail() {
 }
 
 function detailMap() {
-  document.location.href="Map.do"
+  document.location.href="map.do"
 }
 function popup_login(href, w, h) {
   var href = "loginformpage.do";
