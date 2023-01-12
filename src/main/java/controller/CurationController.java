@@ -12,7 +12,7 @@ import service.CurationService;
 import service.CurationServiceImp;
 
 
-//http://localhost:8090/curationRow.do
+//http://localhost:8090/curationrow.do
 
 @Controller
 public class CurationController {
@@ -33,13 +33,27 @@ public class CurationController {
 		this.cDTO = cDTO;
 	}
 
+	@RequestMapping(value="/index.do")
+	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav) {
+//		int randomTagNo = (int)((Math.random()*10000)%10);
+		String randomTagNo = "1";
+		System.out.println(randomTagNo);
+		
+		this.cDTO = new CurationDTO();
+		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
+		mav.addObject("aList", aList);
+		mav.setViewName("mainPage/index");
+		
+		return mav;
+	}
 
-//	@RequestMapping(value="/curationRow.do", method=RequestMethod.GET)
+
+//	@RequestMapping(value="/curationrow.do", method=RequestMethod.GET)
 //	public String curationForm() {
-//		return "curation/curationRow";
+//		return "curation/curationrow";
 //	}
-	//http://localhost:8090/curationRow.do
-	@RequestMapping(value="/curationRow.do")
+	//http://localhost:8090/curationrow.do
+	@RequestMapping(value="/curationrow.do")
 	public ModelAndView curationBody(CurationDTO cDTO, ModelAndView mav) {
 //		int randomTagNo = (int)((Math.random()*10000)%10);
 		String randomTagNo = "1";
@@ -48,7 +62,7 @@ public class CurationController {
 		this.cDTO = new CurationDTO();
 		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
 		mav.addObject("aList", aList);
-		mav.setViewName("curation/curationRow");
+		mav.setViewName("curation/curationrow");
 		
 		return mav;
 	}

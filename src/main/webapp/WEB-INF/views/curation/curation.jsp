@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
@@ -29,22 +28,22 @@
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationRow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationRow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationRow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationRow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
 		</div>
 	</div>
 </body>

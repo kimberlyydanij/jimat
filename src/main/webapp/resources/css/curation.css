@@ -4,11 +4,12 @@ div.curation-body {
 
 div.curation-title {
   text-align: left;
-  margin-left: 70px;
-  font: bolder;
+  font: strong;
+  font-size : 1.2rem;
 }
 
 div.shop-thumbnail-container {
+  width : 180px;	
   height : 180px;
 }
 
@@ -18,18 +19,15 @@ img.shop-thumbnail {
   height: 100%;
 }
 
-div#arrow {
-  max-width: 50px;
-  margin-top: 80px;
-  padding: 0px;
+div.arrow {
+  width: 40px;
+  margin:auto;
+  padding: 0, 5px;
+  background-color: transparent;
 }
 
 div.shop-body {
 overflow : hidden;
-}
-
-div#curation-title {
-  margin-left: -25px;
 }
 
 p.shop-name {
@@ -37,6 +35,6 @@ p.shop-name {
   margin: 0px;
 }
 
-div {
-	border :1px solid black;
+i, button {
+	background-color: transparent;
 }

@@ -30,33 +30,33 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     />
   </head>
   <body>
-    <div class="body-wrap container col-12 mb-2 ms-3">
-      <div class="card border-warning container col-12 mt-2" id="main-curation">
+    <div class="body-wrap container mb-2">
+      <div class="card border-warning container mt-2" id="main-curation">
         <div class="row">
           <div class="a container d-flex">
             <div
-              class="col-1"
-              id="arrow"
+              class="arrow col-1"
               style="transform: 'translate(-'+ (selected-1) * 300+ 'px, 0px)'"
             >
-              <button>
+              <button id="arrow-left">
                 <i class="fa-solid fa-angle-left fa-3x"></i>
               </button>
             </div>
 
-            <div class="curation-body pb-2 col-9 container column-row">
+            <div class="curation-body pb-3 col-11 container column-row">
               <div class="row">
                 <div class="curation-title mt-3">#분위기</div>
               </div>
 
               <div class="row">
-                <div class="col-9 shop-body container d-flex p-1">
+                <div class="shop-body container d-flex p-1">
                   <c:forEach items="${aList}" var="aList">
-                    <div class="col-2 p-1 shop-thumbnail-container">
+                    <div class="p-1 column-row">
+                   	 <div class="shop-thumbnail-container" >
                       <a href="#">
                         <img src="${aList.img_url}" class="shop-thumbnail" }
-                      /></a>
-                      <p class="mt-2 shop-name">${aList.foodstore_name}</p>
+                      /></a></div>
+                      <div><p class="mt-2 shop-name">${aList.foodstore_name}</p></div>
                     </div>
                   </c:forEach>
                 </div>
@@ -64,11 +64,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             </div>
 
             <div
-              class="col-1"
-              id="arrow"
+              class="arrow col-1"
               style="transform: 'translate(-'+ (selected-1) * 300+ 'px, 0px)'"
             >
-              <button>
+              <button id="arrow-left">
                 <i class="fa-solid fa-angle-right fa-3x"></i>
               </button>
             </div>

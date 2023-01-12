@@ -48,3 +48,7 @@ function popup_login(href, w, h) {
       ", top=70, menubar=no, status=no, titlebar=no, location=no, resizable=no, toolbar=no"
   );
 }
+
+function curationrow() {
+  document.location.href="curationrow.do"
+}

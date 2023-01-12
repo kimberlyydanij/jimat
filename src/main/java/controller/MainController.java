@@ -5,17 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-//http://localhost:8090/myapp/index.do
+//http://localhost:8090/index.do
 
 @Controller
 public class MainController {
-
+/*
 	// index로 이동
 	@RequestMapping("index.do")
 	public String MainPage() {
 		return "mainPage/index";
 	}
-
+*/
 	// 팀소개로 이동
 	@RequestMapping("teamVita500.do")
 	public String TeamVita500() {
