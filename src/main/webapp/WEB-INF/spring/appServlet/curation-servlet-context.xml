@@ -9,21 +9,21 @@
 
 
 
-	<!-- [4] Repository 빈 선언 --> 
-	<bean id="cr_repository"
-		class="dao.CurationDaoImp">
+		<!-- [6] CurationDaoImp 빈 선언 -->
+	<bean id="cDao" class="dao.CurationDaoImp" >
 		<property name="sqlSession" ref="sqlSession" />
 	</bean>
 
-		<!-- [5] Service 빈 선언 -->
-	<bean id="curation_service" class="service.CurationServiceImp">
-		<property name="cr" ref="cr_repository" />
+	
+	<!-- [7] CurationServiceImp 빈 선언  -->
+	<bean id="curation_service" class="service.CurationServiceImp" >
+		<property name="cdao" ref="cDao" />
 	</bean>
+	
 
-	<!-- [6] controller 빈 선언-->
+	<!-- [8] controller 빈 선언-->
 	<bean class="controller.CurationController">
-		<property name="cs" ref="curation_service" />
+		<property name="cservice" ref="curation_service" />
 	</bean>
-
 
 </beans>

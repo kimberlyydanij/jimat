@@ -4,7 +4,7 @@
 <mapper namespace="curation"> 
 
 	<!-- 정보 찾기 -->
-	<select id="matchChek" parameterType="dto.CurationDTO" resultType="dto.CurationDTO">
+	<select id="matchCheck" parameterType="String" resultType="dto.CurationDTO">
 		select * from SEOULFOODSAMPLE where tag_gender=#{check_match_tag_gender, jdbcType=VARCHAR} 
 	</select>
 

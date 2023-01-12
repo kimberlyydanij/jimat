@@ -95,9 +95,6 @@ div.header-menu {
   max-width: 1030px;
 }
 
-div.main {
-  background-color: lightyellow;
-}
 .navbar-mainmanu {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
@@ -164,36 +161,6 @@ div.curation-body > div {
   border: 1px solid black;
 } */
 
-div.curation-body {
-  font-size: 1rem;
-}
-
-div.curation-title {
-  text-align: left;
-  margin-left: 70px;
-  font: bolder;
-}
-
-img#shop-thumbnail {
-  height: 180px;
-  border-radius: 15px;
-  width: 100%;
-}
-
-div#arrow {
-  max-width: 50px;
-  margin-top: 80px;
-  padding: 0px;
-}
-
-div#curation-title {
-  margin-left: -25px;
-}
-
-p.shop-name {
-  height: 20px;
-  margin: 0px;
-}
 
 img#team-vita500 {
   width: 100%;

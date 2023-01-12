@@ -31,9 +31,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   </head>
   <body>
     <div class="body-wrap container col-12 mb-2 ms-3">
-      <div class="card border-warning container col-12 mt-2" id="main-curation">
-        <div class="row">
-          <div class="a container d-flex">
+      <div class="row">
+        <div class="card border-warning col-12 d-flex mt-2" id="main-curation">
+          <div class="row">
             <div
               class="col-1"
               id="arrow"
@@ -43,26 +43,19 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <i class="fa-solid fa-angle-left fa-3x"></i>
               </button>
             </div>
-
-            <div class="curation-body pb-2 col-9 container column-row">
-              <div class="row">
-                <div class="curation-title mt-3">#분위기</div>
-              </div>
-
-              <div class="row">
-                <div class="col-9 shop-body container d-flex p-1">
-                  <c:forEach items="${aList}" var="aList">
-                    <div class="col-2 p-1 shop-thumbnail-container">
-                      <a href="#">
-                        <img src="${aList.img_url}" class="shop-thumbnail" }
-                      /></a>
-                      <p class="mt-2 shop-name">${aList.foodstore_name}</p>
-                    </div>
-                  </c:forEach>
-                </div>
+            <div class="curation-body pb-2 container column-row">
+              <div class="curation-title mt-3">#분위기</div>
+              <div class="col-9 shop-body container d-flex p-1">
+                <c:forEach items="${aList}" var="aList">
+                  <div class="col-2 p-1 shop-thumbnail-container">
+                    <a href="#">
+                      <img src="${aList.img_url}" class="shop-thumbnail" }
+                    /></a>
+                    <p class="mt-2 shop-name">${aList.foodstore_name}</p>
+                  </div>
+                </c:forEach>
               </div>
             </div>
-
             <div
               class="col-1"
               id="arrow"

@@ -23,9 +23,9 @@ public class CurationDaoImp implements CurationDAO {
 		System.out.println("check10");
 	}
 
-	public List<CurationDTO> matchCheck(HashMap<String, Object> map) {
+	public List<CurationDTO> matchCheck(String number) {
 		
-		return sqlSession.selectList("curation.curationTags", map);
+		return sqlSession.selectList("curation.matchCheck", number);
 	}
 
 
