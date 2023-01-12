@@ -10,7 +10,7 @@ public interface CurationService {
 	
 	public List<CurationDTO> getShopInfo(CurationDTO cDto);
 	
-	public List<CurationDTO> matchCheckProcess(String number);
+	public List<CurationDTO> matchCheckProcess(int number);
 	
 	
 	

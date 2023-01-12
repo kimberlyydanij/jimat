@@ -7,7 +7,7 @@ import dto.CurationDTO;
 
 public interface CurationDAO {
 
-	public List<CurationDTO> matchCheck(String number);
+	public List<CurationDTO> matchCheck(int number);
 	
 	//public CurationDTO foodStoreTag (CurationDTO checkTag);
 	

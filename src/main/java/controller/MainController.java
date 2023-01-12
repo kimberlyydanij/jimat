@@ -23,7 +23,7 @@ public class MainController {
 	}
 
 	// 맛집소개로 이동
-	@RequestMapping("curation.do")
+	@RequestMapping("curationPage.do")
 	public String Curation() {
 		return "curation/curation";
 	}

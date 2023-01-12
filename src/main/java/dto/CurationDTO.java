@@ -14,6 +14,7 @@ public class CurationDTO {
 	private String tag_store;
 	private String tag_gender;
 	private String tag_age;
+	private int tag_id;
 	
 	public CurationDTO() {
 		
@@ -114,6 +115,15 @@ public class CurationDTO {
 	public void setTag_age(String tag_age) {
 		this.tag_age = tag_age;
 	}
-	
+
+	public int getTag_id() {
+		return tag_id;
+	}
+
+	public void setTag_id(int tag_id) {
+		this.tag_id = tag_id;
+	}
+
+
 	
 }

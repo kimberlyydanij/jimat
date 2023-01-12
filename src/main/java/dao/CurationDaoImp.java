@@ -20,10 +20,9 @@ public class CurationDaoImp implements CurationDAO {
 	
 	public void setSqlSession(SqlSessionTemplate sqlSession) {
 		this.sqlSession = sqlSession;
-		System.out.println("check10");
 	}
 
-	public List<CurationDTO> matchCheck(String number) {
+	public List<CurationDTO> matchCheck(int number) {
 		
 		return sqlSession.selectList("curation.matchCheck", number);
 	}

@@ -2,6 +2,10 @@ div.curation-body {
   font-size: 1rem;
 }
 
+dib {
+border : 1px solid black;	
+
+}
 div.curation-title {
   text-align: left;
   font: strong;

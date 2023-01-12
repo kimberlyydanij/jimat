@@ -9,9 +9,8 @@ import dto.CurationDTO;
 
 public class CurationServiceImp implements CurationService{
 
-	String check_match_tag_store = "한식";
-	String check_match_tag_gender = "0";
-    String check_match_tag_age = "2";
+	int check_match_tag_id;
+
 	
 	private CurationDAO cdao;
 	
@@ -38,7 +37,7 @@ public class CurationServiceImp implements CurationService{
 	}
 
 	@Override
-	public List<CurationDTO> matchCheckProcess(String number) {
+	public List<CurationDTO> matchCheckProcess(int number) {
 		return cdao.matchCheck(number);
 	}
 }

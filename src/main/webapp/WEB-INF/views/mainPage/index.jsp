@@ -46,12 +46,8 @@
       </div>
       <%-- 큐레이션 불러오기 --%>
       <div class="row">
-      <%@ include file="/WEB-INF/views/curation/curationrow.jsp" %>
-      </div>   
-      <%-- 큐레이션 불러오기 --%>
-      <div class="row">
       <jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
       </div>  
-    </div>
+      
   </body>
 </html>

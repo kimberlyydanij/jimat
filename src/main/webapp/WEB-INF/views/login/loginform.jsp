@@ -28,8 +28,8 @@
 </head>
 <body>
 
-	<c:set var="REST_API_KEY" value="dc71b825598ec6c58fb2a8f6fd26e952" />
-	<c:set var="REDIRECT_URI" value="http://localhost:8090/myapp/loginpage.do" />
+	<c:set var="REST_API_KEY" value="959d058d46ea6624759a78c82b93aada" />
+	<c:set var="REDIRECT_URI" value="http://localhost:8090/loginpage.do" />
 	
 
 	<div class="body-wrap m-1 p-4 columns-row mt-3">

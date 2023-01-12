@@ -14,14 +14,14 @@
 
 		<!-- controller LogoutPage 메서드로 연결 -->
 		<form method="post">
-			<a href="/myapp/logoutpage.do">
+			<a href="/logoutpage.do">
 				<input type="button" value="로그아웃" alt="logout_button">
 			</a>
 		</form>
 		
 		<!-- controller StopConnection 메서드로 연결 -->
 		<form method="post">
-			<a href="/myapp/stopconnpage.do">
+			<a href="/stopconnpage.do">
 				<input type="button" value="연결끊기" alt="stop_connection_button">
 			</a>
 		</form>

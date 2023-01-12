@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import dto.CurationDTO;
 import service.CurationService;
-import service.CurationServiceImp;
 
 
 //http://localhost:8090/curationrow.do
@@ -35,9 +33,7 @@ public class CurationController {
 
 	@RequestMapping(value="/index.do")
 	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav) {
-//		int randomTagNo = (int)((Math.random()*10000)%10);
-		String randomTagNo = "1";
-		System.out.println(randomTagNo);
+		int randomTagNo = (int)((Math.random()*1000)%5);
 		
 		this.cDTO = new CurationDTO();
 		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
@@ -54,10 +50,8 @@ public class CurationController {
 //	}
 	//http://localhost:8090/curationrow.do
 	@RequestMapping(value="/curationrow.do")
-	public ModelAndView curationBody(CurationDTO cDTO, ModelAndView mav) {
-//		int randomTagNo = (int)((Math.random()*10000)%10);
-		String randomTagNo = "1";
-		System.out.println(randomTagNo);
+	public ModelAndView curationRowBody(CurationDTO cDTO, ModelAndView mav) {
+        int randomTagNo = (int)((Math.random()*1000)%5);
 		
 		this.cDTO = new CurationDTO();
 		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
@@ -67,4 +61,24 @@ public class CurationController {
 		return mav;
 	}
 	
-}
+	@RequestMapping(value="/curation.do")
+	public ModelAndView curationBody(CurationDTO cDTO, ModelAndView mav) {
+		int randomTagNo = (int)((Math.random()*1000)%5);
+		
+		this.cDTO = new CurationDTO();
+		List<CurationDTO> aList0 = cservice.matchCheckProcess(randomTagNo);
+		List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + 1) % 5);
+		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + 2) % 5);
+		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + 3) % 5);
+		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + 4) % 5);
+		mav.addObject("aList", aList0);
+		mav.addObject("aList", aList1);
+		mav.addObject("aList", aList2);
+		mav.addObject("aList", aList3);
+		mav.addObject("aList", aList4);
+		mav.setViewName("curation/curation");
+		
+		return mav;
+	}
+	
+	}

@@ -31,9 +31,9 @@ import dto.KakaoDTO;
 public class MemberServiceImpl {
 
 
-	String rest_api_key = "dc71b825598ec6c58fb2a8f6fd26e952";
-	String redirect_uri_login = "http://localhost:8090/myapp/loginpage.do";
-	String app_admin_key = "bef3f3738f3c113417083a91c7b5da20";
+	String rest_api_key = "959d058d46ea6624759a78c82b93aada";
+	String redirect_uri_login = "http://localhost:8090/loginpage.do";
+	String app_admin_key = "d14444573a341e999eedb52f2f695c04";
 
 	String access_token = "";
 	String refresh_token = "";

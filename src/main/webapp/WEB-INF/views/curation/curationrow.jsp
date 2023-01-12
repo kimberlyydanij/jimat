@@ -30,8 +30,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     />
   </head>
   <body>
-    <div class="body-wrap container mb-2">
-      <div class="card border-warning container mt-2" id="main-curation">
+    <div class="body-wrap container mb-2 ms-3">
+      <div class="card border-warning container mt-2 b" id="main-curation">
         <div class="row">
           <div class="a container d-flex">
             <div
@@ -42,10 +42,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <i class="fa-solid fa-angle-left fa-3x"></i>
               </button>
             </div>
-
+ 
             <div class="curation-body pb-3 col-11 container column-row">
               <div class="row">
-                <div class="curation-title mt-3">#분위기</div>
+                <c:forEach items="${aList}" var="aList" begin="0" end="0">
+	              <div class="curation-title mt-3">${aList.tag_store}</div>
+	            </c:forEach>
               </div>
 
               <div class="row">
@@ -61,8 +63,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </c:forEach>
                 </div>
               </div>
-            </div>
+            </div>  
+            
 
+            
+            
             <div
               class="arrow col-1"
               style="transform: 'translate(-'+ (selected-1) * 300+ 'px, 0px)'"
