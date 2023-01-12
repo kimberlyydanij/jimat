@@ -17,8 +17,8 @@ import dto.KakaoDTO;
 import service.MemberServiceImpl;
 
 
-//http://localhost:8090/myapp/loginformpage.do
-//http://localhost:8090/myapp/loginpage.do
+//http://localhost:8090/loginformpage.do
+//http://localhost:8090/loginpage.do
 
 @Controller
 public class MemberController {

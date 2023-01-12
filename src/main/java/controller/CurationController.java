@@ -2,11 +2,12 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import service.CurationServiceImp;
 
 
-//http://localhost:8090/myapp/curationRow.do
+//http://localhost:8090/curationRow.do
 
 @Controller
 public class CurationController {
@@ -25,8 +26,8 @@ public class CurationController {
 		this.cs = cs;
 	}
 	
-	@RequestMapping("/curationRow.do")
-	public String curationFrom() {
+	@RequestMapping(value="/curationRow.do", method=RequestMethod.GET)
+	public String curationForm() {
 		return "curation/curationRow";
 	}
 	
