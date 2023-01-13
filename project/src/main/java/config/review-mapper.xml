@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review">
+
+	<select id="count" resultType="int">
+		SELECT count(*) FROM review
+	</select>
+
+	<select id="list" parameterType="dto.PageDTO"
+		resultType="dto.ReviewDTO">
+		<!-- <![CDATA[]]> -->
+	<![CDATA[
+		select b.* from
+		(select rownum as rm, a.* from(
+		select * from review) a)b
+		where b.rm >=#{startRow} and b.rm<=#{endRow}
+		]]>
+	</select>
+
+	
+	<!-- 리뷰 작성 -->
+	<insert id="review_write" parameterType="dto.ReviewDTO">
+		INSERT INTO
+		review(review_seq, review_writer_id, review_write_date,
+		 review_content, review_foodstore_seq, review_good_number)
+		VALUES(review_num_seq.nextval, 	#{review_writer_id}, sysdate,
+		 #{review_content},	#{review_foodstore_seq}, #{review_good_number, jdbcType=VARCHAR})
+	</insert>
+
+	<!-- 전체 리뷰 정보 조회 -->
+	<select id="find_review_all" resultType="dto.ReviewDTO">
+		SELECT * FROM review
+	</select>
+
+	<!-- 유저 id를 통한 리뷰 정보 조회 -->
+	<select id="find_review_user" parameterType="String"
+		resultType="dto.ReviewDTO">
+		SELECT * FROM review where review_writer_id =
+		#{review_writer_id}
+	</select>
+
+	<!-- 리뷰 번호를 통한 리뷰 정보 조회 -->
+	<select id="find_review_number" parameterType="int"
+		resultType="dto.ReviewDTO">
+		SELECT * FROM review where review_seq = #{review_seq}
+	</select>
+
+	<!-- 리뷰 페이지 번호를 통한 리뷰 정보 조회 -->
+	<select id="find_review_page" parameterType="int"
+		resultType="dto.ReviewDTO">
+		SELECT * FROM review where review_foodstore_seq =
+		#{review_foodstore_seq}
+		ORDER BY review_seq DESC
+	</select>
+
+	<!-- 리뷰 수정 -->
+	<update id="review_update" parameterType="dto.ReviewDTO">
+		UPDATE review 
+		SET review_write_date = sysdate, review_content = #{review_content} 
+		WHERE review_foodstore_seq = #{review_foodstore_seq} AND review_seq = #{review_seq} AND review_writer_id = #{review_writer_id}
+	</update>
+
+	<!-- 리뷰 삭제 -->
+	<delete id="review_delete" parameterType="int">
+		DELETE FROM review
+		WHERE review_seq=#{review_seq}
+	</delete>
+</mapper>
