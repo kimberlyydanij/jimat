@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import dto.CurationDTO;
 import service.CurationService;
 
 
+//http://localhost:8090/curation.do
 //http://localhost:8090/curationrow.do
 
 @Controller
@@ -71,11 +73,12 @@ public class CurationController {
 		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + 2) % 5);
 		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + 3) % 5);
 		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + 4) % 5);
-		mav.addObject("aList", aList0);
-		mav.addObject("aList", aList1);
-		mav.addObject("aList", aList2);
-		mav.addObject("aList", aList3);
-		mav.addObject("aList", aList4);
+		
+		mav.addObject("aList0", aList0);
+		mav.addObject("aList1", aList1);
+		mav.addObject("aList2", aList2);
+		mav.addObject("aList3", aList3);
+		mav.addObject("aList4", aList4);
 		mav.setViewName("curation/curation");
 		
 		return mav;
