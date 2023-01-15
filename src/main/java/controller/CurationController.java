@@ -54,7 +54,11 @@ public class CurationController {
         int randomTagNo = (int)((Math.random()*1000)%41);
 		
 		this.cDTO = new CurationDTO();
+		int inc = 0;
 		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
+		while (aList.size() == 0)
+			aList = cservice.matchCheckProcess(randomTagNo + (++inc));
+
 		mav.addObject("aList", aList);
 		mav.setViewName("curation/curationrow");
 		
@@ -66,16 +70,33 @@ public class CurationController {
 		int randomTagNo = (int)((Math.random()*1000)%41);
 		
 		this.cDTO = new CurationDTO();
+		int inc = 0;
+		
 		List<CurationDTO> aList0 = cservice.matchCheckProcess(randomTagNo);
-		List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + 1) % 41);
-		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + 2) % 41);
-		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + 3) % 41);
-		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + 4) % 41);
-		mav.addObject("aList", aList0);
-		mav.addObject("aList", aList1);
-		mav.addObject("aList", aList2);
-		mav.addObject("aList", aList3);
-		mav.addObject("aList", aList4);
+		while (aList0.size() == 0)
+			aList0 = cservice.matchCheckProcess(randomTagNo + (++inc));
+		
+		List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		while (aList1.size() == 0)
+			aList1 = cservice.matchCheckProcess(randomTagNo + (++inc));
+		
+		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		while (aList2.size() == 0)
+			aList2 = cservice.matchCheckProcess(randomTagNo + (++inc));
+
+		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		while (aList3.size() == 0)
+			aList3 = cservice.matchCheckProcess(randomTagNo + (++inc));
+		
+		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		while (aList4.size() == 0)
+			aList4 = cservice.matchCheckProcess(randomTagNo + (++inc));
+
+		mav.addObject("aList0", aList0);
+		mav.addObject("aList1", aList1);
+		mav.addObject("aList2", aList2);
+		mav.addObject("aList3", aList3);
+		mav.addObject("aList4", aList4);
 		mav.setViewName("curation/curation");
 		
 		return mav;

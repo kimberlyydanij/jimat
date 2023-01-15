@@ -16,7 +16,8 @@
 
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
-<script defer src="${path}/resources/js/main.js"></script>
+<script defer src="${path}/resources/js/main.js?v=14"></script>
+<script defer src="${path}/resources/js/imgscroll.js?v=19"></script>
 </head>
 
 <body>
@@ -28,22 +29,27 @@
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow0.jsp"></jsp:include>
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow1.jsp"></jsp:include>
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow2.jsp"></jsp:include>
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow3.jsp"></jsp:include>
+		</div>
+
+		<%-- 큐레이션 불러오기 --%>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow4.jsp"></jsp:include>
 		</div>
 	</div>
 </body>

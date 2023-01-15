@@ -14,6 +14,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script
       src="https://kit.fontawesome.com/edd4d6d779.js"
       crossorigin="anonymous"
@@ -29,6 +30,7 @@
       rel="stylesheet"
     />
     <script defer src="${path}/resources/js/main.js"></script>
+    <script defer src="${path}/resources/js/imgscroll.js?v=19"></script>
   </head>
   <body>
     <div class="body-wrap container col-12 column-row">

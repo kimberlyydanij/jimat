@@ -35,7 +35,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="card border-warning container mt-2 b" id="main-curation">
         <div class="row">
           <div class="a container d-flex">
-            <div class="arrow col-1" onclick="img_scroll(0, 100);">
+            <div class="arrow col-1" onclick="img_scroll(4, 100);">
               <button id="arrow-left">
                 <i class="fa-solid fa-angle-left fa-3x"></i>
               </button>
@@ -43,17 +43,17 @@ uri="http://java.sun.com/jsp/jstl/core"%>
  
             <div class="curation-body pb-3 col-11 container column-row">
               <div class="row">
-                <c:forEach items="${aList}" var="aList" begin="0" end="0">
+                <c:forEach items="${aList4}" var="aList" begin="0" end="0">
 	              <div class="curation-title mt-3">#${aList.foodcategory}</div>
 	            </c:forEach>
               </div>
 
-              <div class="row" id="row_container_0">
+              <div class="row" id="row_container_4">
                 <div class="shop-body container d-flex p-1">
                   <c:set var="count" value="0" />
-                  <c:forEach items="${aList}" var="aList">
+                  <c:forEach items="${aList4}" var="aList">
                     <c:set var="count" value="${count+1}" />
-                    <div class="p-1 column-row" id="shop-thumbnail-body-0-<c:out value="${count}" />">
+                    <div class="p-1 column-row" id="shop-thumbnail-body-4-<c:out value="${count}" />">
                    	 <div class="shop-thumbnail-container" >
                       <a href="#">
                         <img src="${aList.img_url}" class="shop-thumbnail" /></a></div>
@@ -65,7 +65,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             </div>  
           
             <div class="arrow col-1">
-              <button id="arrow-left" onclick="img_scroll(0, -100);">
+              <button id="arrow-left" onclick="img_scroll(4, -100);">
                 <i class="fa-solid fa-angle-right fa-3x"></i>
               </button>
             </div>

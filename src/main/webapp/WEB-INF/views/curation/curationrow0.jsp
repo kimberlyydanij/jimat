@@ -43,7 +43,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
  
             <div class="curation-body pb-3 col-11 container column-row">
               <div class="row">
-                <c:forEach items="${aList}" var="aList" begin="0" end="0">
+                <c:forEach items="${aList0}" var="aList" begin="0" end="0">
 	              <div class="curation-title mt-3">#${aList.foodcategory}</div>
 	            </c:forEach>
               </div>
@@ -51,7 +51,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="row" id="row_container_0">
                 <div class="shop-body container d-flex p-1">
                   <c:set var="count" value="0" />
-                  <c:forEach items="${aList}" var="aList">
+                  <c:forEach items="${aList0}" var="aList">
                     <c:set var="count" value="${count+1}" />
                     <div class="p-1 column-row" id="shop-thumbnail-body-0-<c:out value="${count}" />">
                    	 <div class="shop-thumbnail-container" >
