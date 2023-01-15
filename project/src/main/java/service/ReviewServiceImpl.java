@@ -1,5 +1,6 @@
 package service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -57,14 +58,22 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public int countProcess() {
-		return dao.count();
+	public int countProcess(int review_foodstore_seq) {
+		return dao.count(review_foodstore_seq);
 	}
 
 	@Override
-	public List<ReviewDTO> listProcess(PageDTO pv) {
-		return dao.list(pv);
+	public List<ReviewDTO> listProcess(int startRow, int endRow, int review_foodstore_seq) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		map.put("review_foodstore_seq", review_foodstore_seq);
+		
+		return dao.list(map);
 	}
+
+
 	
 	
 }

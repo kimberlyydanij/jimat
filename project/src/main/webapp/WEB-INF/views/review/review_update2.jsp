@@ -161,7 +161,7 @@
 											</div>
 										</div>
 										<div class="write_date">
-											<span class="date" id="date${dto.review_seq}">${alist_write_date[status.index].alist_write_date}</span>
+											<span class="date" id="date${dto.review_seq}">${alist_write_date}</span>
 										</div>
 										<div class="comment-tag mt-1 container flex-wrap:wrap">
 											<button type="button" class="btn btn-danger">맛</button>

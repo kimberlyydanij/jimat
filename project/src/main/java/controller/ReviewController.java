@@ -1,17 +1,13 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dto.PageDTO;
@@ -22,7 +18,6 @@ import service.ReviewService;
 public class ReviewController {
 
 	private ReviewService service;
-	private ReviewDTO rdto;
 	private PageDTO pdto;
 	private int currentPage;
 	
@@ -34,24 +29,25 @@ public class ReviewController {
 		this.service = service;
 	}
 	
-	//http://localhost:8090/list.do
-	@RequestMapping(value="list.do")
-	public ModelAndView listMethod(PageDTO pv, ModelAndView mav) {
-		int totalRecord = service.countProcess();
-		if(totalRecord>=1) {
-			if(pv.getCurrentPage() == 0)
-				this.currentPage = 1;
-			else
-				this.currentPage = pv.getCurrentPage();
-			
-			this.pdto = new PageDTO(this.currentPage, totalRecord);
-			List<ReviewDTO> aList = service.listProcess(pdto);
-			mav.addObject("aList", aList);
-			mav.addObject("pv", this.pdto);
-		}
-		mav.setViewName("review/list");
-		return mav;
-	}
+//	//http://localhost:8090/list.do
+//	@RequestMapping(value="list.do")
+//	public ModelAndView listMethod(PageDTO pv, ModelAndView mav) {
+//		int totalRecord = service.countProcess();
+//		if(totalRecord>=1) {
+//			if(pv.getCurrentPage() == 0)
+//				this.currentPage = 1;
+//			else
+//				this.currentPage = pv.getCurrentPage();
+//			
+//			this.pdto = new PageDTO(this.currentPage, totalRecord);
+//			List<ReviewDTO> aList = service.listProcess(pdto.getStartRow(), pdto.getEndRow(), review_foodstore_seq);
+//			mav.addObject("aList", aList);
+//			mav.addObject("pv", this.pdto);
+//		}
+//		mav.setViewName("review/list");
+//		return mav;
+//	}
+	
 	
 	//sql 전체 리뷰 데이터를 테이블로 확인
 	//http://localhost:8090/test.do
@@ -141,12 +137,14 @@ public class ReviewController {
 		return mav;
 	}
 	
+	//review 작성을 위한 form으로 연결
 	//http://localhost:8090/reviewform.do
 	@RequestMapping(value="reviewform.do", method=RequestMethod.GET)
 	public String review_write() {
 		return "review/reviewform";
 	}
 	
+	//review 작성후 페이지로 리턴
 	//http://localhost:8090/reviewform.do
 	@RequestMapping(value="reviewform.do", method=RequestMethod.POST)
 	public String review_writePro(ReviewDTO dto) {
@@ -154,24 +152,36 @@ public class ReviewController {
 		return "redirect:/review_page.do";
 	}
 	
+	//해당 페이지(review_foodstore_seq)내에 리뷰를 보여준다.
 	//http://localhost:8090/review_page.do
 	@RequestMapping(value="review_page.do")
-	public ModelAndView review_page(ReviewDTO dto, ModelAndView mav) {
+	public ModelAndView review_page(ReviewDTO dto, PageDTO pv, ModelAndView mav) {
 		int review_foodstore_seq = 2;
-		List<ReviewDTO> page_review = service.find_review_pageProcess(review_foodstore_seq);
-		List<String> alist_write_date = new ArrayList<String>();
 		
-		for(ReviewDTO aList:page_review) {
-			String[] convert_list1 = aList.getReview_write_date().split("/");
-			alist_write_date.add(convert_list1[0] +"년 " + convert_list1[1] + "월 " + convert_list1[2] + "일");
-		}
-		mav.addObject("aList", page_review);
-		mav.addObject("alist_write_date", alist_write_date);
-		mav.setViewName("review/review_update");
+		int totalRecord = service.countProcess(review_foodstore_seq);
+		if(totalRecord>=1) {
+			if(pv.getCurrentPage() == 0)
+				currentPage = 1;
+			else
+				currentPage = pv.getCurrentPage();
+			
+			pdto = new PageDTO(currentPage, totalRecord);
+			List<ReviewDTO> aList = service.listProcess(pdto.getStartRow(), pdto.getEndRow(), review_foodstore_seq);
+			List<String> alist_write_date = new ArrayList<String>();
+			for(ReviewDTO review_list:aList) {
+				String[] convert_list1 = review_list.getReview_write_date().split("/");
+				alist_write_date.add(convert_list1[0] +"년 " + convert_list1[1] + "월 " + convert_list1[2] + "일");
+			}
+			mav.addObject("aList", aList);
+			mav.addObject("alist_write_date", alist_write_date);
+			mav.addObject("pv", pdto);
+			mav.setViewName("review/review_test");
+		}	
+		
 		return mav;
 	}
 	
-	@ResponseBody
+	//review 수정을 위한 페이지 이동 전 수정 리뷰 정보를 받아서 리뷰 작성 페이지에 전달
 	@RequestMapping(value="review_update_form.do")
 	public ModelAndView review_update_form(ModelAndView mav, HttpServletRequest httpServletRequest) {
 		int review_edit_num = (int) Integer.parseInt(httpServletRequest.getParameter("review_edit_num"));
@@ -181,16 +191,17 @@ public class ReviewController {
 		return mav;
 	}
 	
+	//review 수정 후 원래 페이지로 이동
 	@RequestMapping(value="review_update.do", method=RequestMethod.POST)
 	public String review_update(ReviewDTO dto) {
 		service.review_updateProcess(dto);
 		return "redirect:/review_page.do";
 	}
 	
+	//review 삭제 후 원래 페이지로 이동
 	@RequestMapping(value="review_delete.do")
 	public String review_delete(HttpServletRequest httpServletRequest) {
 		int review_delete_num = (int) Integer.parseInt(httpServletRequest.getParameter("review_delete_num"));
-		System.out.println(review_delete_num);
 		service.review_deleteProcess(review_delete_num);
 		return "redirect:/review_page.do";
 	}

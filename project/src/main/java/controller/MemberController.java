@@ -2,6 +2,7 @@ package controller;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class MemberController {
 	//login시 getToken으로 토큰 값을 받아오고 getUserInfo를 통해 유저 정보를 가져옴
 	@ResponseBody
 	@RequestMapping(value="/loginpage.do", method=RequestMethod.GET)
-	public ModelAndView KakaoLogin(@RequestParam(value = "code", required = false, defaultValue = "") String code, ModelAndView mav) throws Exception {
+	public ModelAndView KakaoLogin(@RequestParam(value = "code", required = false, defaultValue = "") String code, ModelAndView mav, HttpServletRequest httpServletRequest) throws Exception {
 		System.out.println("#########" + code);
 		
 		//code 값을 이용해서 access_token을 받음
@@ -63,7 +64,9 @@ public class MemberController {
 		System.out.println("###birthday#### : " + userinfo.getK_birthday());
 		System.out.println("###birthday_type#### : " + userinfo.getK_birthday_type());
 		System.out.println("###gender#### : " + userinfo.getK_gender());
-	
+		
+		HttpSession session = httpServletRequest.getSession();
+		session.setAttribute("sessionId", userinfo.getK_id());
 //		// 아래 코드가 추가되는 내용
 //		session.invalidate();
 
@@ -75,15 +78,19 @@ public class MemberController {
 	
 	//logout 버튼 클릭시 실행이 된다.
 	@RequestMapping(value="/logoutpage.do", method=RequestMethod.GET)
-	public String LogoutPage(@RequestParam(value = "code", required = false, defaultValue = "") String code) {
+	public String LogoutPage(@RequestParam(value = "code", required = false, defaultValue = "") String code, HttpServletRequest httpServletRequest) {
 		String result = ms.logOut();
-		return "login/loginform";
+		HttpSession session = httpServletRequest.getSession();
+		session.removeAttribute("sessionId");
+		return "redirect:/loginformpage.do";
 	}
 	
 	//연결끊기 버튼 클릭시 실행이 된다.
 	@RequestMapping(value="stopconnpage.do", method=RequestMethod.GET)
-	public String StopConnection() {
+	public String StopConnection(HttpServletRequest httpServletRequest) {
 		String result = ms.stopConn();
-		return "login/loginform";
+		HttpSession session = httpServletRequest.getSession();
+		session.removeAttribute("sessionId");
+		return "redirect:/loginformpage.do";
 	}
 }

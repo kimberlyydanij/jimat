@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import dto.PageDTO;
@@ -7,9 +8,9 @@ import dto.ReviewDTO;
 
 public interface ReviewDAO {
 
-	public int count();
+	public int count(int review_foodstore_seq);
 	
-	public List<ReviewDTO> list(PageDTO pv);
+	public List<ReviewDTO> list(HashMap<String, Object> map);
 	
 	public List<ReviewDTO> find_review_all();
 	

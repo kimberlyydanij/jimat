@@ -89,10 +89,10 @@
 		<c:forEach var="dto" items="${aList}" varStatus="status">
 			<input type="text"
 				id='review_foodstore_seq${dto.review_foodstore_seq}'
-				name="review_foodstore_seq"
-				value="${dto.review_foodstore_seq}" hidden=hidden>
-			<input type="text" name="review_seq"
-				value="${dto.review_seq}" hidden=hidden>
+				name="review_foodstore_seq" value="${dto.review_foodstore_seq}"
+				hidden=hidden>
+			<input type="text" name="review_seq" value="${dto.review_seq}"
+				hidden=hidden>
 			<div class="card p-3 col-lg-9 mt-3"
 				id="comment-body${aList[status.index].review_seq}">
 				<div class="card p-3 justify-content-start mt-2">
@@ -104,8 +104,7 @@
 							<c:if test="${dto.review_writer_id == sessionid}">
 								<div class="review_action_btn"
 									style="float: right; margin-left: 10px;">
-									<a
-										href="review_delete.do?review_delete_num=${dto.review_seq}"><i
+									<a href="review_delete.do?review_delete_num=${dto.review_seq}"><i
 										class="fa-regular fa-square-xmark" alt="삭제"></i></a>
 								</div>
 								<div class="review_action_btn" style="float: right">
@@ -124,8 +123,7 @@
 									<div class="profile-image">
 										<span class="round"><img
 											src="/data/images/profile1.png" alt="user" width="80"
-											id="user_profile_image${dto.review_seq}" />
-										</span>
+											id="user_profile_image${dto.review_seq}" /> </span>
 									</div>
 									<div class="comment-options mt-3 d-flex justify-content-center">
 
@@ -161,7 +159,7 @@
 											</div>
 										</div>
 										<div class="write_date">
-											<span class="date" id="date${dto.review_seq}">${alist_write_date[status.index].alist_write_date}</span>
+											<span class="date" id="date${dto.review_seq}">${alist_write_date[status.index]}</span>
 										</div>
 										<div class="comment-tag mt-1 container flex-wrap:wrap">
 											<button type="button" class="btn btn-danger">맛</button>
@@ -198,6 +196,34 @@
 		</c:forEach>
 	</c:if>
 
-	
+	<div class="pagelist">
+		<!-- 이전 출력 시작 -->
+		<c:if test="${pv.startPage>1}">
+			<a href="review_page.do?currentPage=${pv.startPage-pv.blockPage}">이전</a>
+		</c:if>
+		<!-- 이전 출력 끝 -->
+
+		<!-- 페이지 출력 시작 -->
+		<c:forEach var="i" begin="${pv.startPage}" end="${pv.endPage}">
+			<span> <c:url var="currPage" value="review_page.do">
+					<c:param name="currentPage" value="${i}" />
+				</c:url> <c:choose>
+					<c:when test="${i==pv.currentPage}">
+						<a href="${currPage}" class="pagecolor">${i}</a>
+					</c:when>
+					<c:otherwise>
+						<a href="${currPage}">${i}</a>
+					</c:otherwise>
+				</c:choose>
+			</span>
+		</c:forEach>
+		<!-- 페이지 출력 끝 -->
+
+		<!-- 다음 출력 시작 -->
+		<c:if test="${pv.endPage<pv.totalPage}">
+			<a href="review_page.do?currentPage=${pv.startPage+pv.blockPage}">다음</a>
+		</c:if>
+		<!-- 다음 출력 끝 -->
+	</div>
 </body>
 </html>

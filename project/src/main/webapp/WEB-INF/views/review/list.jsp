@@ -63,14 +63,14 @@ table,tr,th,td{
    <div class="pagelist">
      <!-- 이전 출력 시작 -->
        <c:if test="${pv.startPage>1}">
-          <a href="list.sb?currentPage=${pv.startPage-pv.blockPage}">이전</a>
+          <a href="list.do?currentPage=${pv.startPage-pv.blockPage}">이전</a>
        </c:if>
      <!-- 이전 출력 끝 -->
      
       <!-- 페이지 출력 시작 -->
        <c:forEach var="i" begin="${pv.startPage}"  end="${pv.endPage}">
          <span>
-          <c:url var="currPage" value="list.sb">
+          <c:url var="currPage" value="list.do">
               <c:param name="currentPage" value="${i}" />
            </c:url>  
            <c:choose>
@@ -87,11 +87,12 @@ table,tr,th,td{
       
       <!-- 다음 출력 시작 -->
        <c:if test="${pv.endPage<pv.totalPage}">
-          <a href="list.sb?currentPage=${pv.startPage+pv.blockPage}">다음</a>
+          <a href="list.do?currentPage=${pv.startPage+pv.blockPage}">다음</a>
        </c:if>
      <!-- 다음 출력 끝 -->
       
    </div>
+
  </div>
 </body>
 </html>
