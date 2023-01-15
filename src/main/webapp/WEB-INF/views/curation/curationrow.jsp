@@ -65,10 +65,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </div>
               </div>
             </div>  
-            
-
-            
-            
+          
             <div class="arrow col-1">
               <button id="arrow-left" onclick="img_scroll(-100);">
                 <i class="fa-solid fa-angle-right fa-3x"></i>
