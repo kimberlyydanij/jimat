@@ -1,8 +1,5 @@
-<%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <html lang="ko">
@@ -30,50 +27,24 @@
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
-
-		<div class="body-wrap container mb-2 ms-3">
-			<div class="card border-warning container mt-2 b" id="main-curation">
-				<div class="row">
-					<div class="a container d-flex">
-						<div class="arrow col-1">
-							<button id="arrow-left">
-								<i class="fa-solid fa-angle-left fa-3x"></i>
-							</button>
-						</div>
-						<div class="curation-body pb-3 col-11 container column-row">
-							<div class="row">
-								<c:forEach items="${aList}" var="aList" begin="0" end="0">
-									<div class="curation-title mt-3">${aList.tag_store}</div>
-								</c:forEach>
-							</div>
-							<div class="row">
-								<div class="shop-body container d-flex p-1">
-									<c:forEach items="${aList}" var="aList">
-										<div class="p-1 column-row">
-											<div class="shop-thumbnail-container">
-												<a href="#"> <img src="${aList.img_url}"
-													class="shop-thumbnail" }
-                      /></a>
-											</div>
-											<div>
-												<p class="mt-2 shop-name">${aList.foodstore_name}</p>
-											</div>
-										</div>
-									</c:forEach>
-								</div>
-							</div>
-						</div>
-						<div class="arrow col-1">
-							<button id="arrow-left">
-								<i class="fa-solid fa-angle-right fa-3x"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
 		</div>
 
+		<%-- 큐레이션 불러오기 --%>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+		</div>
 
+		<%-- 큐레이션 불러오기 --%>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+		</div>
+
+		<%-- 큐레이션 불러오기 --%>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+		</div>
 	</div>
 </body>
 </html>
