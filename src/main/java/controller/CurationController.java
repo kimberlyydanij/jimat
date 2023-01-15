@@ -33,7 +33,7 @@ public class CurationController {
 
 	@RequestMapping(value="/index.do")
 	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav) {
-		int randomTagNo = (int)((Math.random()*1000)%5);
+		int randomTagNo = (int)((Math.random()*1000)%41);
 		
 		this.cDTO = new CurationDTO();
 		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
@@ -51,7 +51,7 @@ public class CurationController {
 	//http://localhost:8090/curationrow.do
 	@RequestMapping(value="/curationrow.do")
 	public ModelAndView curationRowBody(CurationDTO cDTO, ModelAndView mav) {
-        int randomTagNo = (int)((Math.random()*1000)%5);
+        int randomTagNo = (int)((Math.random()*1000)%41);
 		
 		this.cDTO = new CurationDTO();
 		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
@@ -63,14 +63,14 @@ public class CurationController {
 	
 	@RequestMapping(value="/curation.do")
 	public ModelAndView curationBody(CurationDTO cDTO, ModelAndView mav) {
-		int randomTagNo = (int)((Math.random()*1000)%5);
+		int randomTagNo = (int)((Math.random()*1000)%41);
 		
 		this.cDTO = new CurationDTO();
 		List<CurationDTO> aList0 = cservice.matchCheckProcess(randomTagNo);
-		List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + 1) % 5);
-		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + 2) % 5);
-		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + 3) % 5);
-		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + 4) % 5);
+		List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + 1) % 41);
+		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + 2) % 41);
+		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + 3) % 41);
+		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + 4) % 41);
 		mav.addObject("aList", aList0);
 		mav.addObject("aList", aList1);
 		mav.addObject("aList", aList2);

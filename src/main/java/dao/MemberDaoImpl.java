@@ -20,7 +20,6 @@ public class MemberDaoImpl implements MemberDAO{
 	
 	public void setSqlSession(SqlSessionTemplate sqlSession) {
 		this.sqlSession = sqlSession;
-		System.out.println("check10");
 	}
 	
 	// 정보 저장
