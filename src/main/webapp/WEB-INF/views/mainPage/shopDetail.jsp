@@ -32,7 +32,6 @@
 
 <body>
 	<c:set var="adto" value="${adto}" />
-	<p>foodstore_id = ${adto.foodstore_id}</p>
 	<div class="body-wrap container col-12 column-row">
 		<div class="row">
 			<%-- 메인 메뉴 불러오기 --%>

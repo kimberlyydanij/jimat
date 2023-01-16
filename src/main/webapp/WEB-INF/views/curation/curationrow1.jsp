@@ -55,7 +55,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     <c:set var="count" value="${count+1}" />
                     <div class="p-1 column-row" id="shop-thumbnail-body-1-<c:out value="${count}" />">
                    	 <div class="shop-thumbnail-container" >
-                      <a href="#">
+                      <c:url var="shopDetail_a" value="shopdetail.do">
+                   	 	<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
+                   	 </c:url>
+                      <a href="${shopDetail_a}">
                         <img src="${aList.img_url}" class="shop-thumbnail" /></a></div>
                       <div><p class="mt-2 shop-name">${aList.foodstore_name}</p></div>
                     </div>
