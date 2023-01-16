@@ -13,6 +13,7 @@
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/edd4d6d779.js"
 	crossorigin="anonymous"></script>
 
@@ -20,14 +21,18 @@
 	rel="stylesheet" />
 <link href="${path}/resources/css/shopDetail.css" type="text/css"
 	rel="stylesheet" />
-<script defer src="${path}/resources/js/main.js"></script>
-<script defer src="${path}/resources/js/shopDetailMap.js"></script>
-
 
 <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=library"></script>
 <script charset="UTF-8"
 	src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"></script>
+<script>
+var shopLati="<c:out value="${adto.latitude}" />";
+var shopLong="<c:out value="${adto.longitude}" />";
+</script>
+
+<script defer src="${path}/resources/js/main.js"></script>
+
 </head>
 
 <body>
@@ -83,6 +88,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="col-4 shop-right column-row p-2 mx-0">
 							<div class="shop-map" id="staticMap"></div>
 							<div class="shop-menu column-low mt-3 p-3" id="shop-menu">
@@ -126,5 +132,6 @@
 	</div>
 
 	</div>
+	<script defer src="${path}/resources/js/shopDetailMap.js?v=2"></script>
 </body>
 </html>
