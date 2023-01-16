@@ -1,8 +1,6 @@
 package dao;
 
-import java.util.HashMap;
 import java.util.List;
-
 import dto.CurationDTO;
 
 public interface CurationDAO {

@@ -2,27 +2,26 @@ package dao;
 
 import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
-import dto.CurationDTO;
+import dto.ShopDetailDTO;
 
 
-public class CurationDaoImp implements CurationDAO {
+public class ShopDetailDaoImp implements ShopDetailDAO{
 	
 	// mapper를 호출하기 위한 클래스 주입.
 	private SqlSessionTemplate sqlSession;
-	
-	public CurationDaoImp() {
+		
+	public ShopDetailDaoImp() {
 		
 	}
 	
 	public void setSqlSession(SqlSessionTemplate sqlSession) {
 		this.sqlSession = sqlSession;
 	}
+	
+	public ShopDetailDTO shopDetailData(String number) {
 
-	public List<CurationDTO> matchCheck(int number) {
-		
-		return sqlSession.selectList("curation.matchCheck", number);
+		return sqlSession.selectOne("shopDetail.shopDetailData", number);
 	}
 
 
 }
-	//public CurationDTO foodStoreTag (CurationDTO checkTag) {}

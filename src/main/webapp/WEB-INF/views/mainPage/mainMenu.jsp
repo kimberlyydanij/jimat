@@ -13,11 +13,6 @@
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.css"
-	rel="stylesheet"
-	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-	crossorigin="anonymous" />
 <script src="https://kit.fontawesome.com/edd4d6d779.js"
 	crossorigin="anonymous"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
@@ -25,7 +20,6 @@
 	 <script defer src="${path}/resources/js/main.js"></script>
 </head>
 
-</script>
 <body>
 	<div class="header container d-flex col-12 mt-4" id="main-menu-body">
 		<div class="logo col-2">
@@ -80,6 +74,7 @@
 					</div>
 				</nav>
 			</div>
+		</div>
 		</div>
 </body>
 </html>

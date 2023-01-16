@@ -15,10 +15,14 @@ public class ShopDetailDTO {
 	private String address_code;
 	private String address;
 	private String road_name;
+	private String working_time;
 	private String latitude;
 	private String longitude;
 	private String img_url;
 	private String foodstore_num;
+	private String rating;
+	private String menuName;
+	private String menuPrice;
 	private String tag_store;
 	private String tag_gender;
 	private String tag_age;
@@ -131,6 +135,14 @@ public class ShopDetailDTO {
 		this.road_name = road_name;
 	}
 
+	public String getWorking_time() {
+		return working_time;
+	}
+
+	public void setWorking_time(String working_time) {
+		this.working_time = working_time;
+	}
+	
 	public String getLatitude() {
 		return latitude;
 	}
@@ -163,6 +175,22 @@ public class ShopDetailDTO {
 		this.foodstore_num = foodstore_num;
 	}
 
+	public String getMenuName() {
+		return menuName;
+	}
+
+	public void setMenuName(String menuName) {
+		this.menuName = menuName;
+	}
+
+	public String getMenuPrice() {
+		return menuPrice;
+	}
+
+	public void setMenuPrice(String menuPrice) {
+		this.menuPrice = menuPrice;
+	}
+
 	public String getTag_store() {
 		return tag_store;
 	}
@@ -187,5 +215,14 @@ public class ShopDetailDTO {
 		this.tag_age = tag_age;
 	}
 
+	public String getRating() {
+		return rating;
+	}
+
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
+
+	
 	
 }
