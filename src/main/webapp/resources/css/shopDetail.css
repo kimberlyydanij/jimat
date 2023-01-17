@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+div.shop-left {
+  min-width : 980px;
+}
+
+div.shop-right {
+  max-width: 310px;
+  margin-left :-10px;
+}
+
+
+div.shop-main-image > img{
+	display : cover;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+}
+div#staticMap {
+  height: 300px;
+}
+
+img#shop-main-image {
+  width: 100%;
+  height: 100%;
+}
+
+div.shop-info {
+  height: 50px;
+}
+p#shop-name {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+p#shop-rating {
+  font-size: 2rem;
+  color: #ff851b;
+}
+
+span.shop-bookmark {
+  color: #ff4136;
+}
+
+p#shop-category {
+  height: 48px;
+  font-size: 1.2rem;
+  padding-top: 16px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+p#shop-menu {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+div.shop-map {
+  border: 7px solid #ffc107;
+}
+
+div.shop-menu {
+  border: 3px solid black;
+  max-height: 290px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+div#shop-menu-detail,
+p#shop-menu-detail,
+div.shop-info-detail p {
+  margin: 0px;
+  text-align: left;
+  font-size: 1rem;
+}
+div#shop-menu-price,
+p#shop-menu-price {
+  margin: 0px;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.label#stars {
+  padding: 3px 10px;
+  line-height: 13px;
+  color: #ffffff;
+  font-weight: 400;
+  border-radius: 4px;
+  font-size: 120%;
+}
+
+.round img {
+  border-radius: 100%;
+}
+
+div.comment-tag {
+  min-width: 350px;
+}
+
+.action-icons a,
+.btn-group i {
+  padding-left: 7px;
+  vertical-align: middle;
+  color: #99abb4;
+}
+
+.action-icons a#edit:hover {
+  color: #158cba;
+}
+
+i.fa-heart:hover {
+  color: #ff4136;
+}
+
+div.bookmark > input {
+  display: none;
+}
+
+div.bookmark > label {
+  position: relative;
+  cursor: pointer;
+}
+
+div.bookmark > label::before {
+  position: absolute;
+  opacity: 0;
+}
+
+div.bookmark > label:hover:before,
+div.bookmark > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+div.bookmark > input:checked ~ label:before {
+  opacity: 1;
+}
+
+div.bookmark > input:checked ~ label:before {
+  opacity: 0.4;
+}
+
+.btn {
+  --bs-btn-color: #ff4136;
+  --bs-btn-bg: transparent;
+  --bs-btn-active-color: #ff4136;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
+  border: none;
+}
+
+label.btn-bookmark {
+  padding-top : 20px;
+}
+
+div.header-menu {
+  max-width: 1030px;
+}
