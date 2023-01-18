@@ -7,5 +7,11 @@
 	<select id="matchCheck" parameterType="Int" resultType="dto.CurationDTO">
 		select * from SEOULFOODSTORE where FOOD_CATEGORY_TAG=#{randomTagNo, jdbcType=VARCHAR} 
 	</select>
+	
+	
+		<select id="loginMatchCheck" parameterType="int" resultType="dto.CurationDTO">
+		select * from SEOULFOODSTORE 
+		where FOOD_CATEGORY_TAG=#{randomTagNo, jdbcType=VARCHAR}and TAG_AGE=#{kAge, jdbcType=VARCHAR} and TAG_GENDER=#{kGender, jdbcType=VARCHAR}
+	</select>
 
 </mapper>

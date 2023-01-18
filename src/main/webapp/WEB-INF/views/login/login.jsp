@@ -12,6 +12,7 @@
 <script>
 //팝업창에서 부모창을 다른페이지로 이동합니다.
 window.opener.location.href="http://localhost:8090/index.do";
+<c:out value="out" />
 self.close();
 </script>
 </head>

@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Jimat - Food choice for you</title>
-<link href="/css/review.css" type="text/css" rel="stylesheet" />
+<link href="resources/css/review.css" type="text/css" rel="stylesheet" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -103,8 +103,23 @@
 												<span class="date" id="date${dto.review_seq}">${alist_write_date[status.index]}</span>
 											</div>
 											<div class="comment-tag mt-1 container flex-wrap:wrap">
-												<button type="button" class="btn btn-danger">맛</button>
-												<button type="button" class="btn btn-warning">가격</button>
+												<c:choose>
+													<c:when test="${dto.review_tag == '맛'}">
+														<button type="button" class="btn btn-danger">맛</button>
+													</c:when>
+													<c:when test="${dto.review_tag == '가격'}">
+														<button type="button" class="btn btn-warning">가격</button>
+													</c:when>
+													<c:when test="${dto.review_tag == '서비스'}">
+														<button type="button" class="btn btn-info">서비스</button>
+													</c:when>
+													<c:when test="${dto.review_tag == '분위기'}">
+														<button type="button" class="btn btn-primary">분위기</button>
+													</c:when>
+													<c:otherwise>
+														<button type="button" class="btn btn-success">주차</button>
+													</c:otherwise>
+												</c:choose>
 											</div>
 										</div>
 									</div>

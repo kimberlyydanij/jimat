@@ -11,10 +11,10 @@
 	<insert id="review_write" parameterType="dto.ReviewDTO">
 		INSERT INTO
 		review(review_seq, review_writer_id, review_write_date,
-		review_content, review_foodstore_seq, review_good_number, review_upload)
+		review_content, review_foodstore_seq, review_good_number, review_upload, review_tag)
 		VALUES(review_num_seq.nextval, #{review_writer_id}, sysdate,
 		#{review_content}, #{review_foodstore_seq}, #{review_good_number,
-		jdbcType=VARCHAR}, #{review_upload, jdbcType=VARCHAR})
+		jdbcType=VARCHAR}, #{review_upload, jdbcType=VARCHAR}, #{review_tag, jdbcType=VARCHAR})
 	</insert>
 
 	<!-- 전체 리뷰 정보 조회 -->
@@ -67,7 +67,8 @@
 	<update id="review_update" parameterType="dto.ReviewDTO">
 		UPDATE review
 		SET
-		review_write_date = sysdate, review_content = #{review_content}, review_upload = #{review_upload}
+		review_write_date = sysdate, review_content = #{review_content}, 
+		review_upload = #{review_upload}, review_tag = #{review_tag}
 		WHERE
 		review_foodstore_seq = #{review_foodstore_seq} AND review_seq =
 		#{review_seq} AND review_writer_id = #{review_writer_id}
@@ -78,4 +79,5 @@
 		DELETE FROM review
 		WHERE review_seq=#{review_seq}
 	</delete>
+	
 </mapper>

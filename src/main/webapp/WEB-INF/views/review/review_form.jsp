@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Jimat - Food choice for you</title>
-<link href="/css/review.css" type="text/css" rel="stylesheet" />
+<link href="resources/css/review.css" type="text/css" rel="stylesheet" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -47,7 +47,8 @@
 						$('#formFile').val('');
 						return false;
 					}
-				});
+				});		
+				
 			});
 
 </script>
@@ -77,19 +78,26 @@
 							<div class="comment-tag">
 								<div class="btn-group" role="group"
 									aria-label="Basic radio toggle button group">
-									<input type="checkbox" class="btn-check" name="btnradio"
-										id="taste" autocomplete="off" /> <label
-										class="btn btn-outline-danger" for="taste">#맛</label> <input
-										type="checkbox" class="btn-check" name="btnradio" id="price"
-										autocomplete="off" /> <label class="btn btn-outline-warning"
-										for="price">#가격</label> <input type="checkbox"
-										class="btn-check" name="btnradio" id="service"
-										autocomplete="off" /> <label class="btn btn-outline-info"
-										for="service">#서비스</label> <input type="checkbox"
-										class="btn-check" name="btnradio" id="mood" autocomplete="off" />
-									<label class="btn btn-outline-primary" for="mood">#분위기</label>
-									<input type="checkbox" class="btn-check" name="btnradio"
-										id="parking" autocomplete="off" /> <label
+									<input type="radio" class="btn-check" name="review_tag"
+										id="taste" autocomplete="off" value="맛"/> 
+										<label
+										class="btn btn-outline-danger" for="taste">#맛</label> 
+									<input
+										type="radio" class="btn-check" name="review_tag" id="price"
+										autocomplete="off" value="가격"/> 
+										<label class="btn btn-outline-warning"
+										for="price">#가격</label> 
+									<input type="radio"
+										class="btn-check" name="review_tag" id="service" checked
+										autocomplete="off" value="서비스"/> 
+										<label class="btn btn-outline-info"
+										for="service">#서비스</label> 
+									<input type="radio"
+										class="btn-check" name="review_tag" id="mood" autocomplete="off" value="분위기"/>
+										<label class="btn btn-outline-primary" for="mood">#분위기</label>
+									<input type="radio" class="btn-check" name="review_tag"
+										id="parking" autocomplete="off" value="주차"/> 
+										<label
 										class="btn btn-outline-success" for="parking">#주차</label>
 								</div>
 							</div>
@@ -105,7 +113,7 @@
 				<div class="row" id="row3">
 					<div class="write-buttons mt-3 d-flex justify-content-center">
 						<input class="form-control" type="file" id="formFile"
-							name="filename">
+							name="filename" accept="image/jpg,image/png/image/jpeg">
 						<button class="btn btn-primary" id="comment-send">작성완료</button>
 					</div>
 				</div>

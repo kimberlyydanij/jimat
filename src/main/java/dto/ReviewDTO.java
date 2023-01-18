@@ -10,6 +10,7 @@ public class ReviewDTO {
 	private String review_content;
 	private int review_foodstore_seq;
 	private int review_good_number;
+	private String review_tag;
 	
 	private String review_upload;
 	
@@ -81,6 +82,14 @@ public class ReviewDTO {
 
 	public void setFilename(MultipartFile filename) {
 		this.filename = filename;
+	}
+
+	public String getReview_tag() {
+		return review_tag;
+	}
+
+	public void setReview_tag(String review_tag) {
+		this.review_tag = review_tag;
 	}
 
 	

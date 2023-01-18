@@ -1,6 +1,9 @@
 package controller;
 
+
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,15 +12,21 @@ import org.springframework.web.servlet.ModelAndView;
 import dto.CurationDTO;
 import service.CurationService;
 
+import dao.MemberDaoImpl;
+import dto.KakaoDTO;
+import service.MemberServiceImpl;
+
 
 //http://localhost:8090/curationrow.do
-
+//http://localhost:8090/index.do
 @Controller
 public class CurationController {
 	
 	private CurationService cservice;
 	private CurationDTO cDTO;
-	int randomTag;
+	private MemberServiceImpl kms;
+	private KakaoDTO kdto;
+
 			
 	public CurationController() {
 		
@@ -30,16 +39,46 @@ public class CurationController {
 	public void setcDTO(CurationDTO cDTO) {
 		this.cDTO = cDTO;
 	}
+	
+	public void setMs(MemberServiceImpl kms) {
+		this.kms = kms;
+	}
+	
+    public KakaoDTO getKdto() {
+		return kdto;
+	}
 
 	@RequestMapping(value="/index.do")
 	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav) {
+		
+		if (kms != null)
+		{
+			KakaoDTO loginData = kms.getUserInfo(); 
+			String kAge = loginData.getK_age_range();
+			System.out.println(kAge);
+			String kGender = loginData.getK_gender();
+			System.out.println(kGender);
+			
+			int randomTagNo = 1+ (int)((Math.random()*1000)%17);
+
+			this.cDTO = new CurationDTO();
+			List<CurationDTO> aList = cservice.loginMatchCheckProcess(randomTagNo, kAge, kGender);
+			mav.addObject("aList", aList);
+			mav.setViewName("mainPage/index");
+
+
+		} else {
+			
 		int randomTagNo = 1+ (int)((Math.random()*1000)%17);
+
+			this.cDTO = new CurationDTO();
+			List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
+			mav.addObject("aList", aList);
+			mav.setViewName("mainPage/index");
+			System.out.println("kms is null");
+		//}
 		
-		this.cDTO = new CurationDTO();
-		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
-		mav.addObject("aList", aList);
-		mav.setViewName("mainPage/index");
-		
+		}
 		return mav;
 	}
 

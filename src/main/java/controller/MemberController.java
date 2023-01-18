@@ -74,6 +74,8 @@ public class MemberController {
 		
 		HttpSession session = httpServletRequest.getSession();
 		session.setAttribute("sessionId", userinfo.getK_id());
+		session.setAttribute("session_age_range", userinfo.getK_age_range());
+		session.setAttribute("session_gender", userinfo.getK_gender());
 //		// 아래 코드가 추가되는 내용
 //		session.invalidate();
 
@@ -87,6 +89,9 @@ public class MemberController {
 		ms.logOut();
 		HttpSession session = httpServletRequest.getSession();
 		session.removeAttribute("sessionId");
+		session.removeAttribute("session_age_range");
+		session.removeAttribute("session_gender");
+		
 		return "redirect:/index.do";
 	}
 	
@@ -96,6 +101,8 @@ public class MemberController {
 		ms.stopConn();
 		HttpSession session = httpServletRequest.getSession();
 		session.removeAttribute("sessionId");
+		session.removeAttribute("session_age_range");
+		session.removeAttribute("session_gender");
 		return "redirect:/index.do";
 	}
 }

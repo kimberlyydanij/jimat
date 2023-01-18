@@ -12,6 +12,8 @@ public interface CurationService {
 	
 	public List<CurationDTO> matchCheckProcess(int number);
 	
+	public List<CurationDTO> loginMatchCheckProcess(int number, String kAge, String kGender);
+	
 	
 	
 
