@@ -11,10 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import dto.CurationDTO;
 import service.CurationService;
-
+import service.MemberService;
 import dao.MemberDaoImpl;
 import dto.KakaoDTO;
-import service.MemberServiceImpl;
+import service.MemberService;
 
 
 //http://localhost:8090/curationrow.do
@@ -24,7 +24,7 @@ public class CurationController {
 	
 	private CurationService cservice;
 	private CurationDTO cDTO;
-	private MemberServiceImpl kms;
+	private MemberService kms;
 	private KakaoDTO kdto;
 
 			
@@ -40,7 +40,7 @@ public class CurationController {
 		this.cDTO = cDTO;
 	}
 	
-	public void setMs(MemberServiceImpl kms) {
+	public void setMs(MemberService kms) {
 		this.kms = kms;
 	}
 	
@@ -49,8 +49,15 @@ public class CurationController {
 	}
 
 	@RequestMapping(value="/index.do")
-	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav) {
-		
+	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav, HttpSession session, HttpServletRequest request) {
+
+		String sessionId = (String)session.getAttribute("sessionId");
+		System.out.println("sessionId = " + sessionId);
+		String sessionAgeRange = (String)session.getAttribute("session_age_range");
+		System.out.println("sessionAgeRange = " + sessionAgeRange);
+		String sessionGender = (String)session.getAttribute("session_gender");
+		System.out.println("sessionGender = " + sessionGender);
+
 		if (kms != null)
 		{
 			KakaoDTO loginData = kms.getUserInfo(); 
@@ -58,7 +65,7 @@ public class CurationController {
 			System.out.println(kAge);
 			String kGender = loginData.getK_gender();
 			System.out.println(kGender);
-			
+		
 			int randomTagNo = 1+ (int)((Math.random()*1000)%17);
 
 			this.cDTO = new CurationDTO();
@@ -75,7 +82,6 @@ public class CurationController {
 			List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
 			mav.addObject("aList", aList);
 			mav.setViewName("mainPage/index");
-			System.out.println("kms is null");
 		//}
 		
 		}

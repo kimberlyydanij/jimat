@@ -105,7 +105,7 @@ public class MemberServiceImpl {
 			}
 
 			//읽어온 정보 확인
-			System.out.println("response body : " + result);
+			System.out.println("1response body : " + result);
 
 			//읽어온 파일을 json 형식으로 바꿔준다.
 			JsonParser parser = new JsonParser();
@@ -170,7 +170,7 @@ public class MemberServiceImpl {
 			}
 			
 			//요청한 값 확인 (사용자 정보 리턴)
-			System.out.println("response body : " + result);
+			System.out.println("2response body : " + result);
 
 			//json타입으로 변경
 			JsonParser parser = new JsonParser();
@@ -185,7 +185,9 @@ public class MemberServiceImpl {
 			
 			//id 값을 내부 아이디식으로 변수에 저장
 			String k_id = "kakao_" + id;
-			
+
+			System.out.println("id : " + id);
+
 			//각종 정보를 변수에 저장
 			String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 			String image = properties.getAsJsonObject().get("thumbnail_image").getAsString();
@@ -205,6 +207,8 @@ public class MemberServiceImpl {
 			userinfo.setK_birthday_type(birthday_type);
 			userinfo.setK_gender(gender);
 
+			System.out.println("###id#### : " + userinfo.getK_id());		
+
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -213,7 +217,6 @@ public class MemberServiceImpl {
 		System.out.println(userinfo.getK_id());
 		//데이터 베이스 해당하는 정보가 있는지 확인
 		KakaoDTO result = mr.findkakao(userinfo);
-		System.out.println("S:" + result);
 		
 		//해당하는 정보가 없으면 데이터 베이스에 정보를 저장
 		if(result==null) {
@@ -223,7 +226,7 @@ public class MemberServiceImpl {
 			// 정보 저장 후 컨트롤러에 정보를 보내는 코드
 			
 		} else { // 정보가 이미 있기 때문에 result를 리턴
-			return result;
+			return userinfo;
 			
 		}
 
@@ -282,7 +285,7 @@ public class MemberServiceImpl {
 			}
 			
 			//요청한 값 확인 (로그아웃 된 id 값 리턴)
-			System.out.println("response body : " + result);
+			System.out.println("3response body : " + result);
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -346,7 +349,7 @@ public class MemberServiceImpl {
 			}
 			
 			//요청한 값 확인 (로그아웃 된 id 값 리턴)
-			System.out.println("response body : " + result);
+			System.out.println("4response body : " + result);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

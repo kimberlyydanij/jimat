@@ -1,11 +1,6 @@
 package dao;
 
-import java.util.HashMap;
-
 import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-
 import dto.KakaoDTO;
 
 public class MemberDaoImpl implements MemberDAO{
@@ -30,6 +25,6 @@ public class MemberDaoImpl implements MemberDAO{
 	// 정보 확인
 	public KakaoDTO findkakao(KakaoDTO userInfo) {
 		return sqlSession.selectOne("member.findKakao", userInfo);
-	}
+	} 
 
 }

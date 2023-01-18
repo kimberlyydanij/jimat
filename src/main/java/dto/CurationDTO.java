@@ -12,7 +12,6 @@ public class CurationDTO {
 	private String tag_store;
 	private int food_catetory_tag;
 	
-	
 	public CurationDTO() {
 		
 	}
@@ -108,4 +107,5 @@ public class CurationDTO {
 	}
 
 
+	
 }

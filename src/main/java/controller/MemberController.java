@@ -48,6 +48,7 @@ public class MemberController {
 	public String KakaoLogin(@RequestParam(value = "code", required = false, defaultValue = "") String code, HttpServletRequest httpServletRequest) throws Exception {
 		System.out.println("#########" + code);
 		
+		
 		//code 값을 이용해서 access_token을 받음
 		//getToken으로 access_token 값과 refresh_token 값을 받아옴
 		ms.getToken(code);
@@ -60,17 +61,17 @@ public class MemberController {
 		//MemberService를 이용해서 카카오api 정보를 가져옴
 		//getUserInfo를 통해 유저에 대한 각종 정보를 가져옴
 		KakaoDTO userinfo = ms.getUserInfo();
-//		System.out.println("check2");
+		System.out.println("check2");
 //		System.out.println("###access_Token#### : " + access_token);
-//		System.out.println("###id#### : " + userinfo.getK_id());		
-//		System.out.println("###nickname#### : " + userinfo.getK_nickname());
-//		System.out.println("###image#### : " + userinfo.getK_image());
-//		System.out.println("###email#### : " + userinfo.getK_email());
-//		System.out.println("###image#### : " + userinfo.getK_image());
-//		System.out.println("###age_range#### : " + userinfo.getK_age_range());
-//		System.out.println("###birthday#### : " + userinfo.getK_birthday());
-//		System.out.println("###birthday_type#### : " + userinfo.getK_birthday_type());
-//		System.out.println("###gender#### : " + userinfo.getK_gender());
+		System.out.println("###id#### : " + userinfo.getK_id());		
+		System.out.println("###nickname#### : " + userinfo.getK_nickname());
+		System.out.println("###image#### : " + userinfo.getK_image());
+		System.out.println("###email#### : " + userinfo.getK_email());
+		System.out.println("###image#### : " + userinfo.getK_image());
+		System.out.println("###age_range#### : " + userinfo.getK_age_range());
+		System.out.println("###birthday#### : " + userinfo.getK_birthday());
+		System.out.println("###birthday_type#### : " + userinfo.getK_birthday_type());
+		System.out.println("###gender#### : " + userinfo.getK_gender());
 		
 		HttpSession session = httpServletRequest.getSession();
 		session.setAttribute("sessionId", userinfo.getK_id());

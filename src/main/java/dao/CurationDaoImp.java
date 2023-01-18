@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import dto.CurationDTO;
@@ -22,7 +23,12 @@ public class CurationDaoImp implements CurationDAO {
 		
 		return sqlSession.selectList("curation.matchCheck", number);
 	}
-
+	
+    @Override
+    public List<CurationDTO> loginMatchCheck(HashMap<String, Object> map) {
+ 
+    	return sqlSession.selectList("curation.loginMatchCheck", map);
+    }
 
 }
 	//public CurationDTO foodStoreTag (CurationDTO checkTag) {}
