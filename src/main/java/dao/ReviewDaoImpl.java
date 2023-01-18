@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -56,13 +57,18 @@ public class ReviewDaoImpl implements ReviewDAO{
 	}
 
 	@Override
-	public int count() {
-		return sqlSession.selectOne("review.count");
+	public int count(int review_foodstore_seq) {
+		return sqlSession.selectOne("review.count", review_foodstore_seq);
 	}
 
 	@Override
-	public List<ReviewDTO> list(PageDTO pv) {
-		return sqlSession.selectList("review.list", pv);
+	public List<ReviewDTO> list(HashMap<String, Object> map) {
+		return sqlSession.selectList("review.list", map);
+	}
+
+	@Override
+	public String review_upload(int review_seq) {
+		return sqlSession.selectOne("review.review_upload", review_seq);
 	}
 	
 	

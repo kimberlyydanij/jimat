@@ -31,6 +31,7 @@
 				<value>classpath:config/review-mapper.xml</value>
 				<value>classpath:config/curation-mapper.xml</value>
 				<value>classpath:config/shopdetail-mapper.xml</value>
+				<value>classpath:config/mapMapper.xml</value>
 			</list>
 		</property>
 	</bean>

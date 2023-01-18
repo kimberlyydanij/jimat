@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="food">
+	<select id="food_countAll" parameterType="string"
+		resultType="int">
+		SELECT count(*) FROM food
+		WHERE area Like '%' || #{data} || '%'
+	</select>
+	
+	<select id="food_list" parameterType="java.util.HashMap"
+		resultType="dto.MapDTO">
+	  <![CDATA[
+		  select b.* from(
+		  select rownum as rowm, a.* from(
+		       select * from food
+		       where foodstore_name like '%' || #{keyword} || '%' 
+		       or area like '%' || #{keyword} || '%')a )b
+		 where b.rowm>=#{startpage} and b.rowm<=#{endpage}   
+			 ]]>
+	</select>
+</mapper>

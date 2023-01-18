@@ -1,5 +1,7 @@
 package service;
 
+import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -42,12 +44,32 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public void review_updateProcess(ReviewDTO dto) {
+	public void review_updateProcess(ReviewDTO dto, String urlpath) {
+		String filename = dto.getReview_upload();
+		
+		//수정한 파일 있으면
+		if(filename != null) {
+			String path = dao.review_upload(dto.getReview_seq());
+			System.out.println("path : " + path);
+			//기존 첨부파일이 있으면
+			if(path != null) {
+				File file = new File(urlpath, path);
+				file.delete();
+			}
+		}
 		dao.review_update(dto);
 	}
 
 	@Override
-	public void review_deleteProcess(int review_seq) {
+	public void review_deleteProcess(int review_seq, String urlpath) {
+		String path = dao.review_upload(review_seq);
+		
+		//num컬럼에 해당하는 첨부파일이 있으면
+		if(path!=null) {
+			File file = new File(urlpath, path);
+			file.delete();
+		}
+		
 		dao.review_delete(review_seq);
 	}
 
@@ -57,14 +79,22 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public int countProcess() {
-		return dao.count();
+	public int countProcess(int review_foodstore_seq) {
+		return dao.count(review_foodstore_seq);
 	}
 
 	@Override
-	public List<ReviewDTO> listProcess(PageDTO pv) {
-		return dao.list(pv);
+	public List<ReviewDTO> listProcess(int startRow, int endRow, int review_foodstore_seq) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		map.put("review_foodstore_seq", review_foodstore_seq);
+		
+		return dao.list(map);
 	}
+
+
 	
 	
 }

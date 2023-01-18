@@ -44,7 +44,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             <div class="curation-body pb-3 col-11 container column-row">
               <div class="row">
                 <c:forEach items="${aList3}" var="aList" begin="0" end="0">
-	              <div class="curation-title mt-3">#${aList.foodcategory}</div>
+	              <div class="curation-title mt-3">#${aList.food_category}</div>
 	            </c:forEach>
               </div>
 

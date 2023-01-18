@@ -42,6 +42,7 @@
 			/WEB-INF/spring/appServlet/servlet-context.xml
 			/WEB-INF/spring/appServlet/curation-servlet-context.xml
 			/WEB-INF/spring/appServlet/shopdetail-servlet-context.xml
+			/WEB-INF/spring/appServlet/dispatcher-map.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

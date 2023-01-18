@@ -151,9 +151,12 @@ div#title {
   width: 75px;
 }
 
-#login-button {
+.login-button {
   text-align: right;
-  margin-right: 20px;
+}
+
+.btn-log {
+	width:90px;
 }
 
 /*

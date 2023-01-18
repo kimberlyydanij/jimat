@@ -7,9 +7,9 @@ import dto.ReviewDTO;
 
 public interface ReviewService {
 	
-	public int countProcess();
+	public int countProcess(int review_foodstore_seq);
 	
-	public List<ReviewDTO> listProcess(PageDTO pv);
+	public List<ReviewDTO> listProcess(int startRow, int endRow, int review_foodstore_seq);
 	
 	public List<ReviewDTO> find_review_allProcess();
 	
@@ -21,8 +21,10 @@ public interface ReviewService {
 	
 	public void review_writeProcess(ReviewDTO dto);
 	
-	public void review_updateProcess(ReviewDTO dto);
+	public void review_updateProcess(ReviewDTO dto, String urlpath);
 	
-	public void review_deleteProcess(int review_seq);
+	public void review_deleteProcess(int review_seq, String urlpath);
+	
+
 }
  

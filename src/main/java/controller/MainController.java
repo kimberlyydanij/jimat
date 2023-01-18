@@ -53,7 +53,7 @@ public class MainController {
 	}
 
 	// 임시-상세지도
-	@RequestMapping("detailMap.do")
+	//@RequestMapping("detailMap.do")
 	public String DetailMap() {
 		return "mainPage/detailMap";
 	}

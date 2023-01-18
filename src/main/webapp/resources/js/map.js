@@ -1,4 +1,4 @@
-//기본값 저장
+//기본값저장
 var keyword;
 var pageNo;
 var totalPage;
@@ -18,7 +18,7 @@ function pageSearch(totalPage, total, blockSize, blockPage) {
 				'pageSize' : total,
 				'keyword' : keyword
 			},
-			url : 'libmap.do',
+			url : 'foodmap.do',
 			success : function(result) {
 				var search = result.aList;
 				pageNo = result.pageNo;
@@ -45,6 +45,30 @@ mapOption = {
 // 지도를 생성합니다
 var map = new daum.maps.Map(mapContainer, mapOption);
 
+// 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+function setMapType(maptype) {
+	var roadmapControl = document.getElementById('btnRoadmap');
+	var skyviewControl = document.getElementById('btnSkyview');
+	if (maptype === 'roadmap') {
+		map.setMapTypeId(daum.maps.MapTypeId.ROADMAP);
+		roadmapControl.className = 'selected_btn';
+		skyviewControl.className = 'btn';
+	} else {
+		map.setMapTypeId(daum.maps.MapTypeId.HYBRID);
+		skyviewControl.className = 'selected_btn';
+		roadmapControl.className = 'btn';
+	}
+}
+
+// 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+function zoomIn() {
+	map.setLevel(map.getLevel() - 1);
+}
+
+// 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+function zoomOut() {
+	map.setLevel(map.getLevel() + 1);
+}
 
 // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
 var infowindow = new daum.maps.InfoWindow({
@@ -69,6 +93,7 @@ function searchPlaces() {
 
 }
 
+
 function searchkeyWord(keyword) {
 	//alert(keyword);
 	// 한페이지당 표시될 화면 계산
@@ -85,7 +110,7 @@ function searchkeyWord(keyword) {
 			'pageSize' : total,
 			'keyword' : keyword
 		},
-		url : 'libmap.do',
+		url : 'foodmap.do',
 		success : function(result) {
 			var search = result.aList;
 			pageNo = result.pageNo;
@@ -102,7 +127,7 @@ function searchkeyWord(keyword) {
 
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces(search) {
-	// alert(search.length);
+	//alert(search.length);
 	var listEl = document.getElementById('placesList'), menuEl = document
 			.getElementById('menu_wrap'), fragment = document
 			.createDocumentFragment(), bounds = new daum.maps.LatLngBounds(), listStr = '';
@@ -177,28 +202,31 @@ function displayPlaces(search) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, search, marker) {
 
-	var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
+	var el = document.createElement('li'),
+	itemStr = '<span class="markerbg marker_'
 			+ (index + 1)
 			+ '"></span>'
+			+ '<a href="detailpage.do?latitude=' + `${search.latitude}` + '&longitude=' + `${search.longitude}` 
+	itemStr += '&food_category=' + `${search.food_category}`.replace(" ","+")
+	itemStr += '&img_url=' + `${search.img_url}`.replace(" ","+") 
+	itemStr += '&foodstore_name=' + `${search.foodstore_name}`.replace(" ","+")
+	itemStr += '&store_num=' + `${search.store_num}`.replace(" ","+")
+	itemStr += '&address=' + `${search.address}`.replace(" ","+")
+	itemStr += '&working_time=' + `${search.working_time}`.replace(" ","+")
+	itemStr += '&menu_namesearch=' + `${search.menu_namesearch}`.replace(" ","+")
+	itemStr += '&menu_pricesearch=' + `${search.menu_pricesearch}`.replace(" ","+")
+	itemStr += '">' 
 			+ '<div class="info">'
-			+ '   <h5>'
-			+ search.foodstore_id + '</h5>';
-
-	if (search.newAddress) {
-		itemStr += '<span>' + search.address + '</span>'
-				+ '<span class="jibun gray">' + search.address
-				+ '</span>';
-	} else {
-		itemStr += '<span>' + search.address + '</span>';
-	}
-
-	itemStr += '<span class="tel">' +search.foodcategory + '</span>'
-
-			
-	itemStr += '<span class="typ">' +search.foodstroe_num + '</span>'
+			+ '<h5>'
+			+ search.foodstore_name + '</h5>'
+	itemStr += '<span>' + search.address + '</span>';
 	
-	itemStr += '<img src = searchs.img_url  enctype="multipart/form-data" style="float:right">'
+
+	itemStr += '<span class="tel">' +search.store_num  + '</span>'
+	itemStr += '<span class="typ">' +search.food_category + '</span>'
+	itemStr += '<img src =' + `${search.img_url}` + ' enctype="multipart/form-data" width=100 style="float:right">'
 			+ '</div>';
+			+ '</a>';
 	
 	el.innerHTML = itemStr;
 	el.className = 'item';
@@ -278,11 +306,11 @@ function displayPagination(totalPage, total, blocksize, pageNo) {
 function displayInfowindow(marker, title, searchs) {
 
 	
-	var content = '<div class ="f_main"><div id="f_date">' + '<img src =' + `${searchs.img_url}` +' enctype="multipart/form-data" width=50 style="float:left">' +'</div>'
-			+ '<div class="f_header" style="text-align:right">' + searchs.foodstore_id
-			+ '</div>' + '<div id="f_date" style="text-align:right">' + searchs.foodcategory
-			+ '</div>' + '<div id="f_date" style="text-align:right">' + searchs.foodstroe_num
-			+ '</div>' + '<div id="f_number">'
+	var content = '<div class ="f_main"><div id="f_img_url">' + '<img src =' + `${searchs.img_url}` +' enctype="multipart/form-data" width=50 style="float:left">' +'</div>'
+			+ '<div class="f_header" style="text-align:right">' + searchs.foodstore_name
+			+ '</div>' + '<div id="f_store_num" style="text-align:right">' + searchs.store_num 
+			+ '</div>' + '<div id="f_food_category" style="text-align:right">' + searchs.food_category
+			+ '</div>' + '<div id="f_address">'
 			+ searchs.address + '</div></div>'; 
 
 	// content의 내용을 인포윈도우에 등록

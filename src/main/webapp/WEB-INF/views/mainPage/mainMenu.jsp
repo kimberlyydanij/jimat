@@ -31,11 +31,21 @@
 			<div class="row">
 				<div class="login mt-3">
 					<div class="row">
-						<div class="login-button justify-content-end" id="login-button">
-							<span>
-								<button type="button" class="btn btn-secondary" id="login"
-									value="로그인" onclick="popup_login();">
-									로그인</button>
+						<div class="login-button justify-content-end">
+							<span> <c:choose>
+									<c:when test="${empty sessionScope.sessionId}">
+										<button type="button" class="btn btn-secondary btn-log" id="login"
+											value="로그인" onclick="popup_login();">로그인</button>
+									</c:when>
+									<c:otherwise>
+										<form method="post" class=login-button>				
+										 	<a href="/logoutpage.do"> 
+											<button type="button" class="btn btn-secondary btn-log" id="logout"
+											value="로그아웃">로그아웃</button>	
+											</a>
+										</form>
+									</c:otherwise>
+								</c:choose>
 							</span>
 						</div>
 					</div>
@@ -54,12 +64,9 @@
 								<li class="nav-item"><a class="nav-link menu-oneKmMap"
 									href="javascript: oneKmMap()">반경1km</a></li>
 								<li class="nav-item menu-magazine"><a class="nav-link"
-									href="javascript: magazine();">Magazine</a>
-								</li>
+									href="javascript: magazine();">Magazine</a></li>
 								<li class="nav-item"><a class="nav-link menu-myPage"
 									href="javascript: myPage();">My Page</a></li>
-								<li class="nav-item"><a class="nav-link"
-									href="javascript: shopDetail();">임시_상세</a></li>
 								<li class="nav-item"><a class="nav-link"
 									href="javascript: detailMap();">임시_상세맵</a>
 								</li>

@@ -4,7 +4,7 @@
 <mapper namespace="shopDetail"> 
 	<!-- 정보 찾기 -->
 	<select id="shopDetailData" parameterType="String" resultType="dto.ShopDetailDTO">
-		select * from SEOULFOODSAMPLE where foodstore_id=#{number, jdbcType=VARCHAR} 
+		select * from SEOULFOODSTORE where foodstore_id=#{number, jdbcType=VARCHAR} 
 	</select>
 
 </mapper>

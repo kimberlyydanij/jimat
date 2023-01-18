@@ -42,11 +42,14 @@ var shopLong="<c:out value="${adto.longitude}" />";
 			<%-- 메인 메뉴 불러오기 --%>
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
+
+            <%-- shop-detail wrap --%>
 		<div class="row">
 			<div class="shop-detail-wrap col-12 mt-2 ms-3 column-row"
 				id="shop-detail-wrap">
 				<div class="row">
 					<div class="shop-detail-header container d-flex">
+            <%-- shop-left --%>
 						<div class="col-9 container shop-left column-row py-2 px-0 ms-0 me-0">
 							<div class="shop-main-image">
 								<img src="${adto.img_url}"/>
@@ -57,12 +60,10 @@ var shopLong="<c:out value="${adto.longitude}" />";
 										<div class="shop-name col-7 pe-3">
 											<!-- 업소 이름 -->
 											<p id="shop-name"><c:out value="${adto.foodstore_name}"/></p>
-											
 										</div>
 										<div class="col-3 shop-category">
 											<!-- 1차/2차 카테고리 -->
-											<p id="shop-category"><c:out value="${adto.foodtype}"/></p>
-
+											<p id="shop-category"><c:out value="${adto.food_category}"/></p>
 										</div>
 										<div class="d-flex col-2" id='div-shop-rating'>
 											<div>
@@ -80,52 +81,42 @@ var shopLong="<c:out value="${adto.longitude}" />";
 								<div class="shop-info-detail d-flex mt-1">
 									<div class="shop-address">
 										<p id="shop-address"><c:out value="${adto.address}"/></p>
-										<p id="shop-phone"><c:out value="${adto.foodstore_num}"/></p>
+										<p id="shop-phone"><c:out value="${adto.store_num}"/></p>
 									</div>
 									<div class="shop-etc">
 										<p id="shop-close"><c:out value="${adto.working_time}"/></p>
-										<p id="shop-etc">수정해야함</p>								</div>
 								</div>
 							</div>
 						</div>
-						
-						<div class="col-4 shop-right column-row p-2 mx-0">
+					</div>
+
+                    <%-- shop-right --%>
+                    <div class="col-4 container shop-right column-row py-2 px-0 ms-2 me-0">
 							<div class="shop-map" id="staticMap"></div>
 							<div class="shop-menu column-low mt-3 p-3" id="shop-menu">
 								<div class="row">
 									<p id="shop-menu">메뉴</p>
 								</div>
 								<div class="d-flex">
-									<div class="col-9" id="shop-menu-detail">
-										<p id="shop-menu-detail">소금구이 (1인분)(150g)</p>
-										<p id="shop-menu-detail">전통평양냉면</p>
-										<p id="shop-menu-detail">전통평양비빔냉면</p>
-										<p id="shop-menu-detail">온면</p>
-										<p id="shop-menu-detail">김치말이냉면</p>
-										<p id="shop-menu-detail">장국밥</p>
-										<p id="shop-menu-detail">9개까지</p>
-										<p id="shop-menu-detail">넘어가면</p>
-										<p id="shop-menu-detail">안보임</p>
-									</div>
-									<div class="col-3" id="shop-menu-price">
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">15,000원</p>
-										<p id="shop-menu-price">15,000원</p>
-										<p id="shop-menu-price">15,000원</p>
-										<p id="shop-menu-price">0,000원</p>
+									<div class="col-8" id="shop-menu-detail">
+										<c:forTokens items="${adto.menu_NameSearch}" delims="," var="menu"> 
+										 <p id="shop-menu-detail">
+											${menu}
+										</p>
+										</c:forTokens></div>
+									<div class="col-4" id="shop-menu-price">
+										<c:forTokens items="${adto.menu_PriceSearch}" delims="/" var="price"> 
+										 <p id="shop-price-detail">
+											${price} 원
+										</p>
+										</c:forTokens>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 			</div>
 		</div>
-
+</div>
 	<div class="row m-0">
 		<%-- 리뷰 불러오기 --%>
 		<jsp:include page="/WEB-INF/views/mainPage/review.jsp"></jsp:include>

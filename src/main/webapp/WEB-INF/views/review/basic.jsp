@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="reviewlist.do" method="post">
-		<input type="text" name="review_writer_id" placeholder="id를 입력하세요">
-		<input type="submit" value="검색">
-	</form>
+<div style="text-align:center"><h4>로그인이 필요한 페이지입니다.</h4></div>
 </body>
 </html>

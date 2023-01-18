@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 div.shop-left {
-  min-width : 980px;
+  width : 960px;
 }
 
 div.shop-right {
@@ -67,6 +67,7 @@ div.shop-menu {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+    min-height : 285px;
 }
 
 div#shop-menu-detail,
@@ -77,10 +78,18 @@ div.shop-info-detail p {
   font-size: 1rem;
 }
 div#shop-menu-price,
-p#shop-menu-price {
+p#shop-price-detail {
   margin: 0px;
   text-align: right;
   font-size: 1rem;
+}
+
+
+p#shop-menu-detail{
+  width:180px;	
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;	
 }
 
 .label#stars {

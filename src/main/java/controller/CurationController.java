@@ -33,7 +33,7 @@ public class CurationController {
 
 	@RequestMapping(value="/index.do")
 	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav) {
-		int randomTagNo = (int)((Math.random()*1000)%41);
+		int randomTagNo = 1+ (int)((Math.random()*1000)%17);
 		
 		this.cDTO = new CurationDTO();
 		List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
@@ -51,7 +51,7 @@ public class CurationController {
 	//http://localhost:8090/curationrow.do
 	@RequestMapping(value="/curationrow.do")
 	public ModelAndView curationRowBody(CurationDTO cDTO, ModelAndView mav) {
-        int randomTagNo = (int)((Math.random()*1000)%41);
+        int randomTagNo = 1 + (int)((Math.random()*1000)%17);
 		
 		this.cDTO = new CurationDTO();
 		int inc = 0;
@@ -67,7 +67,7 @@ public class CurationController {
 	
 	@RequestMapping(value="/curation.do")
 	public ModelAndView curationBody(CurationDTO cDTO, ModelAndView mav) {
-		int randomTagNo = (int)((Math.random()*1000)%41);
+		int randomTagNo = 1 + (int)((Math.random()*1000)%17);
 		
 		this.cDTO = new CurationDTO();
 		int inc = 0;
@@ -76,19 +76,19 @@ public class CurationController {
 		while (aList0.size() == 0)
 			aList0 = cservice.matchCheckProcess(randomTagNo + (++inc));
 		
-		List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 17);
 		while (aList1.size() == 0)
 			aList1 = cservice.matchCheckProcess(randomTagNo + (++inc));
 		
-		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 17);
 		while (aList2.size() == 0)
 			aList2 = cservice.matchCheckProcess(randomTagNo + (++inc));
 
-		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 17);
 		while (aList3.size() == 0)
 			aList3 = cservice.matchCheckProcess(randomTagNo + (++inc));
 		
-		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 41);
+		List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + (++inc)) % 17);
 		while (aList4.size() == 0)
 			aList4 = cservice.matchCheckProcess(randomTagNo + (++inc));
 
