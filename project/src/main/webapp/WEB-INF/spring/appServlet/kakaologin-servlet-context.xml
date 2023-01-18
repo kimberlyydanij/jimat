@@ -9,11 +9,11 @@
 
 
 
-	<!-- [4] Repository 빈 선언-->
+	<!-- [4] Repository 빈 선언  -->
 	<bean id="repository"
 		class="dao.MemberDaoImpl">
-		<property name="sqlSession" ref="sqlSession" />
-	</bean>
+		<property name="sqlSession" ref="sqlSession" /> 
+	</bean> 
 
 		<!-- [5] Service 빈 선언 -->
 	<bean id="login_service" class="service.MemberServiceImpl">

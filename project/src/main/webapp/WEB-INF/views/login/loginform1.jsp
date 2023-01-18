@@ -14,8 +14,8 @@
 	crossorigin="anonymous" />
 <script src="https://kit.fontawesome.com/edd4d6d779.js"
 	crossorigin="anonymous"></script>
-<link href="<c:url value='/css/main.css'/>" type="text/css" rel="stylesheet" />
-<link href="<c:url value='/css/login.css'/>" type="text/css" rel="stylesheet" />
+<link href="<c:url value='/resources/css/main.css'/>" type="text/css" rel="stylesheet" />
+<link href="<c:url value='/resources/css/login.css'/>" type="text/css" rel="stylesheet" />
 <script defer src="/js/main.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -30,19 +30,19 @@
 	<div class="body-wrap m-1 p-4 columns-row mt-3">
 		<br />
 		<div class="login_info my-2" >
-			<img src="images/KakaoTalk_login_comment1.png" />
+			<img src="resources/images/KakaoTalk_login_comment1.png" />
 		</div>
 		<div class="login_btn my-5">
 
 			<!-- controller KakaoLogin으로 연결 -->
 			<a class="kakao_btn"
 				href="https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code ">
-				<img src="images/kakao_login_medium_narrow.png">
+				<img src="resources/images/kakao_login_medium_narrow.png">
 			</a>
 
 		</div>
 		<div class="login_info my-5">
-			<img src="images/KakaoTalk_login_comment2.png" />
+			<img src="resources/images/KakaoTalk_login_comment2.png" />
 		</div>
 	</div>
 </body>

@@ -21,9 +21,10 @@ public interface ReviewService {
 	
 	public void review_writeProcess(ReviewDTO dto);
 	
-	public void review_updateProcess(ReviewDTO dto);
+	public void review_updateProcess(ReviewDTO dto, String urlpath);
 	
-	public void review_deleteProcess(int review_seq);
-
+	public void review_deleteProcess(int review_seq, String urlpath);
+	
+	public String review_imageProcess(String review_writer_id);
 }
  

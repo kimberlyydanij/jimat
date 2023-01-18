@@ -25,4 +25,8 @@ public interface ReviewDAO {
 	public void review_update(ReviewDTO dto);
 	
 	public void review_delete(int review_seq);
+	
+	public String review_upload(int review_seq);
+	
+	public String review_image(String review_writer_id);
 } 

@@ -1,5 +1,7 @@
 package dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ReviewDTO {
 
 	private int review_seq;
@@ -8,6 +10,11 @@ public class ReviewDTO {
 	private String review_content;
 	private int review_foodstore_seq;
 	private int review_good_number;
+	private String review_tag;
+	private int review_rating;
+	private String review_upload;
+	
+	private MultipartFile filename;
 	
 	public ReviewDTO() {
 
@@ -59,6 +66,38 @@ public class ReviewDTO {
 
 	public void setReview_good_number(int review_good_number) {
 		this.review_good_number = review_good_number;
+	}
+
+	public String getReview_upload() {
+		return review_upload;
+	}
+
+	public void setReview_upload(String review_upload) {
+		this.review_upload = review_upload;
+	}
+
+	public MultipartFile getFilename() {
+		return filename;
+	}
+
+	public void setFilename(MultipartFile filename) {
+		this.filename = filename;
+	}
+
+	public String getReview_tag() {
+		return review_tag;
+	}
+
+	public void setReview_tag(String review_tag) {
+		this.review_tag = review_tag;
+	}
+
+	public int getReview_rating() {
+		return review_rating;
+	}
+
+	public void setReview_rating(int review_rating) {
+		this.review_rating = review_rating;
 	}
 
 	
