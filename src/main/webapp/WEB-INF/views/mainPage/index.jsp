@@ -51,5 +51,6 @@
       <div class="row">
       <jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
       </div>  
+      <script defer src="${path}/resources/js/map.js"></script>
   </body>
 </html>

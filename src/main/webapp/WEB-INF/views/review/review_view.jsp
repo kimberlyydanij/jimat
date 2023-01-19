@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="review_dto" value="${aList}" />
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,6 +18,7 @@
 	crossorigin="anonymous"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link href="resources/css/review.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 	<p>sessionId = ${sessionScope.sessionId}</p>
@@ -29,7 +32,7 @@
 					hidden=hidden> <input type="text" name="review_seq"
 					value="${dto.review_seq}" hidden=hidden>
 				<div class="card p-3 col-lg-9 mt-3"
-					id="comment-body${aList[status.index].review_seq}">
+					id="comment-body${dto.review_seq}">
 					<div class="card p-3 justify-content-start mt-2">
 						<div class="row">
 							<div class="card-title">
@@ -61,24 +64,29 @@
 								<div class="comment-widgets d-flex m-b-20">
 									<div class="profile column-row mt-3">
 										<div class="profile-image">
-											<span class="round"><img
-												src="/data/images/profile1.png" alt="user" width="80"
-												id="user_profile_image${dto.review_seq}" /> </span>
+											<span class="round"> <c:choose>
+													<c:when test="${!empty review_image_list[status.index]}">
+														<img src="${review_image_list[status.index]}" alt="user"
+															width="80" id="user_profile_image${dto.review_seq}" />
+													</c:when>
+													<c:otherwise>
+														<img src="resources/images/test-images/profile1.png"
+															alt="user" width="80"
+															id="user_profile_image${dto.review_seq}" />
+													</c:otherwise>
+												</c:choose>
+											</span>
 										</div>
 										<div
 											class="comment-options mt-3 d-flex justify-content-center">
 
-											<!-- 여기 하는 중 -->
-
-											<div class="btn-group" role="group"
-												aria-label="Basic checkbox toggle button group" id="i-heart">
-												<input type="checkbox" class="btn-check" name="heart"
-													autocomplete="off" /> <label class="btn-outline-danger"
-													for="i-heart"> <i class="fa fa-heart fa-lg"> </i> </i>
-												</label>
+											<div class="bookmark">
+												<input type="checkbox" class="btn-check"
+													id="review-bookmark${dto.review_seq}" autocomplete="off" /> <label
+													class="btn btn-bookmark" for="review-bookmark${dto.review_seq}"><i
+													class="fa-solid fa-heart fa-lg"> </i> </label>
 											</div>
 
-											<!-- -->
 											<p class="ms-1">5</p>
 										</div>
 									</div>
@@ -89,14 +97,97 @@
 											</div>
 											<div class="user-rating d-flex">
 												<div class="rating flex-row-reverse">
-													<input type="radio" name="rating" value="1" id="1" /><label
-														for="1">☆</label> <input type="radio" name="rating"
-														value="2" id="2" /><label for="2">☆</label> <input
-														type="radio" name="rating" value="3" id="3" /><label
-														for="3">☆</label> <input type="radio" name="rating"
-														value="4" id="4" /><label for="4">☆</label> <input
-														type="radio" name="rating" value="5" id="5" /><label
-														for="5">☆</label>
+													<c:choose>
+														<c:when test="${dto.review_rating==5}">
+															<input type="radio" name="review_rating" value="5" id="5"
+																readonly="readonly" checked="checked" />
+															<label id="stars" for="5">☆</label>
+															<input type="radio" name="review_rating" value="4" id="4"
+																readonly="readonly" />
+															<label id="stars" for="4">☆</label>
+															<input type="radio" name="review_rating" value="3" id="3"
+																readonly="readonly" />
+															<label id="stars" for="3">☆</label>
+															<input type="radio" name="review_rating" value="2" id="2"
+																readonly="readonly" />
+															<label id="stars" for="2">☆</label>
+															<input type="radio" name="review_rating" value="1" id="1"
+																readonly="readonly" />
+															<label id="stars" for="1">☆</label>
+														</c:when>
+
+														<c:when test="${dto.review_rating==4}">
+															<input type="radio" name="review_rating" value="5" id="5"
+																readonly="readonly" />
+															<label id="stars" for="5">☆</label>
+															<input type="radio" name="review_rating" value="4" id="4"
+																readonly="readonly" checked="checked" />
+															<label id="stars" for="4">☆</label>
+															<input type="radio" name="review_rating" value="3" id="3"
+																readonly="readonly" />
+															<label id="stars" for="3">☆</label>
+															<input type="radio" name="review_rating" value="2" id="2"
+																readonly="readonly" />
+															<label id="stars" for="2">☆</label>
+															<input type="radio" name="review_rating" value="1" id="1"
+																readonly="readonly" />
+															<label id="stars" for="1">☆</label>
+														</c:when>
+
+														<c:when test="${dto.review_rating==3}">
+															<input type="radio" name="review_rating" value="5" id="5"
+																readonly="readonly" />
+															<label id="stars" for="5">☆</label>
+															<input type="radio" name="review_rating" value="4" id="4"
+																readonly="readonly" />
+															<label id="stars" for="4">☆</label>
+															<input type="radio" name="review_rating" value="3" id="3"
+																readonly="readonly" checked="checked" />
+															<label id="stars" for="3">☆</label>
+															<input type="radio" name="review_rating" value="2" id="2"
+																readonly="readonly" />
+															<label id="stars" for="2">☆</label>
+															<input type="radio" name="review_rating" value="1" id="1"
+																readonly="readonly" />
+															<label id="stars" for="1">☆</label>
+														</c:when>
+
+														<c:when test="${dto.review_rating==2}">
+															<input type="radio" name="review_rating" value="5" id="5"
+																readonly="readonly" />
+															<label id="stars" for="5">☆</label>
+															<input type="radio" name="review_rating" value="4" id="4"
+																readonly="readonly" />
+															<label id="stars" for="4">☆</label>
+															<input type="radio" name="review_rating" value="3" id="3"
+																readonly="readonly" />
+															<label id="stars" for="3">☆</label>
+															<input type="radio" name="review_rating" value="2" id="2"
+																readonly="readonly" checked="checked" />
+															<label id="stars" for="2">☆</label>
+															<input type="radio" name="review_rating" value="1" id="1"
+																readonly="readonly" />
+															<label id="stars" for="1">☆</label>
+														</c:when>
+
+														<c:when test="${dto.review_rating==1}">
+															<input type="radio" name="review_rating" value="5" id="5"
+																readonly="readonly" />
+															<label id="stars" for="5">☆</label>
+															<input type="radio" name="review_rating" value="4" id="4"
+																readonly="readonly" />
+															<label id="stars" for="4">☆</label>
+															<input type="radio" name="review_rating" value="3" id="3"
+																readonly="readonly" />
+															<label id="stars" for="3">☆</label>
+															<input type="radio" name="review_rating" value="2" id="2"
+																readonly="readonly" />
+															<label id="stars" for="2">☆</label>
+															<input type="radio" name="review_rating" value="1" id="1"
+																readonly="readonly" checked="checked" />
+															<label id="stars" for="1">☆</label>
+														</c:when>
+													</c:choose>
 												</div>
 											</div>
 											<div class="write_date">
@@ -116,9 +207,9 @@
 													<c:when test="${dto.review_tag == '분위기'}">
 														<button type="button" class="btn btn-primary">분위기</button>
 													</c:when>
-													<c:otherwise>
+													<c:when test="${dto.review_tag == '주차'}">
 														<button type="button" class="btn btn-success">주차</button>
-													</c:otherwise>
+													</c:when>
 												</c:choose>
 											</div>
 										</div>
@@ -145,6 +236,5 @@
 			</form>
 		</c:forEach>
 	</c:if>
-
 </body>
 </html>

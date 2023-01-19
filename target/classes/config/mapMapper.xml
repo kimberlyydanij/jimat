@@ -16,7 +16,7 @@
 		  select b.* from(
 		  select rownum as rowm, a.* from(
 		       select * from SEOULFOODSTORE
-		       where foodstore_name like '%' || #{keyword} || '%' 
+		       where foodstore_name like '%' || #{keyword} || '%' or food_category like '%' || #{keyword} || '%' or address like '%' || #{keyword} || '%' 
 		       or area like '%' || #{keyword} || '%')a )b
 		 where b.rowm>=#{startpage} and b.rowm<=#{endpage}   
 			 ]]>

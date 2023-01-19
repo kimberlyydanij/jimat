@@ -38,7 +38,7 @@ var markers = [];
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 mapOption = {
 	center : new daum.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-	level : 5
+	level : 4
 // 지도의 확대 레벨
 };
 
@@ -86,9 +86,10 @@ function searchPlaces() {
 		alert('키워드를 입력해주세요!');
 		return false;
 	} else {
-		infowindow.close();
-		
-		searchkeyWord(keyword);
+	 			sessionStorage.setItem("sKeyword", keyword); 
+				var url = "map.do?keyword=" +keyword;
+				location.replace(url);
+		       	searchkeyWord(keyword);
 	}
 
 }
@@ -217,14 +218,14 @@ function getListItem(index, search, marker) {
 	itemStr += '&menu_pricesearch=' + `${search.menu_pricesearch}`.replace(" ","+")
 	itemStr += '">' 
 			+ '<div class="info">'
-			+ '<h5>'
+			itemStr += '<img src =' + `${search.img_url}` + ' enctype="multipart/form-data" height = 200 width=300 style="float:right">'
+			+ '<h5 style= "font-size: 20px;">'
 			+ search.foodstore_name + '</h5>'
-	itemStr += '<span>' + search.address + '</span>';
+	itemStr += '<span style= "font-size: 20px;">' + search.address + '</span>';
 	
-
-	itemStr += '<span class="tel">' +search.store_num  + '</span>'
-	itemStr += '<span class="typ">' +search.food_category + '</span>'
-	itemStr += '<img src =' + `${search.img_url}` + ' enctype="multipart/form-data" width=100 style="float:right">'
+	
+	itemStr += '<span class="tel" style= "font-size: 20px;">' +search.store_num  + '</span>'
+	itemStr += '<span class="typ" style= "font-size: 20px;">' +search.food_category + '</span>'
 			+ '</div>';
 			+ '</a>';
 	
@@ -306,12 +307,9 @@ function displayPagination(totalPage, total, blocksize, pageNo) {
 function displayInfowindow(marker, title, searchs) {
 
 	
-	var content = '<div class ="f_main"><div id="f_img_url">' + '<img src =' + `${searchs.img_url}` +' enctype="multipart/form-data" width=50 style="float:left">' +'</div>'
-			+ '<div class="f_header" style="text-align:right">' + searchs.foodstore_name
-			+ '</div>' + '<div id="f_store_num" style="text-align:right">' + searchs.store_num 
-			+ '</div>' + '<div id="f_food_category" style="text-align:right">' + searchs.food_category
-			+ '</div>' + '<div id="f_address">'
-			+ searchs.address + '</div></div>'; 
+	var content = '<div class ="f_main" >' + '<div class="f_header" style="text-align:left; font-weight: 900;" >' + searchs.foodstore_name +'</div>'
+		    + '<div id="f_food_category" style="text-align:left">' + searchs.food_category
+			+ '</div>' +  '</div>'; 
 
 	// content의 내용을 인포윈도우에 등록
 	infowindow.setContent(content);
@@ -324,3 +322,4 @@ function removeAllChildNods(el) {
 		el.removeChild(el.lastChild);
 	}
 }
+

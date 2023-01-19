@@ -57,12 +57,16 @@ public class ReviewController {
 			pdto = new PageDTO(currentPage, totalRecord);
 			List<ReviewDTO> aList = service.listProcess(pdto.getStartRow(), pdto.getEndRow(), review_foodstore_seq);
 			List<String> alist_write_date = new ArrayList<String>();
+			List<String> review_image_list = new ArrayList<String>();
 			for(ReviewDTO review_list:aList) {
 				String[] convert_list1 = review_list.getReview_write_date().split("/");
 				alist_write_date.add(convert_list1[0] +"년 " + convert_list1[1] + "월 " + convert_list1[2] + "일");
+				
+				review_image_list.add(service.review_imageProcess(review_list.getReview_writer_id()));
 			}
 			mav.addObject("aList", aList);
 			mav.addObject("alist_write_date", alist_write_date);
+			mav.addObject("review_image_list", review_image_list);
 			mav.addObject("pv", pdto);
 			mav.setViewName("review/review");
 		}	
@@ -108,8 +112,8 @@ public class ReviewController {
 	@RequestMapping(value="review_update.do", method=RequestMethod.POST)
 	public String review_updatePro(ReviewDTO dto, HttpServletRequest request) {
 		MultipartFile file = dto.getFilename();
-		System.out.println("file : " + file);
-		System.out.println("review_content : " + dto.getReview_content());
+//		System.out.println("file : " + file);
+//		System.out.println("review_content : " + dto.getReview_content());
 		if(!file.isEmpty()) {
 			UUID random = save_copy_file(file, request);
 			dto.setReview_upload(random + "_" + file.getOriginalFilename());

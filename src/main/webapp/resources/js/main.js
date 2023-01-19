@@ -31,6 +31,7 @@ function shopDetail() {
 function detailMap() {
   document.location.href="map.do"
 }
+
 function popup_login(href, w, h) {
   var href = "loginformpage.do";
   var w = 466;

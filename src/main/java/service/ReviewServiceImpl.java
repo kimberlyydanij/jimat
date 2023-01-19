@@ -94,6 +94,11 @@ public class ReviewServiceImpl implements ReviewService{
 		return dao.list(map);
 	}
 
+	@Override
+	public String review_imageProcess(String review_writer_id) {
+		return dao.review_image(review_writer_id);
+	}
+
 
 	
 	

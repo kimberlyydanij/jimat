@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import dto.MapDTO;
 import service.MapService;
 
-// http://localhost:8090/map.do
+// http://localhost:8090/myapp/map.do
 
 @Controller
 public class MapController {

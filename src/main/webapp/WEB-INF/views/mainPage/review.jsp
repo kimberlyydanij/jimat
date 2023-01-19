@@ -83,6 +83,9 @@
 				</div>
 			</div>
 			<div class="row">
+	
+	 <!-- 사용자 작성 리뷰 1단 시작 -->
+				
 				<div class="profile-body container">
 					<div class="comment-widgets d-flex m-b-20">
 						<div class="profile column-row mt-3 ms-2">
@@ -99,9 +102,9 @@
 								</div>
 
 								<div class="bookmark">
-									<input type="checkbox" class="btn-check" id="review-bookmark"
+									<input type="checkbox" class="btn-check" id="review-bookmark1"
 										autocomplete="off" /> <label
-										class="btn btn-bookmark" for="review-bookmark"><i
+										class="btn btn-bookmark" for="review-bookmark1"><i
 										class="fa-solid fa-heart fa-lg"> </i> </label>
 								</div>
 
@@ -165,6 +168,9 @@
 						</div>
 					</div>
 				</div>
+
+ <!-- 리뷰 1단 끝 -->
+ 				
 			</div>
 		</div>
 	</div>

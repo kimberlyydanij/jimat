@@ -75,17 +75,17 @@
 							<div class="shop-map" id="staticMap"></div>
 							<div class="shop-menu column-low mt-3 p-3" id="shop-menu">
 								<div class="row">
-									<p id="shop-menu">메뉴</p>
+									<p id="shop-menu" style="text-align: center">메뉴</p>
 								</div>
 								<div class="d-flex">
-									<div class="col-9" id="shop-menu-detail" style="overflow: hidden; word-break:break-all; font-size: 13px; font-weight: 900;">
+									<div class="col-9" id="shop-menu-detail">
 										<c:forTokens var="item" items="${menu_namesearch}" delims=",">
-											<p>${item}</p>
+											<p style=" text-overflow:ellipsis;  overflow:hidden;  white-space:nowrap; margin: 0px; text-align: left;font-size: 1rem;">${item}</p>
 										</c:forTokens>
 									</div>
-									<div class="col-3" id="shop-menu-price" style="font-size: 13px; font-weight: 900;">
+									<div class="col-3" id="shop-menu-price">
 										<c:forTokens var="item" items="${menu_pricesearch}" delims="/">
-											<p>${item}</p>
+											<p style="margin: 0px; text-align: right;font-size: 1rem;">${item}</p>
 										</c:forTokens>
 									</div>
 								</div>

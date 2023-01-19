@@ -17,16 +17,9 @@
 	crossorigin="anonymous"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
-<!--
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
-<script charset="UTF-8"
-	src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"></script> 
--->
+
 <script defer src="${path}/resources/js/main.js"></script>
-<!-- <script defer src="${path}/resources/js/map.js"></script> -->
+
 </head>
 
 <body>
@@ -70,8 +63,8 @@
 										Vita500</a></li>
 								<li class="nav-item"><a class="nav-link menu-curation"
 									href="javascript: curation()">맛집추천</a></li>
-								<li class="nav-item"><a class="nav-link menu-oneKmMap"
-									href="javascript: oneKmMap()">반경1km</a></li>
+							<!--  <li class="nav-item"><a class="nav-link menu-oneKmMap"
+									href="javascript: oneKmMap()">반경1km</a></li> -->	
 								<li class="nav-item menu-magazine"><a class="nav-link"
 									href="javascript: magazine();">Magazine</a></li>
 								<li class="nav-item"><a class="nav-link menu-myPage"
@@ -83,8 +76,8 @@
 							<form class="d-flex" onsubmit="searchPlaces(); return false">
 								<input class="form-control me-sm-4" type="search"
 									placeholder="검색어를 입력하세요" id="keyword" />
-								<button class="btn btn-secondary my-2 my-sm-0" type="submit">
-									Search</button>
+								<button class="btn btn-secondary my-2 my-sm-0" type="submit" >
+								Search</button>		
 							</form>
 						</div>
 					</div>
@@ -92,5 +85,7 @@
 			</div>
 		</div>
 		</div>
+		
+		<script defer src="${path}/resources/js/map.js"></script>
 </body>
 </html>

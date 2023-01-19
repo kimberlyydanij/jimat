@@ -70,6 +70,11 @@ public class ReviewDaoImpl implements ReviewDAO{
 	public String review_upload(int review_seq) {
 		return sqlSession.selectOne("review.review_upload", review_seq);
 	}
+
+	@Override
+	public String review_image(String review_writer_id) {
+		return sqlSession.selectOne("review.review_image", review_writer_id);
+	}
 	
 	
 }

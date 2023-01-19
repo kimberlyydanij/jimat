@@ -28,7 +28,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       type="text/css"
       rel="stylesheet"
     />
-        <link
+    <link
       href="${path}/resources/css/mypage.css"
       type="text/css"
       rel="stylesheet"
@@ -43,7 +43,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="row">
         <jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
       </div>
-      
+
       <%-- my-page --%>
       <div class="row">
         <div class="mypage-main col-8 container d-flex mt-2" id="mypage-main">
@@ -70,51 +70,55 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       ></a>
                     </div>
                   </div>
-                  <div class="mypage-join-type ms-2">카카오톡 계정으로 가입</div>
+                  <div class="mypage-join-type ms-2">
+                    카카오톡 계정으로 가입
+                  </div>
                 </div>
               </div>
             </div>
             <div class="container d-flex mt-4">
-            	<div class="col-6  mypage-withdrawal">
-            	<a href="#">
-            	회원탈퇴</a>
-            	</div>
-            	<div class="col-6 mypage-logout">
-            	<a href="#">
-            	로그아웃</a>
-            	</div>
+              <div class="col-6 mypage-withdrawal">
+                <a href="#"> 회원탈퇴</a>
+              </div>
+              <div class="col-6 mypage-logout">
+                <a href="#"> 로그아웃</a>
+              </div>
             </div>
           </div>
-          
+
           <%-- mybookmark --%>
           <div class="mybookmark-body col-6 container column-row ms-2">
             <div class="row">
               <p class="mybookmark-body-title">내가 찜한 맛집</p>
               <hr />
             </div>
-            <div class="mybookmark-wrap mt-2 p-0" >
-            	<div class="mybookmark-container d-flex py-3 my-2">
-            		<div class="mybookmark-img col-3 m-0 p-0">
-            			<img src="${path}/resources/images/test-images/review_images1.jpg">
-            		</div>
-            			<div class="mybookmark-shopinfo col-8 ps-2">
-            			<p class="mybookmark-shopinfo mt-2">가게이름</p>
-            			<p class="mybookmark-shopinfo-cate">카테고리</p>
-            			</div>
-            			
-            			<div class="mybookmark-shopbookmark col-2 p-0 m-0">
-            			<input type="checkbox" class="btn-check" id="shop-bookmark1"
-										autocomplete="off" /> <label
-										class="btn btn-bookmark m-0 p-0" for="shop-bookmark1"><i
-										class="fa-solid fa-heart fa-2x"> </i> </label>
-            			</div>
-            		</div>
-            	       	
-            	</div>
-          
+            <div class="mybookmark-wrap mt-2 p-0">
+              <div class="mybookmark-container d-flex py-3 my-2">
+                <div class="mybookmark-img col-3 m-0 p-0">
+                  <img
+                    src="${path}/resources/images/test-images/review_images1.jpg"
+                  />
+                </div>
+                <div class="mybookmark-shopinfo col-8 ps-2">
+                  <p class="mybookmark-shopinfo mt-2">가게이름</p>
+                  <p class="mybookmark-shopinfo-cate">카테고리</p>
+                </div>
+                <div class="mybookmark-shopbookmark col-2 p-0 m-0">
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="shop-bookmark1"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-bookmark m-0 p-0" for="shop-bookmark1"
+                    ><i class="fa-solid fa-heart fa-2x"> </i>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </body>
 </html>

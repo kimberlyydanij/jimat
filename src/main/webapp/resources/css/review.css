@@ -220,17 +220,12 @@ div.comment-tag {
 	text-align: center;
 }
 
-.btn { -
-	-bs-btn-color: #ff4136; -
-	-bs-btn-bg: transparent; -
-	-bs-btn-active-color: #ff4136; -
-	-bs-btn-active-bg: #fff; -
-	-bs-btn-active-border-color: #fff;
-	border: none;
-}
 
-div.bookmark>input {
+
+div.bookmark  > input  {
 	display: none;
+
+
 }
 
 div.bookmark>label {
@@ -263,4 +258,13 @@ div.bookmark>label {
 
 #review-rating {
 	text-align: left;
+}
+
+.btn {
+  --bs-btn-color: #ff4136;
+  --bs-btn-bg: transparent;
+  --bs-btn-active-color: #ff4136;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
+  border: none;
 }

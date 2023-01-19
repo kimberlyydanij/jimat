@@ -10,6 +10,8 @@ CREATE TABLE kakao_login (
     k_gender varchar2(6)
 );
 
+drop sequence k_seq;
+
 CREATE SEQUENCE k_seq
  START WITH 1 
  INCREMENT BY 1
