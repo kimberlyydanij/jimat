@@ -17,6 +17,13 @@ import dao.CurationDaoImp;
 import dto.CurationDTO;
 
 public class CurationServiceImp implements CurationService{
+<<<<<<< HEAD
+=======
+
+	
+	int check_match_tag_id;
+
+>>>>>>> 143a2abbf79de6ef52ec445e84e6f78570df2bbb
 	
 	private CurationDAO cdao;
 	
