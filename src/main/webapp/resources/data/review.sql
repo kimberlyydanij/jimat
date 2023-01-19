@@ -10,11 +10,8 @@ CREATE TABLE review(
     
 );
 
-ALTER TABLE review
-ADD FOREIGN KEY(review_writer_id) REFERENCES kakao_login(k_id);
+drop table review;
 
-ALTER TABLE review
-ADD FOREIGN KEY(review_main_number) REFERENCES seoulfood(foodstore_seq);
 
 SELECT * FROM review;
 
@@ -120,3 +117,11 @@ commit;
 DROP TABLE review;
 
 DROP SEQUENCE review_num_seq;
+
+
+
+ALTER TABLE review
+ADD FOREIGN KEY(review_writer_id) REFERENCES kakao_login(k_id);
+
+ALTER TABLE review
+ADD FOREIGN KEY(review_main_number) REFERENCES seoulfood(foodstore_seq);

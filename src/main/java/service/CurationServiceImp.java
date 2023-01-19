@@ -35,17 +35,20 @@ public class CurationServiceImp implements CurationService{
 	}
 
 	@Override
-	public List<CurationDTO> loginMatchCheckProcess(int number, String age, String gender) {
+	public List<CurationDTO> loginMatchCheckProcess(String number, String age, String gender) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		//String kAge = SessionScope.session_age_range;
 		//String kGender = SessionScope.session_gender;
 		
 		//HttpSession ss = req.getSession();
 		
-		int randomTagNo = 1+ (int)((Math.random()*1000)%17);
-		map.put("number", randomTagNo);
+		map.put("number", number);
 		map.put("age", age);
 		map.put("gender", gender);
+		
+		System.out.println(map.get("number"));
+		System.out.println(map.get("age"));
+		System.out.println(map.get("gender"));
 		
 		return cdao.loginMatchCheck(map);
 	}

@@ -6,7 +6,7 @@
 <mapper namespace="food">
 	<select id="food_countAll" parameterType="string"
 		resultType="int">
-		SELECT count(*) FROM food
+		SELECT count(*) FROM SEOULFOODSTORE
 		WHERE area Like '%' || #{data} || '%'
 	</select>
 	
@@ -15,7 +15,7 @@
 	  <![CDATA[
 		  select b.* from(
 		  select rownum as rowm, a.* from(
-		       select * from food
+		       select * from SEOULFOODSTORE
 		       where foodstore_name like '%' || #{keyword} || '%' 
 		       or area like '%' || #{keyword} || '%')a )b
 		 where b.rowm>=#{startpage} and b.rowm<=#{endpage}   

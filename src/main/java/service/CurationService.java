@@ -8,6 +8,6 @@ public interface CurationService {
 	
 	public List<CurationDTO> matchCheckProcess(int number);
 	
-	public List<CurationDTO> loginMatchCheckProcess(int number, String age, String gender);
+	public List<CurationDTO> loginMatchCheckProcess(String number, String age, String gender);
 	
 }

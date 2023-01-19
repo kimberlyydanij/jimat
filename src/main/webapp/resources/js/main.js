@@ -1,12 +1,3 @@
-function clickTouch() {
-	$('.nav-link').click(function(){
-		if( $('.nav-link').hasClass('active') ) {
-			$('.nav-link').removeClass('active');
-		} else {
-		    $('.nav-link').addClass('active');
-		}
-	});
-}
 
 function main() {
   document.location.href="index.do"
@@ -59,3 +50,4 @@ function popup_login(href, w, h) {
       ", top=70, menubar=no, status=no, titlebar=no, location=no, resizable=no, toolbar=no"
   );
 }
+

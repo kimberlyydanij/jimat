@@ -17,7 +17,16 @@
 	crossorigin="anonymous"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
-	 <script defer src="${path}/resources/js/main.js"></script>
+<!--
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
+<script charset="UTF-8"
+	src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"></script> 
+-->
+<script defer src="${path}/resources/js/main.js"></script>
+<!-- <script defer src="${path}/resources/js/map.js"></script> -->
 </head>
 
 <body>

@@ -5,13 +5,13 @@
 
 	<!-- 정보 찾기 -->
 	<select id="matchCheck" parameterType="Int" resultType="dto.CurationDTO">
-		select * from SEOULFOODSTORE where FOOD_CATEGORY_TAG=#{randomTagNo, jdbcType=VARCHAR} 
+		select * from SEOULFOODSTORE where FOOD_CATEGORY_TAG=#{randomTagNo,  jdbcType=VARCHAR} 
 	</select>
 	
 	
-		<select id="loginMatchCheck" parameterType="java.util.HashMap" resultType="dto.CurationDTO">
+	<select id="loginMatchCheck" parameterType="java.util.HashMap" resultType="dto.CurationDTO">
 		select * from SEOULFOODSTORE 
-		where FOOD_CATEGORY_TAG=#{randomTagNo, jdbcType=VARCHAR}and TAG_AGE=#{kAge, jdbcType=VARCHAR} and TAG_GENDER=#{kGender, jdbcType=VARCHAR}
+		where FOOD_CATEGORY_TAG = #{number,  jdbcType=VARCHAR} and SUBSTR(TAG_AGE, 1, 2) = #{age,  jdbcType=VARCHAR} and TAG_GENDER = #{gender, jdbcType=VARCHAR}
 	</select>
 
 </mapper>

@@ -22,7 +22,7 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
 <script charset="UTF-8"
-	src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"></script>
+	src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"></script> 
 </head>
 <body>
 	<div class="body-wrap container col-12 column-row">
