@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+
+
+
+	<!-- [4] Repository 빈 선언  -->
+	<bean id="repository"
+		class="dao.MemberDaoImpl">
+		<property name="sqlSession" ref="sqlSession" /> 
+	</bean> 
+
+		<!-- [5] Service 빈 선언 -->
+	<bean id="login_service" class="service.MemberServiceImpl">
+		<property name="mr" ref="repository" />
+	</bean>
+
+	<!-- [6] controller 빈 선언-->
+	<bean class="controller.MemberController">
+		<property name="ms" ref="login_service" />
+	</bean>
+
+
+</beans>

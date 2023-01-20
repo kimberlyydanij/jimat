@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+* {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 0;
+  border-width: 0;
+  text-align: center;
+  /* border: 1px solid black; */
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #444444;
+}
+
+.clear {
+  clear: both;
+}
+
+body {
+  min-width: 466px;
+  max-width: 466px;
+  min-height: 615px;
+  max-height: 615px;
+}
+
+div.login-logo {
+  margin: auto;
+}
+
+div.body-wrap {
+  border: 7px solid #ffc107;
+}
+
+body::-webkit-scrollbar {
+  display:none;
+}
+
