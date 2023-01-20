@@ -25,13 +25,19 @@ function myPage() {
 }
 
 function shopDetail() {
-  document.location.href="shopDetail.do"
+  document.location.href="shopDetail.do";
 }
 
-function detailMap() {
-  document.location.href="map.do"
+function map() {
+  document.location.href="map.do";
 }
 
+function querySearch() {
+keyword = document.getElementById('keyword').value;
+searchkeyWord(keyword);
+displayPlaces(search);
+  }
+  
 function popup_login(href, w, h) {
   var href = "loginformpage.do";
   var w = 466;

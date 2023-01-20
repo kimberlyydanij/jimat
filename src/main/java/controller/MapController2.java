@@ -19,10 +19,10 @@ import service.MapService;
 // http://localhost:8090/map.do
 
 @Controller
-public class MapController {
+public class MapController2 {
 	private MapService service;
 
-	public MapController() {
+	public MapController2() {
 
 	}
 
@@ -35,11 +35,9 @@ public class MapController {
 		return "map/map";
 	}// end mapForm()
 
-	@RequestMapping(value = "/foodmap.do", method = RequestMethod.GET)
-	public String foodMap(ModelAndView mav, HttpServletRequest request) {
-		String keyword = request.getParameter("keyword");
-		int pageNo = 1;
-		int pageSize = 30;
+	@ResponseBody
+	@RequestMapping(value = "/foodmap.do", method = RequestMethod.POST)
+	public ModelAndView foodMap(int pageNo, int pageSize, String keyword, ModelAndView mav) {
 		int countAll = service.f_countAllProcess(keyword);
 		int totalPage = countAll / pageSize;
 		if ((countAll % pageSize) > 0)
@@ -50,8 +48,7 @@ public class MapController {
 		mav.addObject("pageNo", pageNo);
 		mav.addObject("totalPage", totalPage);
 		mav.setViewName("jsonView");
-		return "map/food";
-		//return mav;
+		return mav;
 	}// end foodMap()
 
 	@RequestMapping("/detailpage.do")
@@ -81,6 +78,6 @@ public class MapController {
 		model.addAttribute("menu_namesearch", menu_namesearch);
 		model.addAttribute("menu_pricesearch", menu_pricesearch);
 
-		return "map/detailpage";
+		return "detailpage";
 	}//end detailpageMethod()
 }

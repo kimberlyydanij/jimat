@@ -28,4 +28,5 @@ public class MapDaoImp implements MapDao{
 	public int food_countAll(String data) {
 		return sqlSession.selectOne("food.food_countAll",data);
 	}	
+	
 }

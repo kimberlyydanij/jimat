@@ -1,0 +1,18 @@
+drop table  magazine;
+
+CREATE TABLE magazine ( 
+  FOODSTORE_ID VARCHAR2(26),
+  FOODSTORE_NAME VARCHAR2(100),
+  FOOD_CATEGORY VARCHAR2(26),
+  FOOD_CATEGORY_TAG VARCHAR2(10),
+  WORKING_TIME VARCHAR2(100),
+  store_num VARCHAR2(26),
+  ADDRESS VARCHAR2(256),
+  area VARCHAR2(26),
+  img_url VARCHAR2(1024),
+  Latitude NUMBER(11, 7),
+  longitude NUMBER(12, 7),
+  menu_NameSearch VARCHAR2(1024),
+  menu_PriceSearch VARCHAR2(1024))  ;
+--
+commit;

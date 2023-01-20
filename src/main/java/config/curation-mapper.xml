@@ -13,5 +13,10 @@
 		select * from SEOULFOODSTORE 
 		where FOOD_CATEGORY_TAG = #{number,  jdbcType=VARCHAR} and SUBSTR(TAG_AGE, 1, 2) = #{age,  jdbcType=VARCHAR} and TAG_GENDER = #{gender, jdbcType=VARCHAR}
 	</select>
+	
+	
+		<select id="magazineCheck" parameterType="Int" resultType="dto.CurationDTO">
+		select * from MAGAZINE where FOOD_CATEGORY_TAG=#{magazine,  jdbcType=VARCHAR} 
+		</select>
 
 </mapper>

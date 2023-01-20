@@ -40,21 +40,17 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
-		<div>
-
-		<%-- 메인 이미지 불러오기 --%>
 		<div class="row">
-			<div class="main col-12 mt-2 ms-3" id="main">
-				<div class="main_image">
-					<img src="${path}/resources/images/a.png" />
-				</div>
-			</div>
-		</div>
+		<div class="food-body container">
 		
-		<%-- 큐레이션 불러오기 --%>
-		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+		  여기다  하면 됨
+		  
 		</div>
-		<script defer src="${path}/resources/js/map.js"></script>
-</body>
-</html>
+		</div>
+	</div>
+	<script defer src="${path}/resources/js/map.js"></script>
+	<script type="text/javascript">
+	displayPlaces(<c:out value="${param.keyword}" />);
+	</script>
+	</body>
+	</html>

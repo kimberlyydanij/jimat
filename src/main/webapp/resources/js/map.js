@@ -38,7 +38,7 @@ var markers = [];
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 mapOption = {
 	center : new daum.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-	level : 4
+	level : 5
 // 지도의 확대 레벨
 };
 
@@ -86,12 +86,13 @@ function searchPlaces() {
 		alert('키워드를 입력해주세요!');
 		return false;
 	} else {
-	 			sessionStorage.setItem("sKeyword", keyword); 
-				var url = "map.do?keyword=" +keyword;
-				location.replace(url);
-		       	searchkeyWord(keyword);
+		//infowindow.close();
+		
+		//searchkeyWord(keyword);
+		var url = "foodmap.do?keyword=" + keyword;
+		alert(url);
+		location.href = url;
 	}
-
 }
 
 
@@ -99,8 +100,8 @@ function searchkeyWord(keyword) {
 	//alert(keyword);
 	// 한페이지당 표시될 화면 계산
 	num = 1;
-	total = 15;
-	keyword = keyword;
+	total = 10;
+	//keyword = keyword;
 	// keyword = document.getElementById('keyword').value;
 	// 디비값을 불러 지도에 뿌림
 	$.ajax({
@@ -203,7 +204,7 @@ function displayPlaces(search) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, search, marker) {
 
-	var el = document.createElement('li'),
+	var el = document.createElement('div'),
 	itemStr = '<span class="markerbg marker_'
 			+ (index + 1)
 			+ '"></span>'
@@ -322,4 +323,3 @@ function removeAllChildNods(el) {
 		el.removeChild(el.lastChild);
 	}
 }
-

@@ -160,4 +160,35 @@ public class CurationController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/magazine.do")
+	public ModelAndView magazineBody(CurationDTO cDTO, ModelAndView mav) {
+	int magazine= 4;
+
+	this.cDTO = new CurationDTO();
+	int inc = 0;
+
+	List<CurationDTO> aList0 = cservice.magazineCheckProcess(0);
+	while (aList0.size() == 0)
+		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
+
+	List<CurationDTO> aList1 = cservice.magazineCheckProcess(0);
+	while (aList0.size() == 0)
+		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
+
+	List<CurationDTO> aList2 = cservice.magazineCheckProcess(0);
+	while (aList0.size() == 0)
+		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
+
+	List<CurationDTO> aList3 = cservice.magazineCheckProcess(0);
+	while (aList0.size() == 0)
+		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
+
+	mav.addObject("aList0", aList0);
+	mav.addObject("aList1", aList1);
+	mav.addObject("aList2", aList2);
+	mav.addObject("aList3", aList3);
+	mav.setViewName("mainPage/magazine");
+
+	return mav;
+}
 }

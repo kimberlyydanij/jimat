@@ -89,19 +89,25 @@ div#main-menu-body {
 
 div.logo {
   margin: 0px 20px 0px 0px;
+  min-width:200px;
 }
 
 div.header-menu {
   max-width: 1030px;
 }
 
-.navbar-mainmanu {
+.navbar-mainmenu {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
   color: var(--bs-navbar-brand-color);
   white-space: nowrap;
   --bs-navbar-active-color: #fff;
   --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+  min-width:1000px;
+}
+
+a.nav-link {
+	font-size:1.2rem;
 }
 div.login-button {
   padding-right: 50px;
@@ -170,6 +176,10 @@ img#team-vita500 {
   height: 100%;
 }
 
+div,.main_image {
+	background-image : url(""../resources/images/a.png")
+}
+
 .nav-item a:hover{
   color: #fff;
 }
@@ -177,4 +187,7 @@ img#team-vita500 {
 .div {
 	border :1px border solid;
 }
+
+.navbar {
+	border-radius : 10px;
 }

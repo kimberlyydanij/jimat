@@ -32,7 +32,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   </head>
   <body>
     <div class="body-wrap container mb-2 ms-3">
-      <div class="card border-warning container mt-2 b" id="main-curation">
+      <div class="card border-warning container mt-4 b" id="main-curation">
         <div class="row">
           <div class="a container d-flex">
             <div class="arrow col-1" onclick="img_scroll(0, 100);">

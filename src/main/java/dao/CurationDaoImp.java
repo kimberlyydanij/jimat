@@ -24,6 +24,11 @@ public class CurationDaoImp implements CurationDAO {
 		return sqlSession.selectList("curation.matchCheck", number);
 	}
 	
+	@Override
+	public List<CurationDTO>  magazineCheck (int number){
+		
+		return sqlSession.selectList("curation.magazineCheck", number);
+	}
     @Override
     public List<CurationDTO> loginMatchCheck(HashMap<String, Object> map) {
  

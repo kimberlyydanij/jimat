@@ -35,7 +35,7 @@ public class MainController {
 	}
 
 	// 매거진로 이동
-	@RequestMapping("magazine.do")
+	@RequestMapping("magazinePage.do")
 	public String Magazine() {
 		return "mainPage/magazine";
 	}

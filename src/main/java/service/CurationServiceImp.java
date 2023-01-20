@@ -42,6 +42,11 @@ public class CurationServiceImp implements CurationService{
 	}
 
 	@Override
+	public List<CurationDTO> magazineCheckProcess(int number) {
+
+		return cdao.magazineCheck(number);
+	}
+	@Override
 	public List<CurationDTO> loginMatchCheckProcess(String number, String age, String gender) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		//String kAge = SessionScope.session_age_range;
