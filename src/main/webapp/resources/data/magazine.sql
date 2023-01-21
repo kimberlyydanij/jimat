@@ -12,6 +12,9 @@ CREATE TABLE magazine (
   img_url VARCHAR2(1024),
   Latitude NUMBER(11, 7),
   longitude NUMBER(12, 7),
+  TAG_STORE  VARCHAR2(26 BYTE),
+  TAG_GENDER VARCHAR2(26 BYTE),
+  TAG_AGE" VARCHAR2(26 BYTE),
   menu_NameSearch VARCHAR2(1024),
   menu_PriceSearch VARCHAR2(1024))  ;
 --
