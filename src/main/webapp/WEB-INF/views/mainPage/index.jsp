@@ -46,7 +46,7 @@
 		<div class="row">
 			<div class="main col-12 mt-2 ms-3" id="main">
 				<div class="main_image">
-					<img src="${path}/resources/images/a.png" />
+					<img src="${path}/resources/images/mainimage.png" />
 				</div>
 			</div>
 		</div>

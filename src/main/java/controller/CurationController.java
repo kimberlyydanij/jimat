@@ -17,6 +17,7 @@ import service.MemberService;
 
 //http://localhost:8090/curationrow.do
 //http://localhost:8090/index.do
+//http://localhost:8090/magazine.do
 @Controller
 public class CurationController {
 
@@ -162,7 +163,7 @@ public class CurationController {
 
 	@RequestMapping(value = "/magazine.do")
 	public ModelAndView magazineBody(CurationDTO cDTO, ModelAndView mav) {
-	int magazine= 4;
+	int magazine= 0;
 
 	this.cDTO = new CurationDTO();
 	int inc = 0;

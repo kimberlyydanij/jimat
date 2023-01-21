@@ -20,7 +20,8 @@
 	rel="stylesheet" />
 <script defer src="${path}/resources/js/main.js?v=10"></script>
 <script>
-	var urladdress = window.location.pathname; </script>
+	var urladdress = window.location.pathname;
+</script>
 </head>
 
 <body>
@@ -65,8 +66,6 @@
 									href="javascript: teamVita500();">Team Vita500</a></li>
 								<li class="nav-item"><a class="nav-link menu-curation"
 									href="javascript: curation()">맛집추천</a></li>
-								<!--  <li class="nav-item"><a class="nav-link menu-oneKmMap"
-									href="javascript: oneKmMap()">반경1km</a></li> -->
 								<li class="nav-item menu-magazine"><a
 									class="nav-link menu-magazine" href="javascript: magazine();">Magazine</a></li>
 								<li class="nav-item"><a class="nav-link menu-myPage"
@@ -83,7 +82,8 @@
 							</form>
 						</div>
 					</div>
-				</nav>
+				</nav> 
+				
 			</div>
 		</div>
 	</div>

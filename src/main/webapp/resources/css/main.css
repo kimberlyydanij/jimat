@@ -43,12 +43,13 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 8px; /* 스크롤바의 너비 */
+  width: 15px; /* 스크롤바의 너비 */
+  border-rarius: 5px;
 }
 
 body::-webkit-scrollbar-thumb {
   height: 5px; /* 스크롤바의 길이 */
-  background: ffffff; /* 스크롤바의 색상 */
+  background: #ffffff /* 스크롤바의 색상 */
 
   border-radius: 10px;
 }
@@ -73,13 +74,13 @@ div#rowa {
   background-color: red;
 }
 div#rowb {
-  background-color: green;
+  background-color: yellow;
 }
 div#rowc {
-  background-color: blue;
+  background-color: green;
 }
 div#rowd {
-  background-color: violet;
+  background-color: grey;
 }
 /* test 끝 */
 
@@ -104,11 +105,17 @@ div.header-menu {
   --bs-navbar-active-color: #fff;
   --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
   min-width:1000px;
+  border-radius:10px;
 }
 
 a.nav-link {
 	font-size:1.2rem;
 }
+
+a.nav-link:hover {
+	color:#fff;
+}
+
 div.login-button {
   padding-right: 50px;
 }
@@ -176,18 +183,17 @@ img#team-vita500 {
   height: 100%;
 }
 
-div,.main_image {
-	background-image : url(""../resources/images/a.png")
-}
-
 .nav-item a:hover{
   color: #fff;
 }
 
+/*
 .div {
 	border :1px border solid;
-}
+} */
 
 .navbar {
 	border-radius : 10px;
 }
+
+ 

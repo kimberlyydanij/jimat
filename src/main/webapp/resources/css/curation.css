@@ -42,3 +42,9 @@ p.shop-name {
 i, button {
 	background-color: transparent;
 }
+
+#main-curation{
+	border : 2px solid;
+	border-radius : 20px;
+}
+
