@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  border-width: 0;
+  font-size:1rem;
+}
+/*
+div * {
+  border: 1px solid black; 	
+}  */
+
+div.mypage-profile {
+	background-color : #f8f9fa;
+	border-radius : 10px;
+}
+
+div.mypage-profile  img{
+	width : 70px;
+	height:70px;
+}
+
+div.mybookmark-container {
+	height : 130px;
+}	
+div.mypage-body p,
+p.mybookmark-body-title {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+p.mybookmark-shopinfo{
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+div.mypage-name,
+ {
+	text-align : left;
+	font-size: 1.2rem;
+}
+
+div.mypage-join-type {
+	text-align : left;
+}
+
+div.mypage-withdrawal {
+	border-right : 1px solid black;	
+}
+
+div.mybookmark-img img {
+	width: 90px;
+	height: 90px;
+	display:cover;
+	text-align:left;
+}
+
+.mybookmark-shopinfo  p{
+	text-align:left;
+	text-size :1rem;
+}
+
+.mybookmark-shopinfo-cate  p {
+	text-align:left;
+	text-size :0.8rem;
+	font-weight:normal;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:250px;
+}
+
+div.mybookmark-shopbookmark  i{
+	margin-left:-30px;
+	margin-top:20px;
+} 
+
+div.mybookmark-container {
+	border-bottom : 1px solid #dedede;
+}
+
+i.fa-heart:hover {
+  color: #ff4136;
+}
+
+div.mybookmark-shopbookmark > input {
+  display: none;
+}
+
+div.mybookmark-shopbookmark > label {
+  position: relative;
+  cursor: pointer;
+}
+
+div.mybookmark-shopbookmark > label::before {
+  position: absolute;
+  opacity: 0;
+}
+
+div.mybookmark-shopbookmark > label:hover:before,
+div.mybookmark-shopbookmark > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+div.mybookmark-shopbookmark > input:checked ~ label:before {
+  opacity: 1;
+}
+
+div.mybookmark-shopbookmark > input:checked ~ label:before {
+  opacity: 0.4;
+}
+
+.btn {
+  --bs-btn-color: #ff4136;
+  --bs-btn-bg: transparent;
+  --bs-btn-active-color: #ff4136;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
+  border: none;
+}

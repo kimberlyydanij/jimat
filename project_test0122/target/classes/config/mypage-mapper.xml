@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mypage">
+
+	<!-- 정보 찾기 -->
+	<select id="mypage_find" parameterType="String"
+		resultType="dto.ShopDetailDTO">
+		select * from seoulfood where k_id=#{k_id,
+		jdbcType=VARCHAR}
+	</select>
+
+</mapper>
