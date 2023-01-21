@@ -28,13 +28,13 @@
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
 
-		<img src="${path}/resources/images/magazinemain.png">
+		<img id="magazine-top" src="${path}/resources/images/magazine-main.png">
 
 		<div class="row">
 			<div class="magazine-body col-12 ms-3 d-flex">
 				<div class="row">
 					<div class="magazine-item" id="korean-drink">
-						<a href="#"><img
+						<a href="javascript: magazine0();"><img
 							src="${path}/resources/images/korean-drink.png"></a>
 					</div>
 					<div class="magazine-item" id="garosu">

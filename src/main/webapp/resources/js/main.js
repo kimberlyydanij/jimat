@@ -32,6 +32,22 @@ function map() {
   document.location.href="map.do";
 }
 
+function magazine0() {
+  document.location.href="/curation/magazine0.jsp";
+}
+
+function magazine1() {
+  document.location.href="magazine1.jsp";
+}
+
+function magazine2() {
+  document.location.href="magazine2.jsp";
+}
+
+function magazine3() {
+  document.location.href="magazine3.jsp";
+}
+
 function querySearch() {
 keyword = document.getElementById('keyword').value;
 searchkeyWord(keyword);

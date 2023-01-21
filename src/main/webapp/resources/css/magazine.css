@@ -25,3 +25,8 @@ div.magazine-item img {
 	border-radius :10px;
 }
 
+img#magazine-top {
+	margin-left : 100px;
+	display : block;
+}
+

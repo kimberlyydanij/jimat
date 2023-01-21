@@ -5,6 +5,7 @@
   padding: 0;
   border-width: 0;
   text-align: center;
+  font-family: 'IBM Plex Sans KR', sans-serif;
   /*border: 1px solid black; */
 }
 
@@ -110,7 +111,8 @@ div.header-menu {
 
 a.nav-link {
 	font-size:1.2rem;
-}
+	font-weight:bold;
+}	
 
 a.nav-link:hover {
 	color:#fff;
