@@ -25,7 +25,7 @@ public class CurationDaoImp implements CurationDAO {
 	}
 	
 	@Override
-	public List<CurationDTO>  magazineCheck (int number){
+	public List<CurationDTO> magazineCheck (int number){
 		
 		return sqlSession.selectList("curation.magazineCheck", number);
 	}

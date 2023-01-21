@@ -31,10 +31,10 @@
 		<img id="magazine-top" src="${path}/resources/images/magazine-main.png">
 
 		<div class="row">
-			<div class="magazine-body col-12 ms-3 d-flex">
+			<div class="magazine-body col-12 ms-3 d-flex" >
 				<div class="row">
 					<div class="magazine-item" id="korean-drink">
-						<a href="javascript: magazine0();"><img
+						<a href="magazine-korea-drink.do"><img
 							src="${path}/resources/images/korean-drink.png"></a>
 					</div>
 					<div class="magazine-item" id="garosu">

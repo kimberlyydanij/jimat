@@ -18,6 +18,7 @@ import service.MemberService;
 //http://localhost:8090/curationrow.do
 //http://localhost:8090/index.do
 //http://localhost:8090/magazine.do
+
 @Controller
 public class CurationController {
 
@@ -161,35 +162,18 @@ public class CurationController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/magazine.do")
+	
+	//http://localhost:8090/magazine-korea-drink.do
+	@RequestMapping(value = "/magazine-korea-drink.do")
 	public ModelAndView magazineBody(CurationDTO cDTO, ModelAndView mav) {
-	int magazine= 0;
 
 	this.cDTO = new CurationDTO();
-	int inc = 0;
-
-	List<CurationDTO> aList0 = cservice.magazineCheckProcess(0);
-	while (aList0.size() == 0)
-		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
-
-	List<CurationDTO> aList1 = cservice.magazineCheckProcess(0);
-	while (aList0.size() == 0)
-		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
-
-	List<CurationDTO> aList2 = cservice.magazineCheckProcess(0);
-	while (aList0.size() == 0)
-		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
-
-	List<CurationDTO> aList3 = cservice.magazineCheckProcess(0);
-	while (aList0.size() == 0)
-		aList0 = cservice.magazineCheckProcess(magazine + (++inc));
-
-	mav.addObject("aList0", aList0);
-	mav.addObject("aList1", aList1);
-	mav.addObject("aList2", aList2);
-	mav.addObject("aList3", aList3);
-	mav.setViewName("mainPage/magazine");
+	List<CurationDTO> aList = cservice.magazineCheckProcess(0);
+	
+	mav.addObject("aList", aList);
+	mav.setViewName("curation/magazine-korea-drink");
 
 	return mav;
 }
+
 }

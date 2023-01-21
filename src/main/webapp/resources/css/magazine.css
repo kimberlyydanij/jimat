@@ -25,8 +25,33 @@ div.magazine-item img {
 	border-radius :10px;
 }
 
+div#main-magazine {
+	border-radius : 20px;
+	border : 3px solid;
+}
+
+.magazine-list-body div{
+	border : 1px solid black;
+}
+
 img#magazine-top {
 	margin-left : 100px;
 	display : block;
 }
 
+div.magazine-list-thumbnail {
+  border-radius: 15px;
+  width: 300px;
+  height: 200px;
+  display:cover
+}
+
+div.magazine-list-thumbnail img {
+  width: 100%;
+  height: 100%;
+  display:cover;
+}
+
+.card {
+	border-radius : 15px;
+}

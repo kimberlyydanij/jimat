@@ -25,5 +25,7 @@
 	<bean class="controller.CurationController">
 		<property name="cservice" ref="curation_service" />
 	</bean>
+	
+
 
 </beans>
