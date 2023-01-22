@@ -42,15 +42,16 @@
 		</div>
 		<div class="row">
 		<div class="food-body container">
-		
-		  여기다  하면 됨
-		  
+			<c:out value="${fn:length(aList)}" />
+			<c:forEach var="aList" items="${aList}" varStatus="status">
+			  여기다  하면 됨
+			</c:forEach>		
 		</div>
 		</div>
 	</div>
 	<script defer src="${path}/resources/js/map.js"></script>
 	<script type="text/javascript">
-	displayPlaces(<c:out value="${param.keyword}" />);
+	//displayPlaces(<c:out value="${param.keyword}" />);
 	</script>
 	</body>
 	</html>

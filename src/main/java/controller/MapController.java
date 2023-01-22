@@ -17,6 +17,7 @@ import dto.MapDTO;
 import service.MapService;
 
 // http://localhost:8090/map.do
+// http://localhost:8090/foodmap.do
 
 @Controller
 public class MapController {
@@ -36,7 +37,7 @@ public class MapController {
 	}// end mapForm()
 
 	@RequestMapping(value = "/foodmap.do", method = RequestMethod.GET)
-	public String foodMap(ModelAndView mav, HttpServletRequest request) {
+	public String foodMap(Model model, HttpServletRequest request) {
 		String keyword = request.getParameter("keyword");
 		int pageNo = 1;
 		int pageSize = 30;
@@ -46,12 +47,8 @@ public class MapController {
 			totalPage++;
 
 		List<MapDTO> aList = service.f_listProcess(pageNo, pageSize, keyword);
-		mav.addObject("aList", aList);
-		mav.addObject("pageNo", pageNo);
-		mav.addObject("totalPage", totalPage);
-		mav.setViewName("jsonView");
+		model.addAttribute("aList", aList);
 		return "map/food";
-		//return mav;
 	}// end foodMap()
 
 	@RequestMapping("/detailpage.do")

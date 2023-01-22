@@ -12,7 +12,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap"
+	rel="stylesheet">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -24,13 +26,11 @@
 	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/edd4d6d779.js"
 	crossorigin="anonymous"></script>
-	<script
+<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript"
+<script type="text/javascript"
 	src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
-	rel="stylesheet" />
-<link href="${path}/resources/css/map.css" type="text/css"
 	rel="stylesheet" />
 <script defer src="${path}/resources/js/main.js"></script>
 <!--   <script defer src="${path}/resources/js/gps.js"></script> -->
@@ -44,8 +44,6 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
-		<div>
-
 		<%-- 메인 이미지 불러오기 --%>
 		<div class="row">
 			<div class="main col-12 mt-2 ms-3" id="main">
@@ -54,11 +52,12 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
 		</div>
-		<script defer src="${path}/resources/js/map.js"></script>
+	</div>
+	<script defer src="${path}/resources/js/map.js"></script>
 </body>
 </html>

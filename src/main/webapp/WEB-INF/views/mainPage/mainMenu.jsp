@@ -23,7 +23,7 @@
 	crossorigin="anonymous"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
-<script defer src="${path}/resources/js/main.js?v=10"></script>
+<script defer src="${path}/resources/js/main.js?v=11"></script>
 <script>
 	var urladdress = window.location.pathname;
 </script>
@@ -92,6 +92,6 @@
 			</div>
 		</div>
 	</div>
-
+<script defer src="${path}/resources/js/main.js?v=11"></script>
 </body>
 </html>

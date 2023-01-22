@@ -40,7 +40,7 @@ public class MemberController {
 		}else {
 			request.getSession().setAttribute("prevURI", "index.do");
 		}
-		return "login/loginform1";
+		return "login/loginform";
 	}
 	
 	//login시 getToken으로 토큰 값을 받아오고 getUserInfo를 통해 유저 정보를 가져옴

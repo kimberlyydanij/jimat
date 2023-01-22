@@ -11,7 +11,7 @@ div#main-curation {
 	border : 3px solid;
 }
 
-div#curation-title {
+div.curation-title {
   text-align: left;
   font-weight: 800;
   font-size : 1.2rem;

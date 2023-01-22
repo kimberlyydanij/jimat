@@ -19,6 +19,7 @@ public class MapDTO {
 	private String menu_namesearch;
 	private String menu_pricesearch;
 
+
 	public MapDTO() {
 
 	}
@@ -158,6 +159,5 @@ public class MapDTO {
 	public void setMenu_pricesearch(String menu_pricesearch) {
 		this.menu_pricesearch = menu_pricesearch;
 	}
-	
 	
 }

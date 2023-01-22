@@ -86,13 +86,11 @@ function searchPlaces() {
 		alert('키워드를 입력해주세요!');
 		return false;
 	} else {
-		//infowindow.close();
+		infowindow.close();
 		
-		//searchkeyWord(keyword);
-		var url = "foodmap.do?keyword=" + keyword;
-		alert(url);
-		location.href = url;
+		searchkeyWord(keyword);
 	}
+
 }
 
 
@@ -100,8 +98,8 @@ function searchkeyWord(keyword) {
 	//alert(keyword);
 	// 한페이지당 표시될 화면 계산
 	num = 1;
-	total = 10;
-	//keyword = keyword;
+	total = 15;
+	keyword = keyword;
 	// keyword = document.getElementById('keyword').value;
 	// 디비값을 불러 지도에 뿌림
 	$.ajax({
@@ -204,11 +202,12 @@ function displayPlaces(search) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, search, marker) {
 
-	var el = document.createElement('div'),
+	var el = document.createElement('li'),
 	itemStr = '<span class="markerbg marker_'
 			+ (index + 1)
 			+ '"></span>'
 			+ '<a href="detailpage.do?latitude=' + `${search.latitude}` + '&longitude=' + `${search.longitude}` 
+	itemStr += '&foodstore_id=' + `${search.foodstore_id}`.replace(" ","+")
 	itemStr += '&food_category=' + `${search.food_category}`.replace(" ","+")
 	itemStr += '&img_url=' + `${search.img_url}`.replace(" ","+") 
 	itemStr += '&foodstore_name=' + `${search.foodstore_name}`.replace(" ","+")
