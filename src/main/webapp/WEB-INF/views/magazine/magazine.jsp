@@ -20,6 +20,19 @@
 	crossorigin="anonymous"></script>
 <link href="${path}/resources/css/magazine.css" type="text/css"
 	rel="stylesheet" />
+<script defer src="${path}/resources/js/main.js?v=1"></script>
+
+<script type="text/javascript">
+	var bDisplay = true;
+	function doDisplay() {
+		var con = document.getElementById("myDIV");
+		if (con.style.display == 'none') {
+			con.style.display = 'block';
+		} else {
+			con.style.display = 'none';
+		}
+	}
+</script>
 </head>
 <body>
 	<div class="body-wrap container col-12 column-row">
@@ -28,27 +41,29 @@
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
 
-		<img id="magazine-top" src="${path}/resources/images/magazine-main.png">
+		<img id="magazine-top"
+			src="${path}/resources/images/magazine-main.png">
 
 		<div class="row">
-			<div class="magazine-body col-12 ms-3 d-flex" >
-				<div class="row">
+			<div class="magazine-body col-12 ms-3 d-flex">
+				<div class="container colums-row">
+
 					<div class="magazine-item" id="korean-drink">
 						<a href="magazine-korea-drink.do"><img
 							src="${path}/resources/images/korean-drink.png"></a>
 					</div>
 					<div class="magazine-item" id="garosu">
-						<a href="#"><img src="${path}/resources/images/garosu.png"></a>
+						<a href="magazine-garosu.do"><img src="${path}/resources/images/garosu.png"></a>
 					</div>
 				</div>
-				<div class="row">
-					<div class="6 magazine-item" id="macandcheese">
-						<a href="#"><img
+				<div class="container colums-row">
+					<div class="magazine-item" id="macandcheese">
+						<a href="magazine-macandcheese.do"><img
 							src="${path}/resources/images/macandcheese
 				.png"></a>
 					</div>
-					<div class="6 magazine-item" id="porkcutlet">
-						<a href="#"><img src="${path}/resources/images/porkcutlet.png"></a>
+					<div class="magazine-item" id="porkcutlet">
+						<a href="magazine-porkcutlet.do"><img src="${path}/resources/images/porkcutlet.png"></a>
 					</div>
 				</div>
 			</div>

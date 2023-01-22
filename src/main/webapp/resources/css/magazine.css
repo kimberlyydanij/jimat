@@ -5,29 +5,21 @@
   padding: 0;
   border-width: 0;
   font-size:1rem;
+  text-align :cemter;
 }
 
-/* test 단 */
-
-div#rowa {
-  background-color: red;
-}
-div#rowb {
-  background-color: yellow;
-}
-div#rowc {
-  background-color: green;
-}
-div#rowd {
-  background-color: grey;
-}
-/* test 끝 */
-
-
+/*
 div {
   border: 1px solid black; 	
-} 
+}  */ 
 
+div.magazine-body {
+
+}
+
+div.div-body {
+	max-width : 590px;
+}
 div.magazine-item {
 	width : 600px;
 	height : 300px;
@@ -50,21 +42,14 @@ img#magazine-top {
 .magazine-list-body {
     border-radius : 20px;
 	border : 3px solid #ffc107;
-	height : 250px;
+	height : 200px;
+	width : 580px !important;
 }  
 
-div.magazine-list-no {
-	font-weight : 800;
-	vertical-align : middle;
-	font-size : 2rem;
-	line-height: 250px;
-	text-align : center;
-
-}
 
 div.magazine-list-thumbnail {
-  width : 300px;
-  height: 250px;
+  width : 200px;
+  height: 200px;
 
 }
 
@@ -79,25 +64,16 @@ div.magazine-list-thumbnail img {
 div.magazine-list-info {
 	margin : 0px;
 }
-div.magazine-shop-info text {
-		text-algin : left !important;
-} 
+
 
 .shop-name {
 	font-size : 2rem;
-	font-weight : 800;
-	margin : 0;
-	
-}
-
-.shop-category {
-	font-size : 1.4rem;
 	font-weight : 600;
-	text-decoration: underline;
-	padding-top : 15px;
+
 }
 
 .shop-tags {
-	font-size : 1.2rem;
+	font-size : 1.4rem;
 	font-weight : 400;
+	
 }

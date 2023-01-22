@@ -17,7 +17,7 @@ function oneKmMap() {
 }
 
 function magazine() {
-  document.location.href="magazine.do";
+  document.location.href="magazinePage.do";
 }
 
 function myPage() {

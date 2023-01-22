@@ -52,13 +52,13 @@ public class CurationController {
 
 		String sessionId = (String) session.getAttribute("sessionId");
 		if (sessionId != null)
-		System.out.println("sessionId = " + sessionId);
+			System.out.println("sessionId = " + sessionId);
 		String sessionAgeRange = (String) session.getAttribute("session_age_range");
 		if (sessionAgeRange != null)
 			System.out.println("sessionAgeRange = " + sessionAgeRange.substring(0, 2) + "%");
 		String sessionGender = (String) session.getAttribute("session_gender");
 		if (sessionGender != null)
-		System.out.println("sessionGender = " + sessionGender);
+			System.out.println("sessionGender = " + sessionGender);
 
 		if (sessionId != null && sessionId != "") {
 			System.out.println("LOGIN SESSION");
@@ -67,13 +67,11 @@ public class CurationController {
 
 			this.cDTO = new CurationDTO();
 			List<CurationDTO> aList = null;
-			if (sessionAgeRange != null && sessionGender != null)
-			{
-				aList = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo), sessionAgeRange.substring(0, 2) + "%", sessionGender);
+			if (sessionAgeRange != null && sessionGender != null) {
+				aList = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo),
+						sessionAgeRange.substring(0, 2) + "%", sessionGender);
 				System.out.println("aList.size = " + aList.size());
-			}
-			else
-			{
+			} else {
 				System.out.println("aList.size = -1");
 			}
 			mav.addObject("aList", aList);
@@ -107,7 +105,8 @@ public class CurationController {
 			int randomTagNo = 1 + (int) ((Math.random() * 1000) % 17);
 
 			this.cDTO = new CurationDTO();
-			List<CurationDTO> aList = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo), sessionAgeRange.substring(0, 2) + "%", sessionGender);
+			List<CurationDTO> aList = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo),
+					sessionAgeRange.substring(0, 2) + "%", sessionGender);
 			mav.addObject("aList", aList);
 			mav.setViewName("mainPage/index");
 
@@ -162,18 +161,57 @@ public class CurationController {
 		return mav;
 	}
 
-	
-	//http://localhost:8090/magazine-korea-drink.do
+	// http://localhost:8090/magazine-korea-drink.do
 	@RequestMapping(value = "/magazine-korea-drink.do")
-	public ModelAndView magazineBody(CurationDTO cDTO, ModelAndView mav) {
+	public ModelAndView magazineBody0(CurationDTO cDTO, ModelAndView mav) {
 
-	this.cDTO = new CurationDTO();
-	List<CurationDTO> aList = cservice.magazineCheckProcess(0);
-	
-	mav.addObject("aList", aList);
-	mav.setViewName("curation/magazine-korea-drink");
+		this.cDTO = new CurationDTO();
+		List<CurationDTO> aList = cservice.magazineCheckProcess(0);
 
-	return mav;
-}
+		mav.addObject("aList", aList);
+		mav.setViewName("magazine/magazine-korea-drink");
 
+		return mav;
+	}
+
+	// http://localhost:8090/magazine-garosu.do
+	@RequestMapping(value = "/magazine-garosu.do")
+	public ModelAndView magazineBody1(CurationDTO cDTO, ModelAndView mav) {
+
+		this.cDTO = new CurationDTO();
+		List<CurationDTO> aList = cservice.magazineCheckProcess(1);
+
+		mav.addObject("aList", aList);
+		mav.setViewName("magazine/magazine-garosu");
+
+		return mav;
+	}
+
+	// http://localhost:8090/magazine-garosu.do
+	@RequestMapping(value = "/magazine-macandcheese.do")
+	public ModelAndView magazineBody2(CurationDTO cDTO, ModelAndView mav) {
+
+		this.cDTO = new CurationDTO();
+		List<CurationDTO> aList = cservice.magazineCheckProcess(2);
+
+		mav.addObject("aList", aList);
+		mav.setViewName("magazine/magazine-macandcheese");
+
+		return mav;
+
+	}
+
+	// http://localhost:8090/magazine-porkcutlet.do
+	@RequestMapping(value = "/magazine-porkcutlet.do")
+	public ModelAndView magazineBody3(CurationDTO cDTO, ModelAndView mav) {
+
+		this.cDTO = new CurationDTO();
+		List<CurationDTO> aList = cservice.magazineCheckProcess(3);
+
+		mav.addObject("aList", aList);
+		mav.setViewName("magazine/magazine-porkcutlet");
+
+		return mav;
+
+	}
 }
