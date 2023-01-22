@@ -36,7 +36,7 @@ public class MapController {
 		return "map/map";
 	}// end mapForm()
 
-	@RequestMapping(value = "/foodmap.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/foodmap.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String foodMap(Model model, HttpServletRequest request) {
 		String keyword = request.getParameter("keyword");
 		int pageNo = 1;

@@ -12,7 +12,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap"
+	rel="stylesheet">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -24,16 +26,11 @@
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
 <script defer src="${path}/resources/js/main.js?v=11"></script>
-<script>
-	var urladdress = window.location.pathname;
-</script>
 </head>
 
 <body>
-
 	<div class="header container d-flex col-12 mt-4" id="main-menu-body">
 		<div class="logo col-2">
-
 			<a href="javascript: main();"><img
 				src="${path}/resources/images/logo.png" id="logo_img" /></a>
 		</div>
@@ -79,19 +76,19 @@
 									href="javascript: map();">임시_상세맵</a></li>
 							</ul>
 
-							<form class="d-flex"  onsubmit="searchPlaces(); return false">
+							<form class="d-flex" onsubmit="searchPlaces(); return false">
 								<input class="form-control me-sm-4" type="search"
 									placeholder="검색어를 입력하세요" id="keyword" />
-								<button class="btn btn-secondary my-2 my-sm-0" type="submit" >
-								Search</button>		
+								<button class="btn btn-secondary my-2 my-sm-0" type="submit">
+									Search</button>
 							</form>
 						</div>
 					</div>
-				</nav> 
-				
+				</nav>
+
 			</div>
 		</div>
 	</div>
-<script defer src="${path}/resources/js/main.js?v=11"></script>
+	<script defer src="${path}/resources/js/main.js?v=11"></script>
 </body>
 </html>

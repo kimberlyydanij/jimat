@@ -46,13 +46,13 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
-		<div>
+		<!--  	<div>
 			<form onsubmit="searchPlaces(); return false">
 				<span>검색:</span> <input type="text" value="강남구" id="keyword"
 					size="30" />
 				<button type="submit">검색하기</button>
 			</form>
-		</div>
+		</div> -->
 
 		<!-- 검색창 -->
 
