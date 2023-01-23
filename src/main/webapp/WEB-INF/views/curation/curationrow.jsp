@@ -36,8 +36,8 @@
 	rel="stylesheet" />
 <script defer src="${path}/resources/js/main.js"></script>
 <!--   <script defer src="${path}/resources/js/gps.js"></script> -->
-<script defer src="${path}/resources/js/imgscroll.js?v=19"></script>
 <script defer src="${path}/resources/js/map.js"></script>
+<script defer src="${path}/resources/js/imgscroll.js"></script>
 </head>
   <body>
     <div class="body-wrap container mb-2 ms-3">

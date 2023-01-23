@@ -15,7 +15,7 @@
 	  <![CDATA[
 		  select b.* from(
 		  select rownum as rowm, a.* from(
-		       select * from seoulfoodstore
+		       select * from SEOULFOODSTORE
 		       where foodstore_name like '%' || #{keyword} || '%' 
 		       or food_category like '%' || #{keyword} || '%' 
 		       or address like '%' || #{keyword} || '%' 

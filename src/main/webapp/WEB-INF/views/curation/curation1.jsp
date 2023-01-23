@@ -32,8 +32,11 @@
 	src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
+	<link href="${path}/resources/css/curation.css" type="text/css"
+	rel="stylesheet" />
 <script defer src="${path}/resources/js/main.js"></script>
 <!--   <script defer src="${path}/resources/js/gps.js"></script> -->
+<script defer src="${path}/resources/js/imgscroll.js?v=19"></script>
 <script defer src="${path}/resources/js/map.js"></script>
 </head>
 <body>
@@ -43,20 +46,32 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
-		<%-- 메인 이미지 불러오기 --%>
+
+		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<div class="main col-12 mt-2 ms-3" id="main">
-				<div class="main_image">
-					<img src="${path}/resources/images/mainimage.png" />
-				</div>
-			</div>
+			<jsp:include page="/WEB-INF/views/curation/curationrow0.jsp"></jsp:include>
 		</div>
 
 		<%-- 큐레이션 불러오기 --%>
 		<div class="row">
-			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/curation/curationrow1.jsp"></jsp:include>
+		</div>
+
+		<%-- 큐레이션 불러오기 --%>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow2.jsp"></jsp:include>
+		</div>
+
+		<%-- 큐레이션 불러오기 --%>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow3.jsp"></jsp:include>
+		</div>
+
+		<%-- 큐레이션 불러오기 --%>
+		<div class="row">
+			<jsp:include page="/WEB-INF/views/curation/curationrow4.jsp"></jsp:include>
 		</div>
 	</div>
-	<script defer src="${path}/resources/js/map.js"></script>
+<script defer src="${path}/resources/js/map.js"></script>
 </body>
 </html>

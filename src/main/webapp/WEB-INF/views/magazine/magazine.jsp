@@ -37,7 +37,6 @@
 
 <script defer src="${path}/resources/js/main.js"></script>
 <!--   <script defer src="${path}/resources/js/gps.js"></script> -->
-<script defer src="${path}/resources/js/imgscroll.js?v=19"></script>
 <script defer src="${path}/resources/js/map.js"></script>
 </head>
 <body>

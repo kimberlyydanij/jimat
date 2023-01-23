@@ -87,7 +87,6 @@ function searchPlaces() {
 		return false;
 	} else {
 		infowindow.close();
-		
 		searchkeyWord(keyword);
 	}
 
@@ -117,7 +116,7 @@ function searchkeyWord(keyword) {
 			totalPage = result.totalPage;
 			displayPlaces(search);
 			keyword = document.getElementById('keyword').value;
-			
+			alert(success);
 		},
 		error : function(error) {
 			alert(error);

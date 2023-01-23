@@ -6,15 +6,20 @@
 	<!-- 정보 찾기 -->
 	<select id="matchCheck" parameterType="Int"
 		resultType="dto.CurationDTO">
-		select * from SEOULFOODSTORE 
-		where FOOD_CATEGORY_TAG=#{randomTagNo, jdbcType=VARCHAR}
+		select * from (
+			select * from SEOULFOODSTORE
+			order by DBMS_RANDOM.RANDOM 
+		) where FOOD_CATEGORY_TAG=#{randomTagNo, jdbcType=VARCHAR}
 	</select>
 
 
 	<select id="loginMatchCheck" parameterType="java.util.HashMap"
 		resultType="dto.CurationDTO">
-		select * from SEOULFOODSTORE
-		where FOOD_CATEGORY_TAG = #{number, jdbcType=VARCHAR} and SUBSTR(TAG_AGE,1, 2) 
+		
+		select * from (
+			select * from SEOULFOODSTORE
+			order by DBMS_RANDOM.RANDOM 
+		) where FOOD_CATEGORY_TAG = #{number, jdbcType=VARCHAR} and SUBSTR(TAG_AGE,1, 2) 
 		= #{age, jdbcType=VARCHAR} and TAG_GENDER = #{gender,
 		jdbcType=VARCHAR}
 	</select>
