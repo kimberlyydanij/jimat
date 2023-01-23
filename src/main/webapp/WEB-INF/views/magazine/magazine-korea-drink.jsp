@@ -28,8 +28,10 @@
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
 
+		<a href="javascript: magazine();">
 		<img id="magazine-top"
 			src="${path}/resources/images/magazine-main.png">
+		</a>
 
 		<div
 			class="magazine-body pb-3 col-11 container column-row mt-2 px-0 py-3"

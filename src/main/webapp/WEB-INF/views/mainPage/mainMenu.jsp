@@ -60,7 +60,7 @@
 				<nav
 					class="navbar navbar-expand-lg navbar-mainmenu bg-warning col-10 mt-3">
 					<div class="container-fluid">
-						<div class="collapse navbar-collapse" id="navbarColor03">
+						<div class="collapse navbar-collapse me-sm-5" id="navbarColor03">
 							<ul class="navbar-nav me-auto">
 								<li class="nav-item"><a class="nav-link main-home"
 									href="javascript: main();">Home </a></li>
@@ -72,13 +72,11 @@
 									class="nav-link menu-magazine" href="javascript: magazine();">Magazine</a></li>
 								<li class="nav-item"><a class="nav-link menu-myPage"
 									href="javascript: myPage();">My Page</a></li>
-								<li class="nav-item"><a class="nav-link menu-map"
-									href="javascript: map();">임시_상세맵</a></li>
 							</ul>
 
-							<form class="d-flex" onsubmit="searchPlaces(); return false">
-								<input class="form-control me-sm-4" type="search"
-									placeholder="검색어를 입력하세요" id="keyword" />
+							<form class="d-flex me-sm-7"" onsubmit="searchPlaces(); return false">
+								<input class="form-control search-from"  type="search"
+									placeholder="검색어를 입력하세요 ex)신논현, 칼국수" id="keyword" />
 								<button class="btn btn-secondary my-2 my-sm-0" type="submit">
 									Search</button>
 							</form>

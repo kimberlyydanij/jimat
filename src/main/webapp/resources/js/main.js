@@ -24,21 +24,12 @@ function myPage() {
   document.location.href="myPage.do";
 }
 
-function shopDetail() {
-  document.location.href="shopDetail.do";
-}
-
-function map() {
-  document.location.href="map.do";
-}
-
-
-
 function querySearch() {
 keyword = document.getElementById('keyword').value;
 searchkeyWord(keyword);
 displayPlaces(search);
   }
+
   
 function popup_login(href, w, h) {
   var href = "loginformpage.do";

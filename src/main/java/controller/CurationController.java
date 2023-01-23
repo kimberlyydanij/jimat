@@ -6,16 +6,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dto.CurationDTO;
 import service.CurationService;
-import service.MemberService;
-import dao.MemberDaoImpl;
 import dto.KakaoDTO;
-import service.MemberService;
 
+//http://localhost:8090/curationrow.do
 //http://localhost:8090/curation.do
 //http://localhost:8090/index.do
 
@@ -24,6 +21,7 @@ public class CurationController {
 
 	private CurationService cservice;
 	private CurationDTO cDTO;
+	private KakaoDTO kdto;
 
 	public CurationController() {
 
@@ -37,7 +35,11 @@ public class CurationController {
 		this.cDTO = cDTO;
 	}
 
-	@RequestMapping(value="/index.do")
+	public KakaoDTO getKdto() {
+		return kdto;
+	}
+
+	@RequestMapping(value = "/index.do")
 	public ModelAndView indexBody(CurationDTO cDTO, ModelAndView mav, HttpSession session, HttpServletRequest request) {
 
 		String sessionId = (String) session.getAttribute("sessionId");
@@ -50,16 +52,13 @@ public class CurationController {
 		if (sessionGender != null)
 			System.out.println("sessionGender = " + sessionGender);
 
-		// 로그인 한 경우
-
 		if (sessionId != null && sessionId != "") {
 			System.out.println("LOGIN SESSION");
-	
-			int randomTagNo = 1 + (int) ((Math.random() * 1000) % 17);
+
+			int randomTagNo = 1 + (int) ((Math.random() * 1000) % 13);
 
 			this.cDTO = new CurationDTO();
 			List<CurationDTO> aList = null;
-
 			if (sessionAgeRange != null && sessionGender != null) {
 				aList = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo), sessionAgeRange.substring(0, 2),
 						sessionGender);
@@ -71,25 +70,26 @@ public class CurationController {
 			mav.setViewName("mainPage/index");
 
 		} else {
-			
+			System.out.println("LOGOUT SESSION");
+
 			int randomTagNo = 1 + (int) ((Math.random() * 1000) % 17);
 
 			this.cDTO = new CurationDTO();
-			List<CurationDTO> aList = null;
-			System.out.println("LOGOUT SESSION");
-
-			aList = cservice.matchCheckProcess(randomTagNo);
+			List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
 			mav.addObject("aList", aList);
 			mav.setViewName("mainPage/index");
+			// }
+
 		}
 		return mav;
 	}
 
-	@RequestMapping(value="/curation.do")
-	public ModelAndView curationBody(CurationDTO cDTO, ModelAndView mav, HttpSession session,
+//  여기부터 수정
+
+	@RequestMapping(value = "/curationrow.do")
+	public ModelAndView curationRowBody(CurationDTO cDTO, ModelAndView mav, HttpSession session,
 			HttpServletRequest request) {
 
-		// 세션값 저장
 		String sessionId = (String) session.getAttribute("sessionId");
 		if (sessionId != null)
 			System.out.println("sessionId = " + sessionId);
@@ -100,104 +100,113 @@ public class CurationController {
 		if (sessionGender != null)
 			System.out.println("sessionGender = " + sessionGender);
 
-		// 로그인 여부 확인
 		if (sessionId != null && sessionId != "") {
 			System.out.println("LOGIN SESSION");
 
+			int randomTagNo = 1 + (int) ((Math.random() * 1000) % 13);
+
+			this.cDTO = new CurationDTO();
+			List<CurationDTO> aList = null;
+
 			if (sessionAgeRange != null && sessionGender != null) {
-				
-				int randomTagNo = 1 + (int) ((Math.random() * 1000) % 13);
-
-				this.cDTO = new CurationDTO();
-				int inc = 0;
-				
-				List<CurationDTO> aList0 = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo),
-						sessionAgeRange.substring(0, 2), sessionGender);
-				while (aList0.size() == 0)
-					aList0 = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo + (++inc)),
-							sessionAgeRange.substring(0, 2), sessionGender);
-
-				List<CurationDTO> aList1 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
-						sessionAgeRange.substring(0, 2), sessionGender);
-				while (aList1.size() == 0)
-					aList1 = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo + (++inc)),
-							sessionAgeRange.substring(0, 2), sessionGender);
-
-				List<CurationDTO> aList2 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
-						sessionAgeRange.substring(0, 2), sessionGender);
-				while (aList2.size() == 0)
-					aList2 = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo + (++inc)),
-							sessionAgeRange.substring(0, 2), sessionGender);
-
-				List<CurationDTO> aList3 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
-						sessionAgeRange.substring(0, 2), sessionGender);
-				while (aList3.size() == 0)
-					aList3 = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo + (++inc)),
-							sessionAgeRange.substring(0, 2), sessionGender);
-
-				List<CurationDTO> aList4 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
-						sessionAgeRange.substring(0, 2), sessionGender);
-				while (aList4.size() == 0)
-					aList4 = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo + (++inc)),
-							sessionAgeRange.substring(0, 2), sessionGender);
-
-				mav.addObject("aList0", aList0);
-				mav.addObject("aList1", aList1);
-				mav.addObject("aList2", aList2);
-				mav.addObject("aList3", aList3);
-				mav.addObject("aList4", aList4);
-				mav.setViewName("curation/curation");
-				
-				System.out.println("로그인 끝");
-
-				// login session 끝
-
-			} else if(sessionAgeRange == null && sessionGender == null)  {
-				System.out.println("LOGOUT SESSION");
-				
-				int randomTagNo = 1 + (int) ((Math.random() * 1000) % 13);
-
-				this.cDTO = new CurationDTO();
-				int inc = 0;
-
-				List<CurationDTO> aList0 = cservice.matchCheckProcess(randomTagNo);
-				while (aList0.size() == 0)
-					aList0 = cservice.matchCheckProcess(randomTagNo + (++inc));
-
-				List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + (++inc)));
-				while (aList1.size() == 0)
-					aList1 = cservice.matchCheckProcess(randomTagNo + (++inc));
-
-				List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + (++inc)));
-				while (aList2.size() == 0)
-					aList2 = cservice.matchCheckProcess(randomTagNo + (++inc));
-
-				List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + (++inc)));
-				while (aList3.size() == 0)
-					aList3 = cservice.matchCheckProcess(randomTagNo + (++inc));
-
-				List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + (++inc)));
-				while (aList4.size() == 0)
-					aList4 = cservice.matchCheckProcess(randomTagNo + (++inc));
-
-				mav.addObject("aList0", aList0);
-				mav.addObject("aList1", aList1);
-				mav.addObject("aList2", aList2);
-				mav.addObject("aList3", aList3);
-				mav.addObject("aList4", aList4);
-				mav.setViewName("curation/curation");
-				
-				System.out.println("비로그인 끝");
-				
+				aList = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo), sessionAgeRange.substring(0, 2),
+						sessionGender);
+				System.out.println("aList.size = " + aList.size());
+			} else {
+				System.out.println("aList.size = -1");
 			}
+
+			mav.addObject("aList", aList);
+			mav.setViewName("mainPage/index");
+
+		} else {
+			System.out.println("LOGOUT SESSION");
+
+			int randomTagNo = 1 + (int) ((Math.random() * 1000) % 13);
 			
-		} //end login check 
-		
+			this.cDTO = new CurationDTO();
+			List<CurationDTO> aList = cservice.matchCheckProcess(randomTagNo);
+			mav.addObject("aList", aList);
+			mav.setViewName("mainPage/index");
+			// }
+
+		}
 		return mav;
-	} // end method
+	}
 
+	@RequestMapping(value = "/curation.do")
+	public ModelAndView curationBody(CurationDTO cDTO, ModelAndView mav, HttpSession session,
+			HttpServletRequest request) {
+		
+		// 세션값 저장
+				String sessionId = (String) session.getAttribute("sessionId");
+				if (sessionId != null)
+					System.out.println("sessionId = " + sessionId);
+				String sessionAgeRange = (String) session.getAttribute("session_age_range");
+				if (sessionAgeRange != null)
+					System.out.println("sessionAgeRange = " + sessionAgeRange.substring(0, 2));
+				String sessionGender = (String) session.getAttribute("session_gender");
+				if (sessionGender != null)
+					System.out.println("sessionGender = " + sessionGender);
 
-	// 여기서 부터 Magazine
+				// 로그인 여부 확인
+					if (sessionAgeRange != null && sessionGender != null) {
+						System.out.println("LOGIN SESSION");
+						
+						int randomTagNo = 1 + (int) ((Math.random() * 1000) % 13);
+
+						this.cDTO = new CurationDTO();
+						int inc = 0;
+						
+						List<CurationDTO> aList0 = cservice.loginMatchCheckProcess(Integer.toString(randomTagNo),
+								sessionAgeRange.substring(0, 2), sessionGender);
+						List<CurationDTO> aList1 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
+								sessionAgeRange.substring(0, 2), sessionGender);
+						List<CurationDTO> aList2 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
+								sessionAgeRange.substring(0, 2), sessionGender);
+						List<CurationDTO> aList3 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
+								sessionAgeRange.substring(0, 2), sessionGender);
+						List<CurationDTO> aList4 = cservice.loginMatchCheckProcess(Integer.toString((randomTagNo + (++inc))),
+								sessionAgeRange.substring(0, 2), sessionGender);
+
+						mav.addObject("aList0", aList0);
+						mav.addObject("aList1", aList1);
+						mav.addObject("aList2", aList2);
+						mav.addObject("aList3", aList3);
+						mav.addObject("aList4", aList4);
+						mav.setViewName("curation/curation");
+						
+						System.out.println("로그인 끝");
+
+						// login session 끝
+
+					} else if(sessionAgeRange == null && sessionGender == null)  {
+						System.out.println("LOGOUT SESSION");
+						
+						int randomTagNo = 1 + (int) ((Math.random() * 1000) % 13);
+
+						this.cDTO = new CurationDTO();
+						int inc = 0;
+
+						List<CurationDTO> aList0 = cservice.matchCheckProcess(randomTagNo);
+						List<CurationDTO> aList1 = cservice.matchCheckProcess((randomTagNo + (++inc)));
+						List<CurationDTO> aList2 = cservice.matchCheckProcess((randomTagNo + (++inc)));
+						List<CurationDTO> aList3 = cservice.matchCheckProcess((randomTagNo + (++inc)));
+						List<CurationDTO> aList4 = cservice.matchCheckProcess((randomTagNo + (++inc)));
+
+						mav.addObject("aList0", aList0);
+						mav.addObject("aList1", aList1);
+						mav.addObject("aList2", aList2);
+						mav.addObject("aList3", aList3);
+						mav.addObject("aList4", aList4);
+						mav.setViewName("curation/curation");
+						
+						System.out.println("비로그인 끝");
+						
+					}
+				
+				return mav;
+			} // end method
 
 	// http://localhost:8090/magazine-korea-drink.do
 	@RequestMapping(value = "/magazine-korea-drink.do")
@@ -251,5 +260,5 @@ public class CurationController {
 
 		return mav;
 
-	} // end method
-} // end class
+	}
+}

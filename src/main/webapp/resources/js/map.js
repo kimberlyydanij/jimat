@@ -35,16 +35,6 @@ function pageSearch(totalPage, total, blockSize, blockPage) {
 // 마커를 담을 배열입니다
 var markers = [];
 
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-mapOption = {
-	center : new daum.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-	level : 5
-// 지도의 확대 레벨
-};
-
-// 지도를 생성합니다
-var map = new daum.maps.Map(mapContainer, mapOption);
-
 // 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
 function setMapType(maptype) {
 	var roadmapControl = document.getElementById('btnRoadmap');
@@ -86,8 +76,11 @@ function searchPlaces() {
 		alert('키워드를 입력해주세요!');
 		return false;
 	} else {
-		infowindow.close();
-		searchkeyWord(keyword);
+		//infowindow.close();
+		//searchkeyWord(keyword);
+		
+		var url = "foodmap.do?keyword=" + keyword;
+		location.href = url;
 	}
 
 }

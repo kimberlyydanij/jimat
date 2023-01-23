@@ -10,12 +10,6 @@
 <meta charset="utf-8" />
 <title>Jimat - Food choice for you</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600&display=swap"
-	rel="stylesheet">
-
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -32,52 +26,37 @@
 	src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
-<link href="${path}/resources/css/magazine.css" type="text/css"
+<link href="${path}/resources/css/map.css" type="text/css"
 	rel="stylesheet" />
-
 <script defer src="${path}/resources/js/main.js"></script>
 <!--   <script defer src="${path}/resources/js/gps.js"></script> -->
 <script defer src="${path}/resources/js/map.js"></script>
 </head>
 <body>
+
 	<div class="body-wrap container col-12 column-row">
 		<%-- 메인 메뉴 불러오기 --%>
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
-		
-		<a href="javascript: magazine();">
-		<img id="magazine-top"
-			src="${path}/resources/images/magazine-main.png">
-		</a>
-		
-		<div class="row">
-			<div class="magazine-body col-12 ms-3 d-flex">
-				<div class="container colums-row">
-
-					<div class="magazine-item" id="korean-drink">
-						<a href="magazine-korea-drink.do"><img
-							src="${path}/resources/images/korean-drink.png"></a>
-					</div>
-					<div class="magazine-item" id="garosu">
-						<a href="magazine-garosu.do"><img
-							src="${path}/resources/images/garosu.png"></a>
-					</div>
-				</div>
-				<div class="container colums-row">
-					<div class="magazine-item" id="macandcheese">
-						<a href="magazine-macandcheese.do"><img
-							src="${path}/resources/images/macandcheese
-				.png"></a>
-					</div>
-					<div class="magazine-item" id="porkcutlet">
-						<a href="magazine-porkcutlet.do"><img
-							src="${path}/resources/images/porkcutlet.png"></a>
-					</div>
-				</div>
+		<div class="map_wrap">
+			<div id="map"
+				style="display: block; margin: 0 auto; width: 60%; height: 99%; position: relative; overflow: hidden;">
+			</div>
+		</div>
+		<div class="food-body container menu_wrap columns-row">
+			<div>
+				<c:out value="${fn:length(aList)}" />
+				<c:forEach var="aList" items="${aList}" varStatus="status" begin="1"
+					end="10">
+			  	여기다  하면 됨
+				</c:forEach>
 			</div>
 		</div>
 	</div>
 	<script defer src="${path}/resources/js/map.js"></script>
+	<script type="text/javascript">
+		//displayPlaces(<c:out value="${param.keyword}" />);
+	</script>
 </body>
 </html>

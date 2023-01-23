@@ -22,7 +22,6 @@ public class MainController {
 		return "mainPage/teamVita500";
 	}
 
-	
 	// 맛집소개로 이동
 	@RequestMapping("curationPage.do")
 	public String Curation() {

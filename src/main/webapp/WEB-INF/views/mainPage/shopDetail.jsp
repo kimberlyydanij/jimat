@@ -77,7 +77,11 @@
 										<div class="col-3 shop-category">
 											<!-- 1차/2차 카테고리 -->
 											<p id="shop-category">
-												<c:out value="${adto.food_category}" />
+												<c:out value="${adto.food_category}" /> / 
+												<c:out value="${adto.tag_gender}" /> / 
+												<c:out value="${adto.tag_age}" /> / 
+											<p id="shop-user-tag">
+											    
 											</p>
 										</div>
 										<div class="d-flex col-2" id='div-shop-rating'>

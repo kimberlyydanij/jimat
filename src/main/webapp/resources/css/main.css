@@ -35,8 +35,6 @@ a {
 }
 
 body {
-  font-family: "맑은 고딕", "돋움";
-  font-size: 16px;
   color: #444444;
   text-align: center;
   min-width: 1200px;
@@ -98,6 +96,10 @@ div.header-menu {
   max-width: 1030px;
 }
 
+div#navbarColor03 {
+	margin-right : 0px !important;
+}
+
 .navbar-mainmenu {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
@@ -116,6 +118,11 @@ a.nav-link {
 
 a.nav-link:hover {
 	color:#fff;
+}
+
+input.form-control {
+	width : 300px;
+	margin-right : 30px;
 }
 
 div.login-button {

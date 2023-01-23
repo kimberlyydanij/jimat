@@ -34,7 +34,7 @@
 	rel="stylesheet" />
 <script defer src="${path}/resources/js/main.js"></script>
 <!--   <script defer src="${path}/resources/js/gps.js"></script> -->
-<script defer src="${path}/resources/js/map.js"></script>
+<script defer src="${path}/resources/js/map.js?v=13"></script>
 </head>
 <body>
 
@@ -57,6 +57,6 @@
 			<jsp:include page="/WEB-INF/views/curation/curationrow.jsp"></jsp:include>
 		</div>
 	</div>
-	<script defer src="${path}/resources/js/map.js"></script>
+	<script defer src="${path}/resources/js/map.body.js?v=1"></script>
 </body>
 </html>

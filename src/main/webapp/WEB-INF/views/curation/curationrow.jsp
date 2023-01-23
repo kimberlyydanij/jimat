@@ -32,58 +32,62 @@
 	src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd"></script>
 <link href="${path}/resources/css/main.css" type="text/css"
 	rel="stylesheet" />
-	<link href="${path}/resources/css/curation.css" type="text/css"
+<link href="${path}/resources/css/curation.css" type="text/css"
 	rel="stylesheet" />
 <script defer src="${path}/resources/js/main.js"></script>
 <!--   <script defer src="${path}/resources/js/gps.js"></script> -->
-<script defer src="${path}/resources/js/map.js"></script>
+<script defer src="${path}/resources/js/map.js?v=13"></script>
 <script defer src="${path}/resources/js/imgscroll.js"></script>
 </head>
-  <body>
-    <div class="body-wrap container mb-2 ms-3">
-      <div class="card border-warning container mt-4 b" id="main-curation">
-        <div class="row">
-          <div class="a container d-flex">
-            <div class="arrow col-1" onclick="img_scroll(0, 100);">
-              <button id="arrow-left">
-                <i class="fa-solid fa-angle-left fa-3x"></i>
-              </button>
-            </div>
- 
-            <div class="curation-body pb-3 col-11 container column-row">
-              <div class="row">
-                <c:forEach items="${aList}" var="aList" begin="0" end="0">
-	              <div class="curation-title mt-3" id="curation-title">#${aList.food_category}</div>
-	            </c:forEach>
-              </div>
+<body>
+	<div class="body-wrap container mb-2 ms-3">
+		<div class="card border-warning container mt-4 b" id="main-curation">
+			<div class="row">
+				<div class="a container d-flex">
+					<div class="arrow col-1" onclick="img_scroll(0, 100);">
+						<button id="arrow-left">
+							<i class="fa-solid fa-angle-left fa-3x"></i>
+						</button>
+					</div>
 
-              <div class="row" id="row_container_0">
-                <div class="shop-body container d-flex p-1">
-                  <c:set var="count" value="0" />
-                  <c:forEach items="${aList}" var="aList" begin="0" end="10">
-                    <c:set var="count" value="${count+1}" />
-                    <div class="p-1 column-row" id="shop-thumbnail-body-0-<c:out value="${count}" />">
-                   	 <div class="shop-thumbnail-container" >
-                   	 <c:url var="shopDetail_a" value="shopdetail.do">
-                   	 	<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
-                   	 </c:url>
-                      <a href="${shopDetail_a}">
-                        <img src="${aList.img_url}" class="shop-thumbnail" /></a></div>
-                      <div><p class="mt-2 shop-name">${aList.foodstore_name}</p></div>
-                    </div>
-                  </c:forEach>
-                </div>
-              </div>
-            </div>  
-          
-            <div class="arrow col-1">
-              <button id="arrow-left" onclick="img_scroll(0, -100);">
-                <i class="fa-solid fa-angle-right fa-3x"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+					<div class="curation-body pb-3 col-11 container column-row">
+						<div class="row">
+							<c:forEach items="${aList}" var="aList" begin="0" end="0">
+								<div class="curation-title mt-3" id="curation-title">#${aList.food_category}</div>
+							</c:forEach>
+						</div>
+
+						<div class="row" id="row_container_0">
+							<div class="shop-body container d-flex p-1">
+								<c:set var="count" value="0" />
+								<c:forEach items="${aList}" var="aList" begin="0" end="10">
+									<c:set var="count" value="${count+1}" />
+									<div class="p-1 column-row"
+										id="shop-thumbnail-body-0-<c:out value="${count}" />">
+										<div class="shop-thumbnail-container">
+											<c:url var="shopDetail_a" value="shopdetail.do">
+												<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
+											</c:url>
+											<a href="${shopDetail_a}"> <img src="${aList.img_url}"
+												class="shop-thumbnail" /></a>
+										</div>
+										<div>
+											<p class="mt-2 shop-name">${aList.foodstore_name}</p>
+										</div>
+									</div>
+								</c:forEach>
+							</div>
+						</div>
+					</div>
+
+					<div class="arrow col-1">
+						<button id="arrow-left" onclick="img_scroll(0, -100);">
+							<i class="fa-solid fa-angle-right fa-3x"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
