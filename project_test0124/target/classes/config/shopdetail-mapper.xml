@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="shopDetail"> 
+	<!-- 정보 찾기 -->
+	<select id="shopDetailData" parameterType="String" resultType="dto.ShopDetailDTO">
+		select * from SEOULFOODSTORE where foodstore_id=#{number, jdbcType=VARCHAR} 
+	</select>
+	
+	<select id="count" resultType="int" parameterType="String">
+		SELECT
+		count(*) FROM review WHERE review_foodstore_seq =
+		#{review_foodstore_seq, jdbcType=NUMERIC}
+	</select>
+
+	<!-- 리뷰 작성 -->
+	<insert id="review_write" parameterType="dto.ReviewDTO">
+		INSERT INTO
+		review(review_seq, review_writer_id, review_write_date,
+		review_content, review_foodstore_seq,
+		review_upload, review_tag, review_rating)
+		VALUES(review_num_seq.nextval, #{review_writer_id}, sysdate,
+		#{review_content}, #{review_foodstore_seq}, #{review_upload, jdbcType=VARCHAR}, 
+		#{review_tag, jdbcType=VARCHAR}, #{review_rating, jdbcType=VARCHAR})
+	</insert>
+
+	<!-- 전체 리뷰 정보 조회 -->
+	<select id="find_review_all" resultType="dto.ReviewDTO">
+		SELECT * FROM review
+	</select>
+
+	<!-- 유저 id를 통한 리뷰 정보 조회 -->
+	<select id="find_review_user" parameterType="String"
+		resultType="dto.ReviewDTO">
+		SELECT * FROM review where review_writer_id =
+		#{review_writer_id}
+	</select>
+
+	<!-- 리뷰 번호를 통한 리뷰 정보 조회 -->
+	<select id="find_review_number" parameterType="int"
+		resultType="dto.ReviewDTO">
+		SELECT * FROM review where review_seq = #{review_seq}
+	</select>
+
+	<!-- 리뷰 페이지 번호를 통한 리뷰 정보 조회 -->
+	<select id="find_review_page" parameterType="String"
+		resultType="dto.ReviewDTO">
+		SELECT * FROM review where review_foodstore_seq =
+		#{review_foodstore_seq}
+		ORDER BY review_seq DESC
+	</select>
+
+	<!-- 리뷰 페이지 번호와 리스트 개수를 가지고 페이징 처리 -->
+	<select id="list" parameterType="java.util.HashMap"
+		resultType="dto.ReviewDTO">
+		<!-- <![CDATA[]]> -->
+	<![CDATA[
+		select b.* from
+		(select rownum as rm, a.* from(
+		select * from review where review_foodstore_seq = #{review_foodstore_seq, jdbcType=VARCHAR}
+		order by review_seq desc, review_write_date desc) a)b
+		where b.rm >=#{startRow} and b.rm<=#{endRow}
+		]]>
+
+	</select>
+
+	<select id="review_upload" parameterType="int"
+		resultType="String">
+		SELECT review_upload FROM review
+		WHERE
+		review_seq=#{review_seq}
+	</select>
+
+	<!-- 리뷰 수정 -->
+	<update id="review_update" parameterType="dto.ReviewDTO">
+		UPDATE review
+		SET
+		review_write_date = sysdate, review_content = #{review_content},
+		review_upload = #{review_upload, jdbcType=VARCHAR}, review_tag =
+		#{review_tag, jdbcType=VARCHAR}, review_rating = #{review_rating, jdbcType=VARCHAR}
+		WHERE
+		review_foodstore_seq = #{review_foodstore_seq} AND review_seq =
+		#{review_seq} AND review_writer_id = #{review_writer_id}
+	</update>
+
+	<!-- 리뷰 삭제 -->
+	<delete id="review_delete" parameterType="int">
+		DELETE FROM review
+		WHERE review_seq=#{review_seq}
+	</delete>
+
+	<select id="review_image" parameterType="String"
+		resultType="String">
+		SELECT k_image
+		FROM kakao_login
+		WHERE k_id = #{review_writer_id}
+	</select>
+
+</mapper>

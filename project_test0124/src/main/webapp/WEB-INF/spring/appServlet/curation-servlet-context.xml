@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+
+
+
+		<!-- [6] CurationDaoImp 빈 선언 -->
+	<bean id="cDao" class="dao.CurationDaoImp" >
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
+
+	
+	<!-- [7] CurationServiceImp 빈 선언  -->
+	<bean id="curation_service" class="service.CurationServiceImp" >
+		<property name="cdao" ref="cDao" />
+	</bean>
+	
+
+	<!-- [8] controller 빈 선언-->
+	<bean class="controller.CurationController">
+		<property name="cservice" ref="curation_service" />
+	</bean>
+	
+
+
+</beans>
