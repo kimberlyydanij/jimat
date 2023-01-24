@@ -23,16 +23,16 @@
 	$(document).ready(
 			function() {
 				$('#comment-send').click(function() {
+					console.log("1 : " + $('[name=review_content]').val());
 					if(${!empty sessionScope.sessionId}) {
-						if($('[name=review_content]').val()) {
+						if($('[name=review_content]').val() != "") {
 							$('[name=review_content]').val(
 									$('[name=review_content]').val().replace(/\n/gi, '<br>'));
 							$('#frm').attr("method", "post");
 							$('#frm').attr("action", "reviewform.do").submit();
 						}else {
 							alert("리뷰에 내용을 적어주세요.");
-// 							이 부분은 완성시키고 다시 수정해야할 부분
-							location.reload();
+							location.href = "http://localhost:8090/";
 						}
 					}else {
 						popup_login();
@@ -50,13 +50,13 @@
 				});		
 				
 			});
-
 </script>
 </head>
 <body>
+	<p>review_store_id = ${review_foodstore_seq}</p>
 	<form id="frm" enctype="multipart/form-data">
-		<div class="card p-3 col-lg-9 mt-3" id="comment-body">
-			<div class="comment-box-body column-row p-3">
+		<div class="card p-3 col-12 mt-3" id="comment-body">
+			<div class="comment-box-body column-row col-11 p-3">
 				<div class="comment-box column-row mb-4 column-row">
 					<div class="row" id="row1">
 						<div class="comment-rating d-flex justify-content-between p-0">
@@ -66,14 +66,23 @@
 								</p>
 							</div>
 							<div class="rating flex-row-reverse ms-3">
-								<input type="radio" name="rating" value="1" id="1" /> <label
-									id="stars" for="1">☆</label> <input type="radio" name="rating"
-									value="2" id="2" /> <label id="stars" for="2">☆</label> <input
-									type="radio" name="rating" value="3" id="3" /> <label
-									id="stars" for="3">☆</label> <input type="radio" name="rating"
-									value="4" id="4" /> <label id="stars" for="4">☆</label> <input
-									type="radio" name="rating" value="5" id="5" /> <label
-									id="stars" for="5">☆</label>
+								<input type="radio" name="review_rating" value="5" id="5" /> 
+								<label
+									id="stars" for="5">☆</label> 
+									<input type="radio" name="review_rating"
+									value="4" id="4" /> 
+									<label id="stars" for="4">☆</label> 
+									<input
+									type="radio" name="review_rating" value="3" id="3" /> 
+									<label
+									id="stars" for="3">☆</label> 
+									<input type="radio" name="review_rating"
+									value="2" id="2" /> 
+									<label id="stars" for="2">☆</label> 
+									<input
+									type="radio" name="review_rating" value="1" id="1" /> 
+									<label
+									id="stars" for="1">☆</label>
 							</div>
 							<div class="comment-tag">
 								<div class="btn-group" role="group"
@@ -88,7 +97,7 @@
 										<label class="btn btn-outline-warning"
 										for="price">#가격</label> 
 									<input type="radio"
-										class="btn-check" name="review_tag" id="service" checked
+										class="btn-check" name="review_tag" id="service"
 										autocomplete="off" value="서비스"/> 
 										<label class="btn btn-outline-info"
 										for="service">#서비스</label> 
@@ -113,7 +122,7 @@
 				<div class="row" id="row3">
 					<div class="write-buttons mt-3 d-flex justify-content-center">
 						<input class="form-control" type="file" id="formFile"
-							name="filename" accept="image/jpg,image/png/image/jpeg">
+							name="filename" accept="image/jpg,image/png,image/jpeg">
 						<button class="btn btn-primary" id="comment-send">작성완료</button>
 					</div>
 				</div>
@@ -121,8 +130,7 @@
 		</div>
 		<input type="text" name="review_writer_id"
 			value="${sessionScope.sessionId}" hidden=hidden> <input
-			type="text" name="review_foodstore_seq" value="2" hidden=hidden>
-		<input type="text" name="review_good_number" value="0" hidden=hidden>
+			type="text" name="review_foodstore_seq" value="${review_foodstore_seq}" hidden=hidden>
 	</form>
 </body>
 </html>

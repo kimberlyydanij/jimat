@@ -146,7 +146,28 @@
 			</div>
 			<div class="row m-0">
 				<%-- 리뷰 불러오기 --%>
-				<jsp:include page="/WEB-INF/views/mainPage/review.jsp"></jsp:include>
+				<div>
+					<p>main_review_food_store_seq = ${review_foodstore_seq}</p>
+					<jsp:include page="/WEB-INF/views/review/review_form.jsp">
+						<jsp:param name="review_foodstore_seq" value="${review_foodstore_seq}" />
+					</jsp:include>
+				</div>
+
+				<div>
+					<jsp:include page="/WEB-INF/views/review/review_view.jsp">
+						<jsp:param name="review_foodstore_seq" value="${review_foodstore_seq}" />
+						<jsp:param name="aList" value="${aList}" />
+						<jsp:param name="review_image_list" value="${review_image_list}" />
+						<jsp:param name="alist_write_date" value="${alist_write_date}" />
+					</jsp:include>
+				</div>
+
+				<div>
+					<jsp:include page="/WEB-INF/views/review/review_paging.jsp" >
+						<jsp:param name="review_foodstore_seq" value="${review_foodstore_seq}" />
+						<jsp:param name="pv" value="${pv}" />						
+					</jsp:include>
+				</div>
 			</div>
 
 		</div>

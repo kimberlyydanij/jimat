@@ -28,8 +28,9 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:config/member-mapper.xml</value>
-				<value>classpath:config/review-mapper.xml</value>
 				<value>classpath:config/curation-mapper.xml</value>
+				<value>classpath:config/like-mapper.xml</value>
+				<value>classpath:config/mypage-mapper.xml</value>
 				<value>classpath:config/shopdetail-mapper.xml</value>
 				<value>classpath:config/mapMapper.xml</value>
 			</list>

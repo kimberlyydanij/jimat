@@ -11,7 +11,11 @@
 		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
 	</configs>
 	<autoconfigs>
-		<config>src/main/webapp/WEB-INF/spring/appServlet/review-servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/dispatcher-map.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/curation-servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/review-like-servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/shopdetail-servlet-context.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

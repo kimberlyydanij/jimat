@@ -20,7 +20,6 @@ public class ShopDetailDTO {
 	
 	private int food_category_tag;
 
-
 	public ShopDetailDTO() {
 		
 	}

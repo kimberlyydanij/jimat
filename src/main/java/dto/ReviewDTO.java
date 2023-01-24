@@ -8,7 +8,7 @@ public class ReviewDTO {
 	private String review_writer_id;
 	private String review_write_date;
 	private String review_content;
-	private int review_foodstore_seq;
+	private String review_foodstore_seq;
 	private String review_tag;
 	private int review_rating;
 	private String review_upload;
@@ -51,11 +51,11 @@ public class ReviewDTO {
 		this.review_content = review_content;
 	}
 
-	public int getReview_foodstore_seq() {
+	public String getReview_foodstore_seq() {
 		return review_foodstore_seq;
 	}
 
-	public void setReview_foodstore_seq(int review_foodstore_seq) {
+	public void setReview_foodstore_seq(String review_foodstore_seq) {
 		this.review_foodstore_seq = review_foodstore_seq;
 	}
 

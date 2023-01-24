@@ -1,10 +1,19 @@
 body {
-	font-family: "Calibri", sans-serif !important;
-	font-family: "nanumbarungothic" !important;
-	font-size: 16px;
+	font-size: 1rem;
 	min-width: 600px;
+	magin: 0;
 }
 
+.review_title {
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: left !important;
+	display: flex;
+}
+
+.review-update-body {
+	margin : auto;
+}
 div#comment-area {
 	margin: 0;
 	padding: 0;
@@ -15,21 +24,21 @@ div.card {
 }
 
 div.card#comment-body, div.profile-body {
-	margin: auto;
 	min-width: 550px;
 }
 
 div.comment-rating {
 	max-height: 45px;
+	margin: auto;
 }
 
-.title> p {
+.title>p {
 	margin: 0px;
 }
 
 textarea {
 	min-width: 550px;
-	text-align : left;
+	text-align: left;
 }
 
 .form .comment-options {
@@ -63,10 +72,9 @@ input#formFile {
 .comment-widgets {
 	background: rgba(0, 0, 0, 0.02);
 	cursor: pointer;
-}
-
-.comment-widgets {
 	border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+	max-height : 280px;
+	overflow:hidden;
 }
 
 div.user-rating {
@@ -91,6 +99,10 @@ div.comment-options>p {
 	font-style: bold;
 }
 
+div.profile {
+	margin: 0px;
+}
+
 div.profile-image {
 	width: 80px;
 	height: 80px;
@@ -99,10 +111,12 @@ div.profile-image {
 
 div.comment-info {
 	padding: 0px;
+	margin: 0px;
 }
 
 div.comment-inside, div.comment-info, div.user-info {
 	min-width: 150px;
+	margin: 0px;
 }
 
 div.user_info {
@@ -124,7 +138,8 @@ div.user_info {
 }
 
 div.comment-tag {
-	min-width: 200px;
+	min-width: 150px;
+	margin: 0px;
 }
 
 .action-icons a, .btn-group i {
@@ -143,7 +158,7 @@ i.fa-heart:hover {
 
 .rating {
 	display: flex;
-	width: 115px;
+	width: 150px;
 	min-width: 120px;
 	margin-top: -4px;
 }
@@ -197,35 +212,43 @@ h4#user_nickname {
 }
 
 .comment-text {
-	padding-right: 5px;
+	padding-right: 0 5px;
+	margin: 0px;
+	text-align: left !important;
 }
 
-p#comment-text {
-	text-align:left !important;
-}
-
-.comment-text>p {
+div.comment-text p {
+	text-align: left !important;
 	margin-left: 5px;
+	height: 190px;
+	overflow: hidden;
+}
+
+div.image-container {
+	text-align: right;
+}
+
+div.review-images {
+	margin: 0px;
+	width: 250px;
+	display: inline-block;
+	text-align: right;
 }
 
 div.review-images img {
 	object-fit: contain;
-	width: 100%;
+	width: 240px;
 	height: 100%;
-	max-height: 200px;
 	object-fit: cover;
+	border: 2px solid black;
 }
 
 div.comment-tag {
 	text-align: center;
 }
 
-
-
-div.bookmark  > input  {
+div.bookmark>input {
 	display: none;
-
-
 }
 
 div.bookmark>label {
@@ -260,11 +283,19 @@ div.bookmark>label {
 	text-align: left;
 }
 
-.btn {
-  --bs-btn-color: #ff4136;
-  --bs-btn-bg: transparent;
-  --bs-btn-active-color: #ff4136;
-  --bs-btn-active-bg: #fff;
-  --bs-btn-active-border-color: #fff;
-  border: none;
+.btn { -
+	-bs-btn-color: #ff4136; -
+	-bs-btn-bg: transparent; -
+	-bs-btn-active-color: #ff4136; -
+	-bs-btn-active-bg: #fff; -
+	-bs-btn-active-border-color: #fff;
+	border: none;
+}
+
+i{
+	background-color:transparent;
+}
+
+p.ms-1 {
+	margin : 0px;
 }

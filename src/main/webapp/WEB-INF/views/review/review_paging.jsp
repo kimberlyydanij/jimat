@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Jimat - Food choice for you</title>
-<link href="/css/review.css" type="text/css" rel="stylesheet" />
+<link href="resources/css/review.css" type="text/css" rel="stylesheet" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -22,13 +22,13 @@
 	<div class="pagelist" style="text-align:center">
 		<!-- 이전 출력 시작 -->
 		<c:if test="${pv.startPage>1}">
-			<a href="review_page.do?currentPage=${pv.startPage-pv.blockPage}">이전</a>
+			<a href="shopdetail.do?shopDetail_num=${review_foodstore_seq}?currentPage=${pv.startPage-pv.blockPage}">이전</a>
 		</c:if>
 		<!-- 이전 출력 끝 -->
 
 		<!-- 페이지 출력 시작 -->
 		<c:forEach var="i" begin="${pv.startPage}" end="${pv.endPage}">
-			<span> <c:url var="currPage" value="review_page.do">
+			<span> <c:url var="currPage" value="shopdetail.do?shopDetail_num=${review_foodstore_seq}">
 					<c:param name="currentPage" value="${i}" />
 				</c:url> <c:choose>
 					<c:when test="${i==pv.currentPage}">
@@ -44,7 +44,7 @@
 
 		<!-- 다음 출력 시작 -->
 		<c:if test="${pv.endPage<pv.totalPage}">
-			<a href="review_page.do?currentPage=${pv.startPage+pv.blockPage}">다음</a>
+			<a href="review_page.do?shopDetail_num=${review_foodstore_seq}?currentPage=${pv.startPage+pv.blockPage}">다음</a>
 		</c:if>
 		<!-- 다음 출력 끝 -->
 	</div>

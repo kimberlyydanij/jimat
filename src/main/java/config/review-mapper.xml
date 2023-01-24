@@ -3,10 +3,10 @@
 
 <mapper namespace="review">
 
-	<select id="count" resultType="int" parameterType="int">
+	<select id="count" resultType="int" parameterType="String">
 		SELECT
 		count(*) FROM review WHERE review_foodstore_seq =
-		#{review_foodstore_seq, jdbcType=NUMERIC}
+		#{review_foodstore_seq, jdbcType=VARCHAR}
 	</select>
 
 	<!-- 리뷰 작성 -->

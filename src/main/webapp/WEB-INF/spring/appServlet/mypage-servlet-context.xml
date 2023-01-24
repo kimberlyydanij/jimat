@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	
+	<!-- [6] MypageDaoImpl 빈 선언 -->
+	<bean id="mypage_dao" class="dao.MypageDaoImpl" >
+		<property name="sqlSession" ref="sqlSession" />
+	</bean>
+
+	
+	<!-- [7] MypageServiceImpl 빈 선언  -->
+	<bean id="mypage_service" class="service.MypageServiceImpl" >
+		<property name="dao" ref="mypage_dao" />
+	</bean>
+
+	
+	<!-- [8] ReviewController 빈 선언 -->
+ 
+	<bean class="controller.MypageController">
+		<property name="service" ref="mypage_service" />
+	</bean>
+
+</beans>

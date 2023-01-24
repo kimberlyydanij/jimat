@@ -28,8 +28,7 @@
 			<jsp:include page="/WEB-INF/views/mainPage/mainMenu.jsp"></jsp:include>
 		</div>
 
-		<a href="javascript: magazine();">
-		<img id="magazine-top"
+		<a href="javascript: magazine();"> <img id="magazine-top"
 			src="${path}/resources/images/magazine-main.png">
 		</a>
 
@@ -37,29 +36,30 @@
 			class="magazine-body pb-3 col-11 container column-row mt-2 px-0 py-3"
 			id="main-magazine">
 			<div class="row row-cols-2">
-			<c:set var="count" value="0" />
-			<c:forEach items="${aList}" var="aList">
-				<c:set var="count" value="${count+1}" />
-				
-				<div class="col magazine-list-body container d-flex my-2"
-					id="list<c:out value='${count}'/>">
-					<div class="magazine-list-thumbnail py-3 m-0 col-3">
-						<c:url var="shopDetail_a" value="shopdetail.do">
-							<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
-						</c:url>
-						<a href="${shopDetail_a}"> <img src="${aList.img_url}"
-							class="shop-thumbnail" /></a>
+				<c:set var="count" value="0" />
+				<c:forEach items="${aList}" var="aList">
+					<c:set var="count" value="${count+1}" />
+
+					<div class="col magazine-list-body container d-flex my-2 p-0"
+						id="list<c:out value='${count}'/>">
+						<div class="magazine-list-thumbnail col-3">
+							<c:url var="shopDetail_a" value="shopdetail.do">
+								<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
+							</c:url>
+							<a href="${shopDetail_a}"> <img src="${aList.img_url}"
+								class="shop-thumbnail" /></a>
+						</div>
+						<div class="magazine-list-info columns-row col-8 ms-3 mt-2">
+							<div class="shop-name mt-4">${aList.foodstore_name}</div>
+							<div class="shop-tags mt-4">#${aList.tag_age},
+								#${aList.tag_gender}, #${aList.tag_store}</div>
+							<div class="shop-area mt-2">${aList.area}</div>
+						</div>
+						<!--  매거진 리스트 인포 -->
 					</div>
-					<div class="magazine-list-info columns-row col-8 ms-3 mt-2">
-						<div class="shop-name mt-4">${aList.foodstore_name}</div>
-						<div class="shop-tags mt-4">#${aList.tag_age},
-							#${aList.tag_gender}, #${aList.tag_store}</div>
-					</div>
-					<!--  매거진 리스트 인포 -->
-				</div>
-				<!-- 매거진리스트바디-->
-			</c:forEach>
-		</div>
+					<!-- 매거진리스트바디-->
+				</c:forEach>
+			</div>
 		</div>
 </body>
 </html>

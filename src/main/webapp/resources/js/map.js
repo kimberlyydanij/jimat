@@ -90,7 +90,7 @@ function searchkeyWord(keyword) {
 	//alert(keyword);
 	// 한페이지당 표시될 화면 계산
 	num = 1;
-	total = 15;
+	total = 14;
 	keyword = keyword;
 	// keyword = document.getElementById('keyword').value;
 	// 디비값을 불러 지도에 뿌림
@@ -120,9 +120,9 @@ function searchkeyWord(keyword) {
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces(search) {
 	//alert(search.length);
-	var listEl = document.getElementById('placesList'), menuEl = document
+	var listEl = document.getElementById('placeList'), menuEl = document
 			.getElementById('menu_wrap'), fragment = document
-			.createDocumentFragment(), bounds = new daum.maps.LatLngBounds(), listStr = '';
+			.createDocumentFragment(), bounds = new daum.maps.LatLngBounds(), listStr = ''; 
 	
 	
 	

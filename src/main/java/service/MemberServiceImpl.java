@@ -3,32 +3,25 @@ package service;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Scanner;
 
-import javax.net.ssl.HttpsURLConnection;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.apache.velocity.tools.view.WebappUberspector.GetAttributeExecutor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import dao.MemberDaoImpl;
+import dao.MemberDAO;
 import dto.KakaoDTO;
 
 
-public class MemberServiceImpl {
+public class MemberServiceImpl implements MemberService{
 
 
 	String rest_api_key = "959d058d46ea6624759a78c82b93aada";
@@ -40,13 +33,13 @@ public class MemberServiceImpl {
 
 	String id = "";
 
-	private MemberDaoImpl mr;
+	private MemberDAO mr;
 
 	public MemberServiceImpl() {
 
 	}
 
-	public void setMr(MemberDaoImpl mr) {
+	public void setMr(MemberDAO mr) {
 		this.mr = mr;
 	}
 
@@ -105,7 +98,7 @@ public class MemberServiceImpl {
 			}
 
 			//읽어온 정보 확인
-			System.out.println("1response body : " + result);
+			System.out.println("response body : " + result);
 
 			//읽어온 파일을 json 형식으로 바꿔준다.
 			JsonParser parser = new JsonParser();
@@ -170,7 +163,7 @@ public class MemberServiceImpl {
 			}
 			
 			//요청한 값 확인 (사용자 정보 리턴)
-			System.out.println("2response body : " + result);
+			System.out.println("response body : " + result);
 
 			//json타입으로 변경
 			JsonParser parser = new JsonParser();
@@ -185,9 +178,7 @@ public class MemberServiceImpl {
 			
 			//id 값을 내부 아이디식으로 변수에 저장
 			String k_id = "kakao_" + id;
-
-			System.out.println("id : " + id);
-
+			
 			//각종 정보를 변수에 저장
 			String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 			String image = properties.getAsJsonObject().get("thumbnail_image").getAsString();
@@ -199,6 +190,7 @@ public class MemberServiceImpl {
 
 			//DTO에 받아온 값을 저장
 			userinfo.setK_id(k_id);
+			userinfo.setK_name(nickname);
 			userinfo.setK_nickname(nickname);
 			userinfo.setK_image(image);
 			userinfo.setK_email(email);
@@ -207,8 +199,6 @@ public class MemberServiceImpl {
 			userinfo.setK_birthday_type(birthday_type);
 			userinfo.setK_gender(gender);
 
-			System.out.println("###id#### : " + userinfo.getK_id());		
-
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -216,17 +206,18 @@ public class MemberServiceImpl {
 		}
 		System.out.println(userinfo.getK_id());
 		//데이터 베이스 해당하는 정보가 있는지 확인
-		KakaoDTO result = mr.findkakao(userinfo);
+		KakaoDTO result = mr.kakao_find(userinfo);
+		System.out.println("S:" + result);
 		
 		//해당하는 정보가 없으면 데이터 베이스에 정보를 저장
 		if(result==null) {
-			mr.kakaoinsert(userinfo);
+			mr.kakao_insert(userinfo);
 			// 정보를 저장하기 위해 Repository로 보내는 코드
-			return mr.findkakao(userinfo);
+			return mr.kakao_find(userinfo);
 			// 정보 저장 후 컨트롤러에 정보를 보내는 코드
 			
 		} else { // 정보가 이미 있기 때문에 result를 리턴
-			return userinfo;
+			return result;
 			
 		}
 
@@ -285,7 +276,7 @@ public class MemberServiceImpl {
 			}
 			
 			//요청한 값 확인 (로그아웃 된 id 값 리턴)
-			System.out.println("3response body : " + result);
+			System.out.println("response body : " + result);
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -349,11 +340,45 @@ public class MemberServiceImpl {
 			}
 			
 			//요청한 값 확인 (로그아웃 된 id 값 리턴)
-			System.out.println("4response body : " + result);
+			System.out.println("response body : " + result);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		return result;
+	}
+
+	@Override
+	public void kakao_updatePro(KakaoDTO userInfo) {
+		mr.kakao_update(userInfo);
+	}
+
+	@Override
+	public void kakao_deletePro(String k_id) {
+		mr.kakao_delete(k_id);
+	}
+
+	@Override
+	public void kakao_connect_sessionPro(HttpServletRequest request, KakaoDTO userinfo) {
+		HttpSession session = request.getSession();
+		session.setAttribute("sessionId", userinfo.getK_id());
+		session.setAttribute("session_nickname", userinfo.getK_nickname());
+		session.setAttribute("session_image", userinfo.getK_image());
+		session.setAttribute("session_age_range", userinfo.getK_age_range());
+		session.setAttribute("session_gender", userinfo.getK_gender());
+	}
+
+	@Override
+	public String move_pagePro(HttpServletRequest request) {
+		if(request.getHeader("Referer") != null) {
+			return "redirect:" + request.getHeader("Referer");
+		}else {
+			return "redirect:/index.do";
+		}
+	}
+
+	@Override
+	public int kakao_check_nicknamePro(String k_nickname) {
+		return mr.kakao_nickname_check(k_nickname); // 0이면 존재하는 닉네임 없음, 1이면 존재하는 닉네임
 	}
 }

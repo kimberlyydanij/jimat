@@ -7,12 +7,7 @@ color: black;
 a:hover {
         color:red;
 }  */
-.map_wrap, .map_wrap * {
-	margin: 0;
-	padding: 0;
-	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
-	font-size: 13px;
-}
+
 
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active {
 	color: #000;
@@ -30,7 +25,7 @@ div#map {
 	margin : auto;
 }
 
-/* 리스트*/
+/* 리스트
 #menu_wrap {
 	position: relative;
 	bottom: 0;
@@ -46,12 +41,13 @@ div#map {
 	height : auto;
 	background-color: White;
   	border: 1px solid black ;
-}
+} */
 
 .bg_white {
 	background: #fff;
 }
 
+/*
 #menu_wrap hr {
 	display: block;
 	height: 1px;
@@ -111,75 +107,72 @@ div#map {
  height :150px;
 }
 
-#placesList .item .markerbg {
+*/ 
+.markerbg {
 	float: left;
 	position: absolute;
 	width: 40px;
 	height: 40px;
-	margin: 10px 0 0 10px; /*40px 0 0 10px;*/
+	margin: 30px 0 0 20px; /*40px 0 0 10px;*/
 	background:
 		url(http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png)
 		no-repeat;
 }
 
-#placesList .item .marker_1 {
+.marker_1 {
 	background-position: 0 -10px;
 }
 
-#placesList .item .marker_2 {
+.marker_2 {
 	background-position: 0 -56px;
 }
 
-#placesList .item .marker_3 {
+.marker_3 {
 	background-position: 0 -102px
 }
 
-#placesList .item .marker_4 {
+.marker_4 {
 	background-position: 0 -148px;
 }
 
-#placesList .item .marker_5 {
+.marker_5 {
 	background-position: 0 -194px;
 }
 
-#placesList .item .marker_6 {
+.marker_6 {
 	background-position: 0 -240px;
 }
 
-#placesList .item .marker_7 {
+.marker_7 {
 	background-position: 0 -286px;
 }
 
-#placesList .item .marker_8 {
+.marker_8 {
 	background-position: 0 -332px;
 }
 
-#placesList .item .marker_9 {
+.marker_9 {
 	background-position: 0 -378px;
 }
 
-#placesList .item .marker_10 {
+.marker_10 {
 	background-position: 0 -423px;
 }
 
-#placesList .item .marker_11 {
+.marker_11 {
 	background-position: 0 -470px;
 }
 
-#placesList .item .marker_12 {
+.marker_12 {
 	background-position: 0 -516px;
 }
 
-#placesList .item .marker_13 {
+.marker_13 {
 	background-position: 0 -562px;
 }
 
-#placesList .item .marker_14 {
+.marker_14 {
 	background-position: 0 -608px;
-}
-
-#placesList .item .marker_15 {
-	background-position: 0 -654px;
 }
 
 #pagination {
@@ -215,9 +208,8 @@ html, body {
 
 .custom_typecontrol {
 	position: absolute;
-	top: 10px;
-	right: 10px;
-	right: 20%;
+	top: 180px;
+	left: 18%;
 	overflow: hidden;
 	width: 130px;
 	height: 30px;
@@ -265,9 +257,8 @@ html, body {
 
 .custom_zoomcontrol {
 	position: absolute;
-	top: 50px;
-	right: 10px;
-	right: 20%;
+	top: 220px;
+	left: 18%;
 	width: 36px;
 	height: 80px;
 	overflow: hidden;
@@ -283,11 +274,8 @@ html, body {
 	cursor: pointer;
 }
 
-.custom_zoomcontrol span img {
-	width: 15px;
-	height: 15px;
-	padding: 12px 0;
-	border: none;
+.custom_zoomcontrol span i {
+	margin-top : 20px;
 }
 
 .custom_zoomcontrol span:first-child {

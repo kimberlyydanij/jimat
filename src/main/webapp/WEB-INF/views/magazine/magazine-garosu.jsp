@@ -41,9 +41,9 @@
 			<c:forEach items="${aList}" var="aList">
 				<c:set var="count" value="${count+1}" />
 				
-				<div class="col magazine-list-body container d-flex my-2"
+				<div class="col magazine-list-body container d-flex my-2 p-0"
 					id="list<c:out value='${count}'/>">
-					<div class="magazine-list-thumbnail py-3 m-0 col-3">
+					<div class="magazine-list-thumbnail col-3">
 						<c:url var="shopDetail_a" value="shopdetail.do">
 							<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
 						</c:url>
@@ -54,6 +54,7 @@
 						<div class="shop-name mt-4">${aList.foodstore_name}</div>
 						<div class="shop-tags mt-4">#${aList.tag_age},
 							#${aList.tag_gender}, #${aList.tag_store}</div>
+						<div class="shop-area mt-2">${aList.area}</div>
 					</div>
 					<!--  매거진 리스트 인포 -->
 				</div>

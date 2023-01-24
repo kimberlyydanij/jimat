@@ -3,6 +3,7 @@ package dto;
 public class KakaoDTO { 
 
 	private String k_id;
+	private String k_name;
 	private String k_nickname;
 	private String k_email;	
 	private String k_image;
@@ -21,6 +22,14 @@ public class KakaoDTO {
 
 	public void setK_id(String k_id) {
 		this.k_id = k_id;
+	}
+
+	public String getK_name() {
+		return k_name;
+	}
+
+	public void setK_name(String k_name) {
+		this.k_name = k_name;
 	}
 
 	public String getK_nickname() {

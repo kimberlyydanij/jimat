@@ -4,10 +4,16 @@ div#map {
 	overflow: hidden;
 }
 
-div.shop-list-info {
-	border: 1px solid black;
+div.shop-list-body {
+	border: 3px solid black;
 	border-radius: 15px;
-	width: 420px;
+	width:630px;
+	overflow: hidden;
+	margin: auto;
+}
+
+div.shop-list-info {
+	width: 430px;
 	height: 240px;
 	margin-right: -20px;
 }
@@ -15,6 +21,7 @@ div.shop-list-info {
 p.shop-list-address, p.shop-list-phone, p.shop-list-working {
 	font-sizt: 1rem;
 	text-align: left;
+	padding-right: 20px;
 	word-break: keep-all;
 	height: 25px;
 	margin-bottom: 10px;
@@ -29,19 +36,24 @@ p.shop-list-category {
 	text-decoration: underline;
 }
 
-div.shop-list-title  {
-	font-size: 1.4rem;
-	font-weight: bold;
+div.shop-list-title {
+	font-size: 1.4rem; font-weight : bold;
 	word-break: keep-all;
 	margin-top: 10px;
+	font-weight: bold;
 }
 
 div.shop-list-img img {
 	width: 250px;
 	height: 240px;
 	display: cover;
+	overflow: hidden;
 }
 
 div.shop-list {
 	border-bottom: 1px solid black;
+}
+
+div.shop-list-body {
+	margin: 0px;
 }

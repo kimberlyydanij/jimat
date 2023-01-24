@@ -12,7 +12,7 @@ import dto.CurationDTO;
 import service.CurationService;
 import dto.KakaoDTO;
 
-//http://localhost:8090/curationrow.do
+//http://curationrow.do
 //http://localhost:8090/curation.do
 //http://localhost:8090/index.do
 
@@ -213,8 +213,7 @@ public class CurationController {
 	public ModelAndView magazineBody0(CurationDTO cDTO, ModelAndView mav) {
 
 		this.cDTO = new CurationDTO();
-		List<CurationDTO> aList = cservice.magazineCheckProcess(0);
-
+		List<CurationDTO> aList = cservice.magazineCheckProcess(24);
 		mav.addObject("aList", aList);
 		mav.setViewName("magazine/magazine-korea-drink");
 
@@ -226,7 +225,7 @@ public class CurationController {
 	public ModelAndView magazineBody1(CurationDTO cDTO, ModelAndView mav) {
 
 		this.cDTO = new CurationDTO();
-		List<CurationDTO> aList = cservice.magazineCheckProcess(1);
+		List<CurationDTO> aList = cservice.magazineCheckProcess(21);
 
 		mav.addObject("aList", aList);
 		mav.setViewName("magazine/magazine-garosu");
@@ -239,7 +238,7 @@ public class CurationController {
 	public ModelAndView magazineBody2(CurationDTO cDTO, ModelAndView mav) {
 
 		this.cDTO = new CurationDTO();
-		List<CurationDTO> aList = cservice.magazineCheckProcess(2);
+		List<CurationDTO> aList = cservice.magazineCheckProcess(23);
 
 		mav.addObject("aList", aList);
 		mav.setViewName("magazine/magazine-macandcheese");
@@ -253,7 +252,7 @@ public class CurationController {
 	public ModelAndView magazineBody3(CurationDTO cDTO, ModelAndView mav) {
 
 		this.cDTO = new CurationDTO();
-		List<CurationDTO> aList = cservice.magazineCheckProcess(3);
+		List<CurationDTO> aList = cservice.magazineCheckProcess(22);
 
 		mav.addObject("aList", aList);
 		mav.setViewName("magazine/magazine-porkcutlet");

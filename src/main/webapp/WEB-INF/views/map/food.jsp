@@ -47,28 +47,27 @@
 		<div class="map_wrap col-12 mt-2 ms-3">
 			<div id="map"></div>
 		</div>
-		<!--   style="display: block; margin: 0 auto; width: 60%; height: 99%; position: relative; overflow: hidden;">-->
 
 		<div class="shop-body col-12 container m-3">
+
+			<!--  숍 리스트 표시 부분 -->
 			<!-- <c:out value="${fn:length(aList)}" /> -->
-			<div class="row row-cols-2">
+			<div class="row row-cols-2 shop-list justify-content-between">
 				<c:forEach var="aList" items="${aList}" varStatus="status" begin="1"
-					end="10">
-					<div class="shop-list-body col container d-flex p-2">
-
+					end="14">
+					<div class="shop-list-body col container d-flex p-0 mb-3">
 						<div class="row">
-
-							<div class="shop-list-info cols-7 columns-row">
+							<div class="shop-list-info cols-7 columns-row ">
 								<div class="row">
 									<div class=" container d-flex">
-										<div class="markerbg marker_">aaa</div>
+										<div class="markerbg marker_<c:out value='${status.count}'/>"
+											id="marker_<c:out value='${status.count}'/>"></div>
 										<div class="shop-list-title">
-											<p class="shop-list-title">${aList.foodstore_name}<p>
+											<p class="shop-list-title">${aList.foodstore_name}</p>
 										</div>
 									</div>
 								</div>
-		
-																	<p class="shop-list-category"> ${aList.food_category}</p>
+								<p class="shop-list-category">${aList.food_category}</p>
 								<p class="shop-list-address">${aList.address}</p>
 								<p class="shop-list-phone">${aList.store_num}</p>
 								<p class="shop-list-working">${aList.working_time}</p>
@@ -77,16 +76,26 @@
 						<div class="shop-list-img cols-4">
 
 							<c:url var="shopDetail_a" value="shopdetail.do">
-							<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
+								<c:param name="shopDetail_num" value="${aList.foodstore_id}" />
 							</c:url>
 							<a href="${shopDetail_a}"> <img src="${aList.img_url}"
-									class="shop-thumbnail" /></a>
-							
+								class="shop-thumbnail" /></a>
 						</div>
 					</div>
-				
 				</c:forEach>
 			</div>
+		</div>
+		<!-- 지도타입 컨트롤 div 입니다 -->
+		<div class="custom_typecontrol radius_border">
+			<span id="btnRoadmap" class="selected_btn"
+				onclick="setMapType('roadmap')">지도</span> <span id="btnSkyview"
+				class="btn" onclick="setMapType('skyview')"> 스카이뷰</span>
+		</div>
+
+		<!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+		<div class="custom_zoomcontrol radius_border">
+			<span onclick="zoomIn()"><i class="fa-solid fa-plus fa-lg"></i></span>
+			<span onclick="zoomOut()"><i class="fa-solid fa-minus fa-lg"></i></span>
 		</div>
 	</div>
 	<script defer src="${path}/resources/js/map.js"></script>

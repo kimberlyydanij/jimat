@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="reviewLike">
+
+	<select id="like_counts" parameterType="String" resultType="dto.ReviewLikeDTO">
+		select distinct review_like_review_seq, count(*) over(partition by review_like_review_seq) as review_like_click
+		from review_like
+		where review_like_store_id = #{review_like_review_seq, jdbcType=VARCHAR}
+	</select>
+
+	<select id="like_views" parameterType="java.util.HashMap" resultType="int">
+		select count(*) from review_like where review_like_user_id =
+		#{review_like_user_id, jdbcType=VARCHAR} and review_like_review_seq = #{review_like_review_seq, jdbcType=VARCHAR}
+	</select>
+	
+	<select id="like_list" parameterType="String" resultType="dto.ReviewLikeDTO">
+		select * from review_like where review_like_user_id =
+		#{review_like_user_id, jdbcType=VARCHAR}
+	</select>
+
+	<insert id="like_insert" parameterType="dto.ReviewLikeDTO">
+		INSERT INTO
+		review_like(review_like_seq, review_like_user_id,
+		review_like_review_seq, review_like_store_id)
+		VALUES(review_like_sequence.nextval, #{review_like_user_id, jdbcType=VARCHAR}, 
+		#{review_like_review_seq, jdbcType=VARCHAR}, #{review_like_store_id, jdbcType=VARCHAR})
+	</insert>
+
+	<delete id="like_delete" parameterType="dto.ReviewLikeDTO">
+		DELETE FROM review_like
+		WHERE review_like_review_seq = #{review_like_review_seq, jdbcType=VARCHAR} 
+		and review_like_user_id = #{review_like_user_id, jdbcType=VARCHAR}
+	</delete>
+</mapper>

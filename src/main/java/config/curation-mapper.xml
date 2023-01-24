@@ -27,7 +27,7 @@
 
 	<select id="magazineCheck" parameterType="Int"
 		resultType="dto.CurationDTO">
-		select * from MAGAZINE
+		select * from SEOULFOODSTORE
 		where FOOD_CATEGORY_TAG=#{number, jdbcType=VARCHAR}
 	</select>
 
